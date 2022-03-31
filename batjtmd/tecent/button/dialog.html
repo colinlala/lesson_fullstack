@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dialog</title>
+    <style>
+        .page{
+            width: 255px;
+            height: 160px;
+            /* 离上面10px，默认auto中间 */
+            margin: 10px auto;
+            background-color: black;
+            /* 圆角 */
+            border-radius: 15px;
+        }
+        .page__title{
+            text-align: center;
+            height: 50px;
+            /* 离顶边框距离 */
+            line-height: 50px;
+            /* 字体大小 */
+            font-size: 14px;
+            color: gray;
+            /* 加粗？ */
+            font-weight: bold;
+        }
+        .page__desc{
+            height: 60px;
+            color: gray;
+            font-size: 14px;
+            padding: 0 110px;
+        }
+        .page__fd{
+            height: 50px;
+            display: flex;
+            border-radius: 20px;
+        }
+        .page__left,.page__right{
+            width: 50%;
+            height: 50px;
+            border: 1px gray solid;
+            border-radius: 15px;
+            font-size: 14px;
+            text-align: center;
+            line-height: 50px;
+            color: gray;
+            background-color: black;
+        }
+        .page__left{
+            border-radius: 0 0 0 10px;
+        }
+        .page__right{
+            border-radius: 0 0 10px 0;
+        }
+        .page__left:hover{
+            color: aliceblue;
+        }
+        .page__right:hover{
+            color: aliceblue;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="page__bd">
+            <p class="page__title">弹窗内容</p>
+            <p class="page__desc">内容</p>
+        </div>
+        <div class="page__fd">
+            <button class="page__left">辅助操作</button>
+            <button class="page__right">主操作</button>
+        </div>
+    </div>
+</body>
+</html>
