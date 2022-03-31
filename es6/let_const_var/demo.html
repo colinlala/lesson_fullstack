@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // const let 更好， 不污染window
+        // console.log(pizza);  //不行
+        console.log(a);     //变量的提升  提升到全局作用域的顶部去
+        console.log(fn);    //函数也会变量提升，值也提升了
+        fn();
+        const pizza = '胡萝卜牛肉'; //  var可以挂载在window上 const不行
+        var a = '污染';  // 不用var
+        function fn (){  //函数表达式
+            console.log('fn');
+        }
+    </script>
+</body>
+</html>
