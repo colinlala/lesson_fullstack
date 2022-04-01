@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS+CSS实现日月交替</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./Alternate_sun_and_moon.css">
+    <script>
+        function change(str){
+            document.getElementById('container').setAttribute('class',str);
+        }
+    </script>
+</head>
+<body>
+    <div class="btn-box">
+        <div onclick="change('light')">
+            <i class="fa fa-sun-o" aria-hidden="true"></i>天亮亮
+        </div>
+        <div onclick="change('dark')">
+            <i class="fa fa-moon-o" aria-hidden="true"></i>月亮亮
+        </div>
+    </div>
+    <div class="dark" id="container">
+        <div class="bg"></div>
+        <div class="moon-box">
+            <div class="moon"></div>
+        </div>
+        <div class="sun-box">
+            <div class="sun"></div>
+        </div>
+        <div class="sea"></div>
+    </div>
+</body>
+</html>
