@@ -1,0 +1,226 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>boxshadow</title>
+<style>
+    form {
+        width: 200px;
+        margin: 20px auto;
+    }
+    div {
+        margin-bottom: 20px;
+    }
+    input:not([type="submit"]){
+        border:5px solid red;
+    }
+
+/* ------------------------------------------ */
+    p{
+        background: orange;
+        min-height: 30px;
+    }
+    p:empty {
+        display: none;
+    }​
+
+
+    .menuSection{
+        display: none;
+    }
+    :target{
+        display: block;
+    }
+
+
+/* --------------------------------------------- */
+    /* 点击显现 */
+    .menuSection2,.menuSection3,.menuSection4{
+        display: none;
+    }
+    #bnd:target {
+        background: orange;
+        color: #fff;
+        display: block;
+    }
+    #jake:target {
+        background: blue;
+        color: #fff;
+        display: block;
+    }
+    #aron:target {
+        background: red;
+        color: #fff;
+        display: block;
+    }
+
+
+/* -------------------------------------- */
+/* 通过“:first-child”选择器定位列表中的第一个列表项，并将序列号颜色变为黄色。 */
+    ol > li{
+        font-size:20px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    ol a {
+        font-size: 16px;
+        font-weight: normal;
+    }
+    ol > li:first-child{
+        color: yellow;
+    }
+
+
+
+    /* ------------------------------- */
+    /* ol > li:nth-child(2n){
+        background: orange;
+    } */
+
+
+
+
+    /* -----item2变成了橙色------------------------------- */
+    ol > li:nth-last-child(5){
+        background: orange;
+    }
+
+
+
+    /* ---------------------------------------------------- */
+    /* .wrapper {
+        width: 500px;
+        margin: 20px auto;
+        padding: 10px;
+        border: 1px solid #ccc;
+        color: #fff;
+    }
+    .wrapper > div {
+        background: green;
+    }
+    .wrapper > p {
+        background: blue;
+    } */
+    /*我要改变第一个段落的背景为黄色*/
+    /* .wrapper > p:first-of-type {
+        background: yellow;
+    } */
+
+
+    /* ---------------------------------------------------- */
+    /* .wrapper > p:nth-of-type(2n){
+        background: orange;
+    } */
+
+
+    /* -------------------------------------------------------- */
+    .wrapper > p:last-of-type{
+        background: orange;
+    }
+
+</style>
+</head>
+
+<body>
+    <!-- :not 除submit以外的红色框 -->
+    <form action="#">
+        <div>
+            <label for="name">Text Input:</label>
+            <input type="text" name="name" id="name" placeholder="John Smith" />
+        </div>
+        <div>
+            <label for="name">Password Input:</label>
+            <input type="text" name="name" id="name" placeholder="John Smith" />
+        </div>
+        <div>
+            <input type="submit" value="Submit" />
+        </div>
+    </form>
+
+
+    <!-- :empty 没有内容的行没有颜色 -->
+    <p>我是一个段落</p>
+    <p> </p>
+    <p></p>
+
+
+
+    <!-- :target演示 点击显示隐藏的段落-->
+    <h2><a href="#brand">Brand</a></h2>
+        <div class="menuSection" id="brand">
+            content for Brand
+        </div>
+
+
+
+
+
+        <!-- 多个:target演示 -->
+    <h2><a href="#bnd">Brand</a></h2>
+        <div class="menuSection2" id="bnd">
+          content for Bnd
+        </div>
+    <h2><a href="#jake">Brand</a></h2>
+        <div class="menuSection3" id="jake">
+         content for jake
+        </div>
+    <h2><a href="#aron">Brand</a></h2>
+        <div class="menuSection4" id="aron">
+            content for aron
+        </div>
+
+
+
+
+
+        <!-- :first-child--------------------------- -->
+        <!-- <ol>
+            <li><a href="##">Link1</a></li>
+            <li><a href="##">Link2</a></li>
+            <li><a href="##">link3</a></li>
+        </ol> -->
+
+        <!-- “:nth-child(n)”选择器，并且参数使用表达式“2n”，将偶数行列表背景色设置为橙色。 -->
+        <ol>
+            <li>item1</li>
+            <li>item2</li>
+            <li>item3</li>
+            <li>item4</li>
+            <li>item5</li>
+            <li>item6</li>
+          </ol>
+          
+        
+          <!-- :first-of-type”选择器，定位div容器中的第一个p元素（p不一定是容器中的第一个子元素），并设置其背景色为橙色。 -->
+          <!-- <div class="wrapper">
+            <div>我是一个块元素，我是.wrapper的第一个子元素</div>
+            <p>我是一个段落元素，我是不是.wrapper的第一个子元素,但是他的第一个段落元素</p>
+            <p>我是一个段落元素</p>
+            <div>我是一个块元素</div>
+          </div> -->
+
+          <!-- “:nth-of-type(2n)”选择器，将容器“div.wrapper”中偶数段数的背景设置为橙色。 -->
+          <!-- <div class="wrapper">
+            <div>我是一个Div元素</div>
+            <p>我是一个段落元素</p>
+            <div>我是一个Div元素</div>
+            <p>我是一个段落</p>
+            <div>我是一个Div元素</div>
+            <p>我是一个段落</p>
+            <div>我是一个Div元素</div>
+            <p>我是一个段落</p>
+          </div> -->
+
+
+
+          <!-- :last-of-type”选择器，将容器“div.wrapper”中最后一个段落元素背景设置为橙色 -->
+          <div class="wrapper">
+            <p>我是第一个段落</p>
+            <p>我是第二个段落</p>
+            <p>我是第三个段落</p>
+            <div>我是第一个Div元素</div>
+            <div>我是第二个Div元素</div>
+            <div>我是第三个Div元素</div>
+        </div>
+</body>
+</html>
