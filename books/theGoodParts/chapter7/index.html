@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="content">
+        baidu.com
+    </div>
+    
+</body>
+<script>
+    // 使用对象创建正则表达式
+    // 检测输入的值为高亮
+        let con = prompt("请输入要检测的内容，支持正则");
+        let reg = new RegExp(con,"g");
+        let div = document.querySelector("div");
+        div.innerHTML = div.innerHTML.replace(reg, search =>{
+            return '<span style="color:orange">${search}</span>';
+        });
+        
+</script>
+</html>
