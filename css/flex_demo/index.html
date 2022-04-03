@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* css reset  */
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body,html{
+            height: 100%;
+        }
+        body{
+            /* 手机网页  apple-system 不匹配用后面的 */
+            /* css 继承 */
+            font-family: -apple-system-font,sans-serif;
+            background-color: #111;
+        }
+        .page{
+            /* 格式化上下文  绝对定位 脱离了文档流 丢失块级元素*/
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            /*  运行内部滚动  */
+            overflow-y: auto;
+            /* 滚动如丝般 */
+            -webkit-overflow-scrolling: touch;
+        }
+        .page__hd{
+            /* 相对单位  相对viewport视窗 */
+            height: 200vh; 
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="page__hd">
+            <div class="page__title">Flex</div>
+            <div class="page__desc">Flex布局</div>
+        </div>
+        <!-- BEM -->
+        <div class="page__bd padding__bd_spacing">
+            <!-- weui 项目前缀 弹性布局组件   新一轮的BEM -->
+            <div class="weiui-flex">
+                <div class="weui-flex__item">
+                    <div class="placeholder">weui</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
