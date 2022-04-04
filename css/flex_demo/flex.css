@@ -1,0 +1,96 @@
+/* 外联样式 */
+*{
+    margin: 0;
+    padding: 0;
+    /* outline: 1px solid green; */
+}
+/* css4 变量*/
+/* 后面要用这个的 直接拿就可以  引用var(名字)*/
+:root {
+    --weui-FG-1:rgba(255,255,255,0.5);
+    --weui-BG-0:#111;
+    --weui-BG-1:#1e1e1e;
+}
+body, html{
+    height: 100%;
+}
+body{
+    /* 手机网页  apple-system 不匹配用后面的 */
+    /* css 继承 */
+    font-family: -apple-system-font,sans-serif;
+    background-color: var(--weui-BG-0);
+    color: rgba(255,255,255,0.8);
+}
+.page{
+    /* 格式化上下文  绝对定位 脱离了文档流 丢失块级元素*/
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /*  运行内部滚动  */
+    overflow-y: auto;
+    /* 滚动如丝般 */
+    -webkit-overflow-scrolling: touch;
+}
+.page__hd{
+    /* 相对单位  相对viewport视窗 */
+    /* height: 200vh;  */
+    padding: 40px;
+}
+.page__title{
+    text-align: left;
+    font-size: 20px;
+    font-weight: 400;
+    
+}
+.page__desc{
+    margin-top: 4px;
+    color:var(--weui-FG-1);
+    text-align: left;
+    font-size: 14px;
+}
+.page__bd_spacing{
+    padding: 0 16px;
+
+}
+.page__ft{
+    padding-top: 40px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+.page__ft img{
+    height: 19px;
+    filter: invert(100) hue-rotate(170deg);
+}
+/* css 格式上下文概念 */
+/* flex 可以解决移动端大部分布局的需求 */
+.weui-flex{
+    /* 解决兼容性问题 */
+    /* -webkit 是表示针对Chrome浏览器和 safari 浏览器支持，
+        -ms表示针对 IE 浏览器支持。
+        -moz是表示对Firefox浏览器支持。 */
+    display: -webkit-box;
+    
+    display: -ms-flex;
+    /* 前身 */
+    display: -webkit-flex;
+    display: flex;
+}
+.weui-flex__item{
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+}
+.weui-flex__item .placeholder{
+    text-align: center;
+    margin: 5px;
+    padding: 0 10px;
+    /* font-size: 10px; */
+    border-color: var(--weui-BG-1);
+    /* 相对与自身字体大小 */
+    height: 2.3em;
+    line-height: 2.3;
+    color: var(--weui-FG-1);
+}

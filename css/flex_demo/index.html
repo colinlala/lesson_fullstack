@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTTP状态码</title>
+    <link rel="stylesheet" href="./flex.css">
+    <style>
+        /* css reset  */
+        /* 嵌入样式 */
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="page__hd">
+            <div class="page__title">Flex</div>
+            <div class="page__desc">Flex布局</div>
+        </div>
+        <!-- BEM -->
+        <div class="page__bd page__bd_spacing">
+            <!-- weui 项目前缀 弹性布局组件   新一轮的BEM -->
+            <div class="weui-flex">
+                <div class="weui-flex__item">
+                    <div class="placeholder">weui</div>
+                </div>
+            </div>
+            <div class="weui-flex">
+                <div class="weui-flex__item">
+                    <div class="placeholder">weui</div>
+                </div>
+                <div class="weui-flex__item">
+                    <div class="placeholder">weui</div>
+                </div>
+            </div>
+            <div class="weui-flex">
+                <div class="weui-flex__item">
+                    <div class="placeholder">weui</div>
+                </div>
+                <div class="weui-flex__item">
+                    <div class="placeholder">weui</div>
+                </div>
+                <div class="weui-flex__item">
+                    <div class="placeholder">weui</div>
+                </div>
+            </div>
+        </div>
+        <div class="page__ft">
+            <!-- 行内样式 不要这样写 优先级跟高 style=“color:weite”-->
+            <a href="javascript:home()" style="color:white">
+                <!-- img标签 也会发出http请求的 -->
+                <!-- 这个png属于微信的 -->
+                <!-- 保护自己站点资源，减少无效的请求 -->
+                <img src="./icon_footer_link.png" alt="">
+            </a>
+        </div>
+    </div>
+    <script>
+        // js 函数是一等对象 
+        function home(){
+            // 通过js跳转到 /home 页面
+            // window  全局对象
+            // location  属于BOM对象      DOM对象
+            // Browser浏览器 
+            window.location.href = '/home';
+
+        }
+        // typeof不靠谱
+        console.log(typeof home);  //显示function
+    </script>
+</body>
+</html>
