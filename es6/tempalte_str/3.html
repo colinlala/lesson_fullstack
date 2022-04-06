@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="song">
+        <p>
+            你的背包 - 陈奕迅
+            特点是: k歌之王
+        </p>
+    </div>
+    <script>
+        const song = {
+            name:'Dying to live',
+            artist:'Tupac',
+            featuring:'Biggie Smalls'
+        }
+        
+        document.body.innerHTML+=`
+            <div class="song">
+                <p>${song.name}<br>
+                    ${song.artist}<br>
+                    ${song.featuring}<br>
+                    </p>
+            </div>`
+           
+    </script>
+</body>
+</html>

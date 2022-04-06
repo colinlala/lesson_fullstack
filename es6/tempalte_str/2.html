@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table id="userTable">
+        <tr>
+            <td>名字</td>
+            <td>家乡</td>
+            <td>向往的都市</td>
+            <td>工作</td>
+            <td>口号</td>
+        </tr>
+        <!-- <tr>
+            <td>zyh</td>
+            <td>南昌</td>
+            <td>杭州</td>
+            <td>Web Developer</td>
+            <td>冲冲冲冲冲冲</td>
+        </tr> -->
+
+    </table>
+    <script>
+        // 吧对象显示
+        const person = {
+            name:'zyh',
+            home:'南昌',
+            city:'杭州',
+            job:'Web Developer',
+            bio:'冲冲冲冲冲冲'
+        }
+        // DDM html标签   js通向html世界的编程 DOM
+        const tableElment =  document.querySelector('#userTable');
+        console.log(tableElment.innerHTML);
+        tableElment.innerHTML += `
+            <tr>
+                <td>${person.name}</td>
+                <td>${person.home}</td>
+                <td>${person.city}</td>
+                <td>${person.job}</td>
+                <td>${person.bio}</td>
+            </tr>
+        `;
+        // const sayHe = (name,home,city,job,bio) => `我叫 ${name} 住在${home} 想去${city} 未来工作是${job} 志气是${bio}!`;
+        // console.log(sayHe(name,home,city,job,bio));
+    </script>
+</body>
+</html>
