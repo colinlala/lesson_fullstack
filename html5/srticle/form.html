@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form表单语义化</title>
+</head>
+<body>
+    <!-- form用来收集用户数据 -->
+    <form action="/register" method="post">
+        
+        <!-- 表单的不同内容的收集 -->
+        <fieldset>
+            <legend>基本信息</legend>
+            <div>
+                <label for="username">用户名</label>
+                <!-- required必填 -->
+                <input placeholder="请输入用户名" required id="username" type="text" name="name"/>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>银行卡信息</legend>
+            <div>
+                <label for="card">卡号</label>
+                <input type="text" id="card" name="card" required />
+            </div>
+        </fieldset>
+        <div>
+            <input type="submit" value="提交" />
+        </div>
+
+    </form>
+</body>
+</html>
