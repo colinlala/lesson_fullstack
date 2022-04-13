@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>this指向面试题</title>
+</head>
+<body>
+    <script>
+        function Foo(){
+            getName = function(){
+                console.log(1);
+            };
+            return this;
+        }
+        Foo.getName = function(){
+            console.log(2);
+        };
+        Foo.prototype.getName = function(){
+            console.log(3);
+        };
+
+        // 函数表达式
+        var getName = function(){
+            console.log(4);
+        };
+
+        // 函数声明
+        function getName(){
+            console.log(5);
+        }
+
+        // 预编译时，声明提升，运行到表达式时，替换，所以所有的getName()都是4
+
+        Foo.getName();      //2     构造函数的静态方法
+        getName();          //4
+        Foo().getName();    //1     Foo()Foo执行，（getName被重新重写），返回this，this指向window，window.getName就是那个表达式，（getName被重新重写）1覆盖4
+        getName();          //1     上一次重写完
+
+        new Foo.getName();      // 2 new一个方法
+        new Foo().getName();        // 3  Foo()Foo执行，（getName被重新重写），返回this，this指向实例之后的对象，prototype.getName
+        new new Foo().getName();    // 3
+    </script>
+</body>
+</html>
