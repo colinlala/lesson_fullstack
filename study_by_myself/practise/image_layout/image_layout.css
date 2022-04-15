@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(235, 151, 151);
+}
+
+.shell{
+    /* 先设置网格布局 */
+    display: grid;
+    padding: 20px;
+    /* 定义网格布局中行与列之间间隙的尺寸 */
+    grid-gap: 20px;
+    /* 该属性规定网格布局中的列数和宽度 */
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    /* 设置网格中行的默认尺寸 */
+    grid-auto-rows: 270px;
+    /* 属性控制自动放置项目在网格中的插入方式为填充 */
+    grid-auto-flow: dense;
+}
+
+.shell>div{
+    background-color: rgb(51,51,51);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    position: relative;
+}
+
+.shell span{
+    color: #fff;
+    font: 100 100px 'Kristen ITC';
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    /* 给文字加个阴影 */
+    text-shadow: -5px 0 rgb(0, 0, 0), 0 -5px rgb(0, 0, 0),5px 0 rgb(0, 0, 0),0 5px rgb(0, 0, 0);
+}
+.shell .wide{
+    grid-column: span 2;
+}
+.shell .tall{
+    grid-row: span 2;
+}
+.shell .big{
+    grid-column: span 2;
+    grid-row: span 2;
+}
