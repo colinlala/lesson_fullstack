@@ -1,0 +1,99 @@
+body {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(119 157 193);
+}
+.a{
+    position: relative;
+    top: 100px;
+    width: 1000px;
+    height: 600px;
+    background-image: url(./101.jpg);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.b,
+.c,
+.d,
+.e{
+    position: absolute;
+    width: 1000px;
+    height: 600px;
+    /* 设置阴影 */
+    filter: drop-shadow(4px 4px 12px rgba(0,0,0,.5));
+    background-size: cover;
+    opacity: .7;
+    transition: .8s;
+}
+.b::after,
+.c::after,
+.d::after,
+.e::after{
+    content: "";
+    position: absolute;
+    width: 1000px;
+    height: 600px;
+    background-image: url(./101.jpg);
+}
+.b{
+    left: -400px;
+    transform: rotateZ(100deg);
+    overflow: hidden;
+}
+.b::after{
+    transform: rotateZ(-100deg);
+}
+
+.c{
+    left: -400px;
+    transform: rotateZ(-100deg);
+    overflow: hidden;
+}
+.c::after{
+    transform: rotateZ(100deg);
+}
+
+.d{
+    right: -400px;
+    transform: rotateZ(105deg);
+    overflow: hidden;
+}
+.d::after{
+    transform: rotateZ(-105deg);
+}
+
+.e{
+    right: -400px;
+    transform: rotateZ(-100deg);
+    overflow: hidden;
+}
+.e::after{
+    transform: rotateZ(100deg);
+}
+.f{
+    opacity: 0;
+    font: 900 50px '';
+    /* 设置字体间距 */
+    letter-spacing: 10px;
+    color: rgb(60,60,70);
+    transition: .8s;
+}
+/* 设置动画 */
+.a:hover .b{
+    left: -550px;
+}
+.a:hover .c{
+    left: -600px;
+}
+.a:hover .d{
+    right: -550px;
+}
+.a:hover .e{
+    right: -610px;
+}
+.a:hover .f{
+    opacity: 1;
+}
