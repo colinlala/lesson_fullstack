@@ -65,3 +65,17 @@
         .icon-109:before{
             content:'\e667';
         }
+- 以文件打开product.html
+    物理路径 file://。。。。。
+- 以Open with Five Sever打开
+    相对路径 -> web app 根路径 ,启动了http服务
+        http://127.0.0.1:5555/html5/mall4.14-16/product.html
+
+
+> 区别
+> > 协议不一样
+> > html、 css、 js、 等资源下载及显示。http协议是基于请求响应式的协议.
+> > >  mysql:8080.web:80
+
+
+- 组件化思维是良好编程的习惯
