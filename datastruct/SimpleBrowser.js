@@ -18,3 +18,4 @@ for(let key in browser){
     console.log(key)
 }
 console.log("push" in browser);    //true
+//
