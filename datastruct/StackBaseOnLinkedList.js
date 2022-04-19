@@ -43,3 +43,7 @@ class StackBasedLinkedList{
         }
     }
 }
+module.exports = {
+    StackBasedLinkedList,
+    Node
+}
