@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>两列式布局</title>
+    <style>
+    /* 
+        flex做俩列，三列轻轻松松，自适应，简单
+            缺点：浏览器兼容不行  ie9 以前不行
+        float  浮动
+            1. 浮动，离开文档流 ，margin-left | margin-right 不重叠
+            2. BFC 当给main加一个overflow:hidden,浮动，启用了格式化上下文之BFC原则，
+    */
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        /* 1 */
+        /* display: flex; */
+        /* 不用弹性布局，怎么实现俩列式布局 */
+    }
+    .aside, .main {
+        height: 500px;
+    }
+    .aside {
+        /* 2、3 */
+        /* float: left; */
+        /* float: right; */
+
+        float: left;
+        /* 离开了文档流，让main紧贴左边，aside遮住了一些 */
+        width: 300px;
+        background-color: green;
+    }
+    .main {
+        /* 1 */
+        /* flex: 1; */
+        /* 不用弹性布局，怎么实现俩列式布局 */
+        background-color: red;
+
+        /* 2 */
+        /* float: left;
+        width: calc(100% - 300px); */
+        /* 让main浮在右边 */
+
+        /* 3 */
+        /* margin-left: 300px; */
+        /* margin-right: 300px; */
+
+        /* 4 */
+        /* BFC */
+        overflow: hidden;
+
+    }
+
+
+    </style>
+</head>
+<body>
+    <!--
+        自适应的俩列布局 
+        设计一套布局， 两列式布局   aside  300px , 剩下的交给 main  
+        左右
+        侧边栏固定宽度，主栏宽度自适应    
+    -->
+    <div class="container">
+        <aside class="aside"></aside>
+        <main class="main"></main>
+    </div>
+</body>
+</html>
