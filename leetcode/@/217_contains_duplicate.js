@@ -13,7 +13,7 @@
  * @return {boolean}
  */
 var containsDuplicate = function (nums) {
-    // Size属性将会返回Set对象中元素的个数。
+    // Size属性将会返回Set对象中元素的个数。自动去重
     let newArr = new Set(nums)
     if (newArr.size === nums.length)
         return false;
