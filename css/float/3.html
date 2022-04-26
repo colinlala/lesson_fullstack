@@ -1,0 +1,51 @@
+<!--
+ * @Author: ZYH
+ * @Email: 1522302196@qq.com
+ * @GiteeId: colincclala
+ * @Date: 2022-04-26 16:37:32
+ * @LastEditTime: 2022-04-26 16:52:32
+ * @Description: 
+ * 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div1 {
+            padding: 10px;
+            border: 3px solid black;
+        }
+
+        .div2 {
+            border: 3px solid blue;
+        }
+
+        .div2 img {
+            float: left;
+            padding: 10px;
+        }
+
+        .div2::after {
+            content: "12323";
+            display: block;
+            /* 清除浮动 */
+            clear: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div1">
+        <img src="./1 (9).jpeg" alt="">
+    </div>
+    <div class="div2">
+        <img src="./1 (9).jpeg" alt="">
+    </div>
+</body>
+
+</html>
