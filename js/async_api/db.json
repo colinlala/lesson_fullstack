@@ -1,0 +1,31 @@
+{
+    "posts":[
+        {
+            "id":1,
+            "title":"玩unity3D",
+            "author":"zyh"
+        },
+        {
+            "id":2,
+            "title":"event loop",
+            "author":"光光同学"
+        }
+    ],
+    "comments":[
+        {
+            "id":1,
+            "body":"真棒",
+            "postId":1
+        },
+        {
+            "id":2,
+            "body":"真太棒了",
+            "postId":1
+        },
+        {
+            "id":3,
+            "body":"学到了",
+            "postId":2
+        }
+    ]
+}
