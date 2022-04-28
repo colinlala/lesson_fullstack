@@ -1,0 +1,99 @@
+<!--
+ * @Author: ZYH
+ * @Email: 1522302196@qq.com
+ * @GiteeId: colincclala
+ * @Date: 2022-04-28 14:57:00
+ * @LastEditTime: 2022-04-28 16:47:03
+ * @Description: 
+ * 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>异步之数据请求</title>
+</head>
+
+<body>
+    <ul id="posts"></ul>
+    <script>
+        // fetch 请求posts、users
+        // 由异步变同步
+        let posts = [];
+        let users = [];
+
+        // 封装  dry
+        function ajax(url, callback) {
+            const xhr = new XMLHttpRequest();
+            xhr.open("GET", url, true);
+            xhr.send();
+            xhr.addEventListener('readystatechange', function (event) {
+                if (event.target.readyState === 4) {
+                    let data = JSON.parse(event.target.responseText);
+                    console.log(data);
+                    // 嵌套
+                    callback();
+                }
+            })
+        }
+
+        // 使用回调函数技巧实现异步任务嵌套，异步任务，同步化，控制代码的执行流程
+        ajax('http://127.0.0.1:3000/posts', () => {
+            ajax('http://127.0.0.1:3001/users', () => {
+                console.log('OVER!')
+            })
+        });
+
+
+
+        // fetch('http://127.0.0.1:3000/posts')
+        //     .then(data => data.json())
+        //     .then(data => {
+        //         posts = [...data];  // 扩展运算符
+        //         fetch('http://127.0.0.1:3001/users')
+        //             .then(data => data.json())
+        //             .then(data => {
+        //                 users = [...data];
+        //                 console.log(posts, users, '--------------')
+        //             })
+        //     })
+
+        // // 前端拉取数据API   xhr对象
+        // const xhr = new XMLHttpRequest();
+        // // 打开请求通道
+        // xhr.open("GET", "http://127.0.0.1:3000/posts", true);
+        // // 发送请求
+        // xhr.send();
+        // // http  请求响应式
+        // xhr.addEventListener('readystatechange', function (event) {
+        //     // console.log(event);
+        //     if (event.target.readyState === 4) { // 数据全部到达了
+        //         console.log(event.target.responseText, typeof event.target.responseText); // string
+        //         document.getElementById('posts').innerHTML =
+        //             JSON.parse(event.target.responseText).map(item => `
+        //                 <li>
+        //                     ${item.id}
+        //                     ${item.title}
+        //                     ${item.author}
+        //                 <\li>
+        //             `).join('')
+        //     }
+        // })
+
+
+
+        // fetch('http://127.0.0.1:3000/posts')
+        //     // 二进制文件流  二进制转json object
+        //     .then(data => data.json())
+        //     .then(data => {
+        //         console.log(data);
+        //     })
+        console.log('----------------------')
+    </script>
+
+</body>
+
+</html>
