@@ -1,0 +1,42 @@
+<!--
+ * @Author: ZYH
+ * @Email: 1522302196@qq.com
+ * @GiteeId: colincclala
+ * @Date: 2022-04-29 15:01:52
+ * @LastEditTime: 2022-04-29 15:14:55
+ * @Description: 
+ * 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .sjx {
+            /* 生成倒三角 */
+            width: 0;
+            height: 0;
+            border: 20px solid transparent;
+            border-top-color: black;
+            /* border-top: 20px solid red; */
+            /* 左三角 */
+            /* border-left-color: black; */
+        }
+
+        .sjx::before {
+            /* 拿到父容器tooltip-data的值 */
+            content: attr(tooltip-data);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- tooltip-data是自定义的 -->
+    <div class="sjx" tooltip-data="This is another tooltip"></div>
+</body>
+
+</html>
