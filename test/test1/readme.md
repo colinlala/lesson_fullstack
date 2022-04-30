@@ -18,4 +18,13 @@
     4. border-bottom:1px dashed black;
     5. before   after
 
+- 接受数组，返回特定形式的字符串
+    - arr.toString()
+    - arr.join()
 
+- RegExp 正则表达式 对象
+    Reg 规则
+    Exp 表达
+    /  /  符号
+    ^ 开始 $ 结尾
+    + :匹配一次或者多次
