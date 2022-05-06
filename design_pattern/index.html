@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模态框</title>
+    <style>
+        #modal {
+            height: 200px;
+            width: 200px;
+            line-height: 200px;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid black;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="open">打开弹框</button>
+    <button id="close">关闭弹框</button>
+    <script>
+        // Modal类 实例化很多次，有一种类只实例化一次，单例模式
+        // 推迟Modal的实例化的时间 到第一次显示
+
+        // 立即执行函数  默认返回值undefined
+        // 构建Modal类
+        // 1.立即执行函数 + 返回函数。函数嵌套函数，闭包
+        // 2.有return的 ，如果在构造函数中手动指定return，return后的对象才是实例对象。满足单例
+        //       new的高级用法
+        const Modal = (function () {
+            let modal = null;     // 模态框   永生
+            return function () {
+                // 如果实例化很多个，this就很重要。但是此时只实例化一次，就不需要this
+                if (!modal) {
+                    modal = document.createElement('div');  //创建<div>元素
+                    modal.id = 'modal';  // 生成css挂载点
+                    modal.style.display = 'none';
+                    modal.innerHTML = '我是一个全局唯一的Modal';
+                    document.body.appendChild(modal); // 将<div>添加到<body>中
+                }
+                return modal;
+            }
+        })();
+
+
+        // Modal类 实例化很多次，有一种类只实例化一次，单例模式
+        // 推迟Modal的实例化的时间 到第一次显示
+        // const Modal = function () {
+        //     // dom  -> body 
+        //     this.modalBox = document.createElement('div');  //创建<div>元素
+        //     this.modalBox.id = 'modal';  // 生成css挂载点
+        //     this.modalBox.style.display = 'none';
+        //     this.modalBox.innerHTML = '我是一个全局唯一的Modal';
+        //     document.body.appendChild(this.modalBox); // 将<div>添加到<body>中
+        // }
+        // let modal = new Modal(); // 直接实例化 Modal 
+
+
+        // 不做成一个类
+        // 点不点按钮（是否触发），modal框就已经挂载到页面上
+        // modal 不是要提前存在的
+        // modal 第一次 生产 + 显示 ； 二-N次 显示
+        // let modal = document.createElement('div');
+        // modal.id = 'modal';
+        // modal.style.display = 'none';
+        // modal.innerText = '我是一个全局唯一的Modal';
+        // document.body.appendChild(modal);
+
+
+        // let modal = null;
+        const openButton = document.getElementById('open'),
+            closeButton = document.getElementById('close');
+        // open/close的时候都会去实例化
+        // 单例模式，无论实例化多少次，返回的是任然是原来唯一的实例
+        openButton.addEventListener('click', function () {
+            // 弹出框显示出来
+            // modal没有的话，new一次
+            // 达到推迟的目的
+            // modal = new Modal();   // 局部的，不行,在外面let modal = null
+            let modal = new Modal();  // 局部的
+            // modal.modalBox.style.display = 'block';
+            console.log(modal)
+            modal.style.display = 'block';
+        });
+        closeButton.addEventListener('click', function () {
+            // 已经显示的弹出框隐藏掉
+            let modal = new Modal();  // 局部的
+            // modal.modalBox.style.display = 'none';
+            console.log(modal)
+            modal.style.display = 'none';
+        });
+    </script>
+</body>
+
+</html>
