@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>防抖</title>
+</head>
+<body>
+    <!-- 最简单的html标签+js 实现百度功能 
+        有抖动  
+    -->
+    <input type="text" id="undebounce" autofocus placeholder="搜索" />
+    <button id="cancel">取消搜索事件绑定</button>
+    <button id="btn">btn</button>
+    <script>
+        window.onload = function(){
+            const input = document.querySelector('#undebounce');
+            const cancel = document.getElementById('cancel');
+            const btn = document.getElementById('btn');
+            const consoleOne = () => { console.log('one'); }
+            const consoleTwo = () => { console.log('two'); }
+            const consoleThree = () => { console.log('three'); }
+
+            btn.addEventListener('click', consoleOne)
+            btn.addEventListener('click', consoleTwo)
+            btn.addEventListener('click', consoleThree)
+
+            /**
+             * @func 搜索功能
+             * @params {content：string} 关键字
+             * @return 返回结果列表
+            */
+           function doInput(event){
+                let keyword = event.target.value;
+
+                ajax(keyword);
+           }
+            function ajax(content){
+                // 能封装就封装 解耦 
+                console.log('准备实时搜索' + content);
+            }
+            input.addEventListener('input',doInput)
+            // input.addEventListener('input',(event)=>{
+            //     // 这里用普通函数 this可以指向input对象
+            //     // let keyword = this.value;
+            //     // console.log(keyword);
+
+
+            //     // 箭头函数的话
+            //     let keyword = event.target.value;
+            //     ajax(keyword);
+            // })
+            input.addEventListener('keydown',function(event){
+                if(event.keyCode === 13){
+                    console.log('搜索!');
+                }
+            })
+
+            cancel.addEventListener('click',function(){
+                input.removeEventListener('input',doInput);
+                btn.removeEventListener('click',consoleOne);
+            })
+        }
+
+
+
+
+    </script>
+</body>
+</html>

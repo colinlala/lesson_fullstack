@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,4 +44,51 @@
         });
     </script>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 无障碍访问 -->
+    <!-- 不需要点击text，点label也可以聚焦 -->
+    <label for="keywords">keywords</label>
+
+    <!-- autofocus="true"1.自动聚焦 -->
+    <input type="text" id="keywords" />
+    <script>
+        const input = document.querySelector('#keywords');
+        // input.addEventListener('focus',function(event){
+        //     console.log('focus 表单聚焦事件');
+        // })
+
+        // 2.自动聚焦
+        // input.focus();
+        
+        // 3.按tab也可以自动聚焦
+
+
+        // change 改变完后聚焦，点击外部
+        // keyup 变的时候就聚焦
+        // keydown 变的时候就聚焦
+        // input  变的时候就聚焦
+        input.addEventListener('input',function(){
+            console.log(this.value);
+        });
+
+        // keydown enter键-13
+        input.addEventListener('keydown',function(event){
+            // console.log(event.keyCode);
+            if(event.keyCode===13){
+                console.log('提交表单');
+            }
+
+        });
+    </script>
+</body>
+>>>>>>> 3060b42 (第一次Git提交所有文件)
 </html>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -193,4 +194,201 @@
 
     </script>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动态编辑文本</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #content{
+            /* 和display:none的区别？ */
+
+            /* 1. */
+            /* display:none */
+            /* display:none  不显示，不占据文档流 */
+            
+
+
+            /* 2. */
+            /* visibility: hidden; */
+            /* visibility: hidden  不显示，占据文档流 */
+            
+            
+        
+            /* 3. */
+            /* 不显示,相对左移,离开文档流 */
+            /* position: absolute; */
+            /* 找最近的position:absolute来定位,没有就往上找,最后只有body left:100px*/
+            /* left: 100px; */
+
+
+
+            /* 4. */
+            /* inline行内元素,不能设置宽和高 */
+            /* 行内块级 即不换行,又可以做盒子,设置宽高*/
+            /* display: inline-block;
+            width: 200px;
+            height: 200px;
+            background-color: green;
+            transform: scale(0,0); */
+            /* 不显示, 占据文档流 */
+            /* span如果有文字内容就不行 */
+
+
+
+            /* 5. */
+            /* 不显示,占据文档流 */
+            /* opacity: 0; */
+
+
+            /* 6. */
+            /* 不显示,x轴左移,占据文档流 */
+            /* display: inline-block;
+            transform: translateX(-100%); */
+            /* transform相对于元素本身 */
+
+
+
+            /* 7. */
+            /* 离开文档流 */
+            /* float: left; */
+
+
+
+
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="ep1">
+            <span id="content">彪悍的人生不需要解释:</span>
+            <input type="text" id="input" value="彪悍的人生不需要解释" />
+            <input type="button" id="save" value="Save">
+            <input type="button" id="cancel" value="Canel">
+        </div>
+
+        <!-- 这里相对于元素 -->
+        <div style="width: 50%;background-color: green;">123</div>
+    </div>
+    <script>
+        // js基于原型式面向对象
+        function EditInPlace(){
+            // 有什么好处？把dom元素作为属性
+            this.content = document.getElementById('content');
+            this.cancel = document.getElementById('cancel');
+            this.input = document.getElementById('input');
+            this.save = document.getElementById('save');
+
+            // 一开始就监听
+            this.bindEvents();
+
+        }
+        EditInPlace.prototype = {
+            // 罗列方法
+            convertToText(){
+                this.content.style.display = 'inline';
+                this.save.style.display = 'none';
+                this.cancel.style.display = 'none';
+                this.input.style.display = 'none';
+            },
+            convertToEdit(){
+                this.content.style.display = 'none';
+                this.save.style.display = 'inline'; 
+                this.cancel.style.display = 'inline';
+                this.input.style.display = 'inline';
+            },
+            bindEvents(){
+                // 监听事件
+                // 函数是事件的回调函数this，指向元素
+                // this -> editor
+                // let that = this;  // 作用域链
+                this.content.addEventListener('dblclick',()=>{
+                    // this丢失，被覆盖
+                    // that.convertToEdit();
+
+                    // 箭头函数内部没有this
+                    this.convertToEdit();
+                    
+
+                })
+            }
+
+        }
+
+        // html+css运行后，js再做事情
+        window.onload = function(){
+            let editor = new EditInPlace();
+            editor.convertToText();
+
+        }
+        
+
+
+
+        // js来切换显示或隐藏
+        // const save = document.getElementById('save');
+        // const cancel = document.getElementById('cancel');
+        // const input = document.getElementById('input');
+        // const content = document.getElementById('content');
+
+        // // DOM 动态样式
+        // function convertToText(){
+        //     content.style.display = 'inline';
+        //     save.style.display = 'none';
+        //     cancel.style.display = 'none';
+        //     input.style.display = 'none';
+        // }
+        // convertToText();
+        
+
+        // // 函数式编程  组织代码
+        // // 功能复杂，流程式代码不适合
+        // // 函数封装，被执行，复用性
+        // function convertToEdit(){
+        //     content.style.display = 'none';
+        //     save.style.display = 'inline'; 
+        //     cancel.style.display = 'inline';
+        //     input.style.display = 'inline';
+        // }
+
+        // // dblclick双击事件
+        // content.addEventListener('dblclick',function(){
+        //     convertToEdit();
+        //     input.focus();
+        // });  
+
+        // save.addEventListener('click',function(){
+        //     // 拿到当前的值，并动态设置span
+        //     const val = input.value;
+        //     content.innerText = val; 
+        //     convertToText();
+        // })
+
+
+        // cancel.addEventListener('click',function(){
+        //     convertToText();
+        // })
+
+        // setTimeout(()=>{
+        //     content.style.display = 'none';
+        //     save.style.display = 'inline'; // 显示出来 显示在一行
+        //     cancel.style.display = 'inline';
+        //     input.style.display = 'inline';
+        // },1500)
+
+
+
+
+
+    </script>
+</body>
+>>>>>>> 3060b42 (第一次Git提交所有文件)
 </html>

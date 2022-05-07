@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -95,4 +96,103 @@
 
     </script>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>送花</title>
+</head>
+<body>
+    <script>
+        // chrome最快的浏览器
+        // 浏览器 上网代理，运行页面时，js的宿主环境
+        // 作用域
+        function func(){
+            let c = 3;  //局部变量
+        }
+        // 全局变量
+        // 变量名 地址的映射 属于运行环境的作用域
+        // 空间大小 整数空间
+        let d;  // undefined 没有值，类型未定义，空间起始地址
+        // 空间大小未定义
+        var a = 1;   // var es5 及之前  js 变量常量声明的关键字
+        let b = 2;    // es6 2015 之后提供的let const
+        // const name = "ZYH";
+        // let age = 18;
+        // const hometown = "南昌";
+        // const sex = '男';
+        // 除简单类型之外一切都是对象
+        // 对象 字面量
+        const obj = {
+            name: 'zyh',
+            age: 18,
+            home: '南昌',
+            sex: '男',
+            isSingle: true,
+            mi: null,
+            worl_status: undefined,
+            // 参数
+            // 可以里面向外访问 外面不能往里面看
+            sendFlower(target){
+                // this 指向对象
+                const flower = new Flower('红玫瑰',99);
+                // console.log(this);
+                // console.log(target)
+                // 送花代码？
+                // target 类型是对象，对象上有sendFlower方法
+                target.receiveFlower(obj);
+            }
+        }
+        // 对象由哪俩部分组成？属性和方法
+        //女猪脚
+        // [] 数组  {} 对象
+        const xiaomei = {
+            name: '小美',
+            age: 16,
+            home: '海南',
+            receiveFlower(sender){
+
+                console.log('收到了'+sender.name + '送的花！');
+            }
+        }
+        // 老乡  代理人
+        const xiaohong = {
+            name: '小红',
+            home: '海南',
+            // 接口
+            receiveFlower(target){
+                //console.log('华哥,???');
+                target.receiveFlower(obj);
+            }
+        }
+        obj.sendFlower(xiaomei);
+        //obj.sendFlower(xiaomei);
+
+        // class Flower{
+        //     constructor(){
+
+        //     }
+        // }
+
+        // 函数名大写，类的构造函数
+        function Flower(type,num){
+            // this 指向构造函数运行的对象
+            console.log(this)
+            this.type = type;
+            this.num = num;
+        }
+        // 构造对象时就指向哪个
+        const ych = new Flower('油菜花',99);
+        console.log(ych.type,ych.num);
+
+
+        const rose = new Flower('玫瑰',1);
+        console.log(rose.type,rose.num);
+
+    </script>
+</body>
+>>>>>>> 3060b42 (第一次Git提交所有文件)
 </html>

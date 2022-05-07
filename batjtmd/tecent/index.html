@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -58,4 +59,66 @@
         }
     </script>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>腾讯日</title>
+</head>
+<body>
+    <script>
+        // 鸭子国国王喜欢听音乐，1000只鸭子组成合唱团，嘎嘎叫
+        // const 常量 不可以修改  
+        // > 如果是简单数据类型，值不能变
+        // > 如果是复杂数据类型，值可以变，类型不能变
+        // const choir = []; //合唱团数组 复杂数据类型
+        //js 没有特定的Array类型
+        // 除了简单类型，其他的都是对象
+        // 数组是Object的一种，函数
+        //console.log(typeof choir);
+        // 流程式思维   --->  封装成一个个函数
+        // 函数，对多行代码的封装，组成一个功能的单元
+        // 代码工作划分成一个个的函数
+        // 每个函数就只做一件事
+        /**
+         * @func 招募一个合唱团成员
+         * @return {Array[{}]}
+         * 
+        */
+       let duck = {
+            sing (){
+                console.log('gagagag');
+            }
+       }
+       let cat = {
+           sing: 'DDDD'
+       }
+       let chick = {
+            sing (){
+                console.log('gagagag');
+            }
+       }
+       const choir = [];
+
+        function buildChoir(animal){
+            if(animal.sing && typeof animal.sing=="function"){
+                choir.push(animal);
+            }
+        }
+        for(let i = 0 ; i < 999 ;i++){
+            buildChoir(duck);
+        }
+        buildChoir(chick);
+        if(choir.length >= 1000){
+            console.log('合唱团招募完成！');
+            console.log(choir.length);
+        }else{
+            console.log('NO');
+        }
+    </script>
+</body>
+>>>>>>> 3060b42 (第一次Git提交所有文件)
 </html>

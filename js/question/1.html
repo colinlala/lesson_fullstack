@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var obj = {
+            hi:function(){
+                console.log(this);   
+                return ()=>{
+                    console.log(this);  
+                }
+            },
+            sayHi:function(){
+                return function(){
+                    console.log(this);  
+                    return ()=>{
+                        console.log(this);   
+                    }
+                }
+            },
+            say:()=>{
+                console.log(this);  
+            }
+        }
+
+        let sayHi = obj.sayHi();            
+        let fun1 = sayHi();                 
+        fun1();                             //?
+        console.log('11111111111111111111111111111111')
+        let fun2 = sayHi.bind(obj)();        //let fun2 = obj.sayHi().bind(obj)();
+        console.log('11111111111111111111111111111111')
+
+        fun2();                         //?
+    </script>
+</body>
+</html>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*  样式重置  */
 *{
     margin: 0;
@@ -51,3 +52,80 @@ body{
     line-height: 1.88235294;
 }
 
+=======
+/*  样式重置  */
+*{
+    margin: 0;
+    padding: 0;
+    /* 元素的轮廓 */
+    outline: 0;  
+}
+/* css 继承 */
+html,body{
+    height: 100%;
+}
+body{
+    background-color: #373737;
+}
+.page__hd{
+    padding: 40px;
+}
+.page__title{
+    text-align: left;
+    font-size: 40px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.8);
+}
+.page__desc{
+    margin-top: 4px;
+    color: rgba(255, 255, 255, 0.6);
+    text-align: left;
+}
+
+.button-sp-area{
+    margin: 15px auto;
+    padding: 15px;
+    text-align: center;
+}
+/* .antd 当前项目或者公司
+    微信
+*/
+.weui-btn{
+    /* 显示为一个块 可以把a标签变成块级元素*/
+    display: block;   
+    width: 184px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 8px 24px;
+    font-weight: 700;
+    font-size: 17px;
+    /* 文字居中 */
+    text-align: center;
+    color: #fff;
+    border-radius: 8px;
+    /* 下划线去除 */
+    text-decoration: none;
+    /* 行高 17*1.88*/
+    line-height: 1.88235294;
+}
+.weui-btn_primary{
+    background-color: green;
+}
+.weui-btn_default{
+    color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* + 兄弟选择器  选择的是后面的default和disabled*/
+.weui-btn+.weui-btn{
+    margin-top: 10px;
+}
+.weui-btn_disabled{
+    background-color: rgba(255, 255, 255, 0.08);
+    color: rgba( 0, 0, 0, 0.2);
+    /* 禁止手势 PC端 */
+    cursor: not-allowed;
+}
+
+
+>>>>>>> 3060b42 (第一次Git提交所有文件)

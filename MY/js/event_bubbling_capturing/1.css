@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 *{
     margin: 0;
     padding: 0;
@@ -44,3 +45,51 @@
     line-height: 150px;            
     text-align: center;        
 }
+=======
+*{
+    margin: 0;
+    padding: 0;
+}
+.color_list{            
+    display: flex;            
+    display: -webkit-flex;        
+}        
+.color_list li{            
+    width: 100px;            
+    height: 100px;            
+    list-style: none;            
+    text-align: center;            
+    line-height: 100px;        
+}
+.r {
+    color: white;
+    background-color: red;
+}
+.o {
+    color: white;
+    background-color: orange;
+}
+.y {
+    color: white;
+    background-color: yellow;
+}
+.g {
+    color: white;
+    background-color: green;
+}
+.b {
+    color: white;
+    background-color: blue;
+}
+.p {
+    color: white;
+    background-color: purple;
+}
+.box{            
+    width: 600px;            
+    height: 150px;            
+    background-color: #cccccc;            
+    line-height: 150px;            
+    text-align: center;        
+}
+>>>>>>> 3060b42 (第一次Git提交所有文件)

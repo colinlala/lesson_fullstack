@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,4 +41,48 @@
         },500)
     </script>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">停下</button>
+    <!-- 每隔多久就定时一下 -->
+    <!-- 启动定时器（setInterval），点击停下按钮后，，消除定时器 -->
+    <script>
+
+        const btn = document.querySelector('#btn');
+        let interval = null ; // 
+        btn.addEventListener('click',() => {
+            // console.log(this);
+            clearInterval(interval);
+        });
+
+
+
+
+
+        // var找得到，let找不到（this.i）
+        let i = 1;  
+        let b = 2;
+
+        // 作用域链查找 用this
+        // this -> window
+        console.log(this);
+
+        // 定时器对象  定时器id
+        interval = setInterval(()=>{
+            console.log(i++);
+            // 箭头函数没有this
+            // NaN 非数字
+            // console.log(this.i);  this指向window  i是let定义 window上找不到i，但是var定义找得到
+        },500)
+    </script>
+</body>
+>>>>>>> 3060b42 (第一次Git提交所有文件)
 </html>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,4 +41,48 @@
         color_list.addEventListener("click",colorChange,false)
     </script>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./1.css">
+</head>
+<body>
+        <ul class="color_list">        
+            <li class="r">red</li>        
+            <li class="o">orange</li>        
+            <li class="y">yellow</li>        
+            <li class="g">green</li>        
+            <li class="b">blue</li>        
+            <li class="p">purple</li>    
+        </ul>
+        <div class="box"></div>
+    <script>
+        var color_list=document.querySelector(".color_list");            
+        var colors=color_list.getElementsByTagName("li");            
+        var box=document.querySelector(".box");  
+
+        // 性能低   一万个元素就难搞
+        // for(var n=0;n<colors.length;n++){                
+        //     colors[n].addEventListener("click",function(){                    
+        //         console.log(this.innerHTML)                    
+        //         box.innerHTML="该颜色为 "+this.innerHTML;                
+        //     })            
+        // }
+
+
+        function colorChange(e){                
+            var e=e||window.event;//兼容性的处理         
+            if(e.target.nodeName.toLowerCase()==="li"){                    
+                box.innerHTML="该颜色为 "+e.target.innerHTML;                
+            }                            
+        }            
+        color_list.addEventListener("click",colorChange,false)
+    </script>
+</body>
+>>>>>>> 3060b42 (第一次Git提交所有文件)
 </html>

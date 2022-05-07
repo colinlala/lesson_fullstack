@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,4 +43,50 @@
     </div>
     
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .test_transform{
+            width: 10px;
+            height: 100px;
+            background-color: #c685d9;
+            margin: 100px auto;
+            /* 变形属性在3维空间中发生 */
+            transform-style: preserve-3d;
+            /* 中心不变 */
+            transform-origin: 0px 0px;
+            /* 
+                translate(10px) 正值顺时针，负值逆时针 
+                translate3d(0,0,100px) 移动 正值 向屏幕外（变大），负值 向屏幕里（变小）
+                                        不能超过视距    
+            */
+            transition: height 5s,transform 1s;
+            /* transform: rotate(45deg); */
+            /* transform: translate(10px); */
+            /* transform: translate3d(0,0,300px); */
+
+        }
+        .test_transform:hover{
+            height: 400px;
+            transform: rotate(45deg);
+        }
+        .wrap {
+            /* 视距 */
+            perspective: 900px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="test_transform"></div>
+    </div>
+    
+</body>
+>>>>>>> 3060b42 (第一次Git提交所有文件)
 </html>

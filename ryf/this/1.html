@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,4 +27,34 @@
         foo();
     </script>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>this底层原理</title>
+</head>
+<body>
+    <script>
+        // 函数 在内存中其实是独立的
+        // 堆内存,     
+        // obj栈内存 (小的)   obj全局变量   内存地址
+        // obj.bar   obj拿到内存地址到堆内去查找.bar
+        // 匿名函数 在独立的堆内存中,申请空间，obj.foo -> 引用关系
+        // js运行 执行栈
+        var obj = {
+            bar:1,
+            foo:function(){
+                console.log(this);
+            }
+        }
+        
+        var foo = obj.foo;   // foo 存的是个地址,指向了函数所在的地址 
+        obj.foo();    // 出栈
+        foo();
+    </script>
+</body>
+>>>>>>> 3060b42 (第一次Git提交所有文件)
 </html>

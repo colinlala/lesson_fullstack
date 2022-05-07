@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!--
  * @Author: ZYH
  * @Email: 1522302196@qq.com
@@ -91,4 +92,99 @@
     </p>
 </body>
 
+=======
+<!--
+ * @Author: ZYH
+ * @Email: 1522302196@qq.com
+ * @GiteeId: colincclala
+ * @Date: 2022-04-29 15:15:40
+ * @LastEditTime: 2022-04-29 15:41:30
+ * @Description: HTML/CSS tooltip
+ * 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML/CSS tooltip</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .tooltip {
+            position: relative;
+            border-bottom: 1px dashed black;
+        }
+
+        .tooltip::before {
+            content: attr(tooltip-data);
+            position: absolute;
+            width: 250px;
+            background-color: #efba93;
+            color: #fff;
+            text-align: center;
+            line-height: 1.1;
+            padding: 15px;
+            border-radius: 5px;
+            z-index: 99;
+            bottom: 125%;
+            left: 50%;
+            /* margin-left: -70px; 效果一样*/
+            transform: translateX(-50%);
+            font-size: 0.7em;
+            visibility: hidden;
+            /* opacity 0-1可以有个过程,加点效果  
+                visibility：hidden准确控制可见不可见 */
+            transition: opacity .5s;
+            opacity: 0;
+        }
+
+        .tooltip::after {
+            content: '';
+            position: absolute;
+            bottom: 75%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity .5s;
+            border-color: #000 transparent transparent transparent;
+        }
+
+        .tooltip:hover:before,
+        .tooltip:hover:after {
+            /* 不能:before:hover 最后落实的应该是before*/
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>
+        HTML/CSS tooltip
+    </h1>
+    <p>
+        Hover <span class="tooltip" tooltip-data="Tooltip Content">
+            Here
+        </span>
+        to see the tooltip.
+    </p>
+    <p>
+        You can also Hover
+        <span class="tooltip" tooltip-data="This is another Tooltip Content">
+            here
+        </span>
+        to see another example.
+    </p>
+</body>
+
+>>>>>>> 3060b42 (第一次Git提交所有文件)
 </html>

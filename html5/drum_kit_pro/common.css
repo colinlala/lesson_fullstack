@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* 看不到的， css inhert继承  */
 /* css reset 样式重置 变成一张白纸  浏览器会莫名其妙加上一些margin和padding  */
 *{
@@ -60,4 +61,68 @@ html{
     transform: scale(1.1); /* 变形属性 scale 1.1倍 */
     box-shadow: 0 0 1rem #ffc600;
 
+=======
+/* 看不到的， css inhert继承  */
+/* css reset 样式重置 变成一张白纸  浏览器会莫名其妙加上一些margin和padding  */
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 20px;
+    /* height: 100%; */
+    /* bottom center 底部对齐 居中 */
+    background: url('./background.jpg') bottom center;
+    background-size: cover;
+    font-family: sans-serif;
+
+}
+.keys{
+    display: flex; /* 弹性布局 */
+    /* flex-direction: column; */
+    flex: 1; /*  */
+    min-height: 100vh; 
+     /* vh viewportHeight 相对单位 , 设备无关性的  px 是绝对单位 */
+    /* background-color: red; 前端调试的法宝 */
+    align-items: center; /*  */ 
+    justify-content: center; /* 主轴的排列方式 */
+}
+.key{
+    border: .4rem solid black;  /* rem 相对单位 相对于html font-size  */
+    border-radius: .5rem;
+    margin: 1rem;
+    font-size: 1.5rem;
+    padding: 1rem 0.5rem;
+    width: 10rem;
+    text-align: center;
+    color: white;
+    background-color: rgba(0,0,0,0.4);  /*0 ,0 ,0 黑色  0.4透明度 */
+    text-shadow: 0,0,0.5rem,black;
+    /*  */
+    -ms-transition:all .07s linear;
+    /* 标准还没有正式落地，研究 */
+    -webkit-transition: all .07s linear;
+    /* w3c标准 */
+    /* 当元素的属性发生变化的时候，添加一个过渡效果 */
+    transition: all .07s linear;
+
+}
+.key div{
+    font-size: 4rem;
+}
+.key .sound{
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    letter-spacing: .1rem;
+    color: #ffc600;
+    /* css过渡 */
+
+    
+}
+.playing{
+    border-color: #ffc600;
+    transform: scale(1.1); /* 变形属性 scale 1.1倍 */
+    box-shadow: 0 0 1rem #ffc600;
+
+>>>>>>> 3060b42 (第一次Git提交所有文件)
 }

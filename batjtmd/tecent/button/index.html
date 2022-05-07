@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,4 +27,48 @@
         <!-- <div class="page__ft"></div> -->
     </div>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./btn.css">
+</head>
+<body>
+    <!-- <div class="button-sp-area">
+    </div> -->
+    <!-- html 结构 由外到内 从上到下
+        1.page结构命名套路，
+        2.__ BEM 国际命名规范  Block Elment Modifier 
+        3.page Block 兴起一个区块
+        4.page__hd 子元素 Element
+        5.组件命名btn   可以复用的按钮组件    weiui?  
+            .weui-btn   .bd-btn  .tm-btn  .m-btn  .jd-btn
+            项目名或公司名作为前缀   .btn 新的一个block
+            .page>,page__hd>.page__title+.page__ft
+
+            .weiui-messagebox弹窗
+            .weiui-messagebox>.weiui-messagebox__hd{弹窗标题}+.weiui-messagebox__bd>p()+.weiui-messagebox__ft>.weui.btn*2
+    -->
+    <div class="page">
+        <div class="page__hd">
+            <h1 class="page__title">Button</h1>
+            <p class="page__desc">按钮</p>
+        </div>
+        <div class="page__bd">
+            <div class="button-sp-area">
+                <!-- 不同状态下 css 类名 -->
+                <!-- weui-btn 按钮的基类  再加状态类名 -->
+                <a href="javascript:;" class="weui-btn weui-btn_primary">主要操作</a>
+                <a href="javascript:;" class="weui-btn weui-btn_default">次要操作</a>
+                <a href="javascript:;" disabled  class="weui-btn weui-btn_disabled">次要操作</a>
+            </div>
+        </div>
+        <!-- <div class="page__ft"></div> -->
+    </div>
+</body>
+>>>>>>> 3060b42 (第一次Git提交所有文件)
 </html>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -66,4 +67,74 @@
         <footer class="footer">footer</footer>
     </div>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>语义化标签</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .page {
+            /* 宽度不需要设置，因为是块级区域 */
+            height: 100vh; 
+            background: rgba(0,0,0); 
+        }
+        /* 自适应（响应式）布局  网页可以响应设备 宽度 不能写死 px 可以vw */
+
+    </style>
+</head>
+<body>
+    <!-- 能够让html标签有更多的语义传达出来 -->
+    <!-- header在上footer在下 -->
+    <div class="page">
+        <!-- 
+            html5 语义化标签 
+            - 可以和div一样做盒子  块级元素都适合
+            - 提高代码可读性  爬虫   有利于搜索引擎分析网页内容
+                相关内容更好的展现出来，语义化更好，百度的排名跟前一些
+        -->
+        <header class="header">header</header>
+        <!-- nav适合做导航 -->
+        <nav class="nav">nav</nav>
+        <!-- 页面主体 -->
+        <main class="main">
+            <!-- 文章标签    -->
+            <article class="article">
+                <!-- 
+                    比div表达不同的盒子外，还可以传达出不同的性质内容 
+                    section： 包含的内容是一个明确的主题，通常有标题区域
+                    div：应用广泛，任意一个区域
+                -->
+                <section class="content">
+                    <h1>LALALALALALA</h1>
+                    <p>
+                        段落
+                        ............................
+                        段落
+                    </p>
+                </section>
+                <section class="commet">
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </section>
+            </article>
+            <!-- 页面、文章的侧边栏、广告、友情链接等区域。 -->
+            <aside class="aside"></aside>
+        </main>
+        <footer class="footer">footer</footer>
+    </div>
+</body>
+>>>>>>> 3060b42 (第一次Git提交所有文件)
 </html>

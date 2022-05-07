@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -75,4 +76,83 @@
     
     
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #cats li {
+            background-color: pink;
+            height: 40px;
+            line-height: 40px;
+            position: relative;
+            color: white;
+            padding: 10px;
+        }
+        #cats li:after{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            /* 像素有点粗，能不能改0.5px  不能 小数不存在的 向上取整 */
+            /* 屏幕由发光元器件组成，独立的去显示什么颜色 */
+            height: 1px;
+            background-color: green;
+            /* 变形属性 */
+            transform: scaleY(0.5);
+
+        }
+    </style>
+</head>
+<body>
+
+
+    <ul id="cats"></ul>
+    <script>
+        // 对象数组
+        const cats = [
+            {
+                name:'Snickers',
+                age:2
+            },
+            {
+                name:'Hugo',
+                age:1
+            },
+            {
+                name:'Suny',
+                age:3
+            }
+        ];
+        const oUL = document.getElementById('cats');
+        // 相对于计数（面向机器）,面向人类的编程，可读性根号
+        //   新的es6 方案   可读性更好 ，面向人类编程（没有下标）
+        // for  (let cat of cats) {
+            // oUL.innerHTML += `
+            //     <li>
+            //         ${cat.name} --  ${cat.age}
+            //     </li>
+            // `
+
+           oUL.innerHTML =  cats.map((cat)=>`
+                    <li>
+                        名字：${cat.name} -- 年纪 ${cat.age}
+                    </li>
+                `).join('')
+            
+        // }
+    </script>
+    
+    
+</body>
+>>>>>>> 3060b42 (第一次Git提交所有文件)
 </html>

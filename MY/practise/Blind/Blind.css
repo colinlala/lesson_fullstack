@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 *{
     padding: 0;
     margin: 0;
@@ -26,4 +27,34 @@ body{
 }
 img{
     width: 400px;
+=======
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: #7f8c8d;
+    display: flex;
+    justify-content: center;
+}
+.a{
+    width: 900px;
+    height: 300px;
+    position: relative;
+    top: 200px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+.b{
+    transition: .7s;
+    overflow: hidden;
+}
+.b:hover{
+    flex-shrink: 0;
+    flex-grow: 0;
+}
+img{
+    width: 400px;
+>>>>>>> 3060b42 (第一次Git提交所有文件)
 }

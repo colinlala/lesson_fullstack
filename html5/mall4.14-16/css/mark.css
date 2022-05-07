@@ -1,0 +1,79 @@
+/* mark组件  商品 */
+.weui-mark {
+    /* padding-left: 0.625em;
+    padding-right: 0;
+    padding-top: 0.625rem; */
+    padding: 0.625rem 0 0 0.625em;
+    -webkit-overflow-scrolling: touch;
+}
+.weui-mark::after{
+    content: '';
+    display: block;
+    width: 100%;
+    clear: both;
+}
+/* 盒子在页面（文档流）的占位 = 内容+ paddind + border + margin
+    box-sizing  w,h
+    w3c 标准盒子模型with = 内容宽度
+    border-box IE盒模型 with = 内容宽度 + padding + border   border以内
+    盒子模型计算方式 = 内容（width） + paddind + border + margin  标准盒子模型*/
+/* 盒子大小换了一种计算方式 width = 内容 + paddind + border + margin*/
+.weui-mark li {
+    padding-right: 0.625em;
+    padding-bottom: 0.625em;
+    /* 浮动 li块级元素 */
+    float: left;
+    position: relative;
+    width: 50%;
+    /* width: calc(50%-0.625em); */
+    box-sizing: border-box;
+    /* background: green; */
+
+    /* 去掉li的点 */
+    list-style-type:none;
+}
+.weui-mark__img {
+    /* 成为正方形容器 */
+    padding-top: 100%;
+    position: relative;
+    background-size: cover;
+}
+.weui-mark__rt {
+    position: absolute;
+    right: 0.625em;
+    border-radius: 2px;
+    top: 0;
+    color:#fff;
+    height: 1.25em;
+    text-align: center;
+    padding: 0.1em;
+}
+.weui-mark__lb {
+    border-radius: 2px;
+    bottom: 0.825em;
+    position: absolute;
+    color: #fff;
+    font-size: 0.825em;
+    height: 1.25em;
+    text-align-last: left;
+    min-width: 100%;
+    padding: 0.125em 0.375em;
+    background-color: rgba(0,0,0,0.4);
+    width: calc(100% - 1.625em);
+}
+.weui-mark__vip {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    height: 50px;
+    width: 90px;
+    color: #fff;
+}
+/* .weui-mark__img img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+} */

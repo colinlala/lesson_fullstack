@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mall小练习</title>
+    <style>
+        .page-movie {
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+            background-image: url(./images/pic.jpg);
+            background-position: center;
+            background-size: cover;
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+        }
+        .page-movie__desc {
+            width: 98px;
+            height: 24px;
+            background-color: rgb(83, 83, 77);
+            position: absolute;
+            bottom: 0px;
+            font-size: 15px;
+            text-align: center;
+            line-height: 22px;
+            color: white;
+        }
+        .page-movie__title {
+            background-color: orange;
+            color: white;
+            width: 100px;
+            height: 23px;
+            text-align: center;
+            line-height: 22px;
+            transform: rotate(-45deg);
+            position: absolute;
+            top: 18px;
+            left: -20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-movie">
+        <div class="page-movie__title">自制剧</div>
+        <div class="page-movie__desc">更新到101集</div>
+    </div>
+</body>
+</html>

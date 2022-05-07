@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,4 +34,41 @@
         // 3. 
     </script>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = 1;//全局
+        let d = 5;
+        function func(){   
+            {
+                // 块级作用域
+                /* 代码片段 */
+                let a = 2; // 
+                var b = 3; // 老一点
+                const name = 'zyh';
+                // 当前作用域，有a，属于一个作用域，地址代号
+                // 继续往外查找 -> 全局
+                // 冒泡查找
+                console.log(name,a ,d);
+            }
+            console.log(a,b,'!!!!!');
+        }
+        func();
+        console.log(name,a,b,'------------');
+        // 1. 全局作用域  window   
+        // 2. 局部作用域  
+        //   - 函数
+        //   - 块级作用域
+        // 3. 
+    </script>
+</body>
+>>>>>>> 3060b42 (第一次Git提交所有文件)
 </html>

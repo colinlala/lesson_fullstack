@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!--
  * @Author: ZYH
  * @Email: 1522302196@qq.com
@@ -51,4 +52,59 @@
     </script>
 </body>
 
+=======
+<!--
+ * @Author: ZYH
+ * @Email: 1522302196@qq.com
+ * @GiteeId: colincclala
+ * @Date: 2022-04-30 15:14:45
+ * @LastEditTime: 2022-04-30 16:01:18
+ * @Description: 
+ * 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form name="loginForm" method="post" action="/login">
+        <div>
+            <label for="phoneInput">手机</label>
+            <!-- pattern="/^[0-9]{11}$/" 自带的检查 -->
+            <input type="text" name="phone" id="phoneInput" placeholder="请输入手机" required pattern="/^[0-9]{11}$/" />
+        </div>
+        <div>
+            <button type="submit">提交</button>
+        </div>
+    </form>
+    <script>
+        const oForm = document.forms["loginForm"];
+        oForm.addEventListener('submit', function (event) {
+            // 防止跳转
+            event.preventDefault();
+            const phone = oForm["phone"].value.trim();
+            // console.log(phone);
+            // input的required是html5才有的属性，所以还是得写这个
+            if (!phone.length) {
+                return alert('手机号不能为空！')
+            }
+            // pattern="/^[0-9]{11}$/"也是html5才有的 ，为了保险。
+            if (!/^[0-9]{11}$/.test(phone)) {
+                alert('手机号有误！')
+                return
+            }
+
+            // 让他重新提交
+            this.submit();
+        })
+    </script>
+</body>
+
+>>>>>>> 3060b42 (第一次Git提交所有文件)
 </html>

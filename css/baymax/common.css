@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* div-标签选择器 css selector */
 body{
     background: pink;
@@ -31,4 +32,39 @@ div.boy{
 }
 .gril{
     background-color: crimson;
+=======
+/* div-标签选择器 css selector */
+body{
+    background: pink;
+}
+/* 基础样式 */
+div{
+    width: 100px;
+    height: 100px;
+    background: rgb(34, 146, 221);
+    margin-bottom: 10px;
+}
+/* 业务样式 更细致的选择器*/
+/* 同一有div的样式优先 都没有div则下面的覆盖上面的*/
+/* 权重大 优先级大 
+    div p    1分
+    .boy     10分
+    div.boy  11分
+    #hero    100分
+*/
+#hero{
+    background-color: rgb(160, 64, 204);
+}
+div.boy{
+    background-color: yellow;
+}
+.boy{
+    background-color: black;
+}
+.baymax{
+    background: white;
+}
+.gril{
+    background-color: crimson;
+>>>>>>> 3060b42 (第一次Git提交所有文件)
 }

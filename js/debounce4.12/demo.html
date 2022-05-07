@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="请输入搜索的内容" id="debounce" autofocus />
+    <script>
+        window.onload = function(){
+            let t = 500;
+            let t1 = + new Date();
+            const input = document.getElementById('debounce');
+            // const ajax = (event)=>{
+            //     let keyword = event.target.value;
+            //     console.log(keyword);
+            //     let t2 = + new Date();
+
+            //     // 2s内执行一次
+            //     if( t2-t1 > t){
+            //         console.log('-----------------------------')
+            //         t1 = t2
+            //     }
+            // }
+
+
+            // 回调函数？（异步处理）
+            // 1. keyup一开始就声明了   放在事件池里面 event loop
+            // 2. 事件处理函数是在事件发生时触发并执行
+            // 3. 异步？回到event loop找出相应的事件处理函数调用执行
+
+            // 单位时间如何减少执行次数？
+            // + new Date()的+后，类型转换，日期对象转换成整数类型
+            // console.log(+ new Date()); // 时间挫 1970到现在的时间 毫秒数
+            // console.log(new Date()); // Tue Apr 12 2022 20:54:39 GMT+0800 (中国标准时间)
+
+
+            // debounceAjax 是debounce函数的执行结果
+            // debounce结果是一个函数
+            const ajax = (event) =>{
+                console.log('搜索',event.target.value)
+            }
+            const debounce = (cb,t)=>{
+                // t
+                return cb;
+            }
+            const debounceAjax = debounce(ajax,t);
+            // 事件，第二个参数一定是函数
+            input.addEventListener('keyup',debounceAjax);
+        }
+    </script>
+</body>
+</html>

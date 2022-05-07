@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,4 +22,29 @@
         console.log(obj);
     </script>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const obj = {
+            name: 'zyh',
+            hobbies: ['篮球','音乐']
+        }
+        // obj.hobbies[0] = '羽毛球';
+        // 让 obj 不可以被改变？  
+        Object.freeze(obj);    //不可以改变已有的属性，
+        obj.name = '123'; // freeze不改变名字，羽毛球加进去了---浅层的不改变
+        obj.sex = '男';
+        obj.hobbies.unshift('羽毛球');  //shift移除数组第一个  unshift数组第一位添加  push在数组最后添加
+        console.log(obj);
+    </script>
+</body>
+>>>>>>> 3060b42 (第一次Git提交所有文件)
 </html>
