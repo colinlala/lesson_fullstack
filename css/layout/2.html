@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .layout {
+            color: #fff;
+            padding: 0 100px;
+            min-width: 500px;
+        }
+
+        h4 {
+            position: relative;
+            color: #333;
+            margin: 20px 0 10px;
+        }
+
+        h4::before {
+            content: '#';
+            position: absolute;
+            /* 使得#脱离开 */
+            left: -20px;
+            top: -1px;
+            font-size: 18px;
+            color: #38ab89;
+        }
+
+        .orange {
+            background-color: orange;
+        }
+
+        .green {
+            background-color: green;
+        }
+
+        main {
+            height: 100px;
+        }
+
+        aside {
+            height: 100px;
+        }
+
+        .grid {
+            /* 
+                网格布局
+                块级元素，行内元素，使用文档流布局  使用行（块级，从上到下）+ 行内（从左到右），自然填满页面
+                    行内布局中，span等元素难堪容器布局任务。
+                块级元素如何来到行内，完成列布局使命？
+                    关键是 display属性，改天换命， inline、inline-block就可以设为块级容器
+             */
+            display: grid;
+            grid-template-columns: 150px auto 150px;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .flex main {
+            flex: 1;
+        }
+
+        .w150 {
+            width: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- css 布局 三列式布局
+        div 块级    
+        span 行内    BFC IFC FFC。。。
+    -->
+    <div class="layout">
+        <h4>方法四：flex布局，布局都和display相关，标签的显示方案和计算规则</h4>
+        <section class="flex">
+            <aside class="w150 orange">aside</aside>
+            <main class="green">main</main>
+            <aside class="w150 orange">aside</aside>
+        </section>
+        <h4>方法五：grid布局,flex布局之后的新的布局方案</h4>
+        <!-- html5 语义化标签 侧边栏 -->
+        <section class="grid">
+            <aside class="orange">aside</aside>
+            <main class="green">main</main>
+            <aside class="orange">aside</aside>
+        </section>
+    </div>
+</body>
+
+</html>
