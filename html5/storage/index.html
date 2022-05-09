@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5之LocalStorage</title>
+    <!-- 职责分离  git -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <h2>LOCAL TAPAS</h2>
+        <p></p>
+        <ul class="plates">
+            <li>Loading Tapas...<>
+        </ul>
+        <form class="add-items">
+            <input type="text" name="item" autofocus placeholder="Item Name" required>
+            <input type="submit" value="+ Add Item">
+        </form>
+    </div>
+    <script>
+        // 1. todolist   form + ul
+        // 2. loding ...
+        // 3. 前端的数据持久化    前端有数据库，5M的空间
+        // es6 认为 变量提升不太好
+
+        // console.log(addItems)   // 报错,  const let 和var 不同， const let 不会提升，进入暂时性死区
+        // console.log(addItem)    // 申明提升了，值也提升了
+        // console.log(a);  // undefined  申明提升了，但是值没有
+        // var a = 1;
+
+        const addItems = document.querySelector('.add-items');   // 性能
+        const itemsList = document.querySelector('.plates');
+        const items = JSON.parse(localStorage.getItem("items")) || [];
+
+        // 将todos 显示到列表
+        // plates = [] 默认值   data-index=${i} 数据属性
+        function populateList(plates = [], platesList) {
+            platesList.innerHTML = plates.map((plate, i) => `
+                <li>
+                    <input type="checkbox" data-index=${i} id="item${i}"
+                    ${plate.done ? 'checked' : ''} />
+                    <label for="item${i}">${plate.text}</label>
+                </li>    
+            `).join('')
+        }
+
+        function addItem(event) {
+            // console.log('-----------------')
+            event.preventDefault();
+            // 如果作为事件处理的函数，this指向事件发生的元素，event.target
+            const text = this.querySelector('[name=item]').value.trim();  // .trim()去掉空格
+            // console.log(text);
+            const item = {  // obj 新建未完成的对象
+                text,  // text:text 属性和值一样只需要写一个就行
+                done: false
+            }
+            items.push(item);
+            // itemsList.innerHTML = items.map(item => `
+            //     <li>
+            //         <label>${item.text}</label>
+            //     </li>    
+            // `).join('')
+            populateList(items, itemsList);
+            // storage
+            // 存储 items
+            // JSON.stringify(items);   // 把json数组变成字符串
+            localStorage.setItem('items', JSON.stringify(items));
+            this.reset();  // 清除输入框
+        }
+
+        // function init() {
+        //     // 取出loacalstorage
+        //     // [].length > 0
+        //     // populateList
+        //     // const storageItems = JSON.parse(localStorage.getItem("items"));  // 拿到数据并转化成数组
+        //     if (storageItems.length) {
+        //         // items = [...storageItems]; // items 是const 不行
+        //         // for (let item of storageItems) {
+        //         //     items.push(item);
+        //         // }
+        //         populateList(storageItems, itemsList);
+        //     }
+        // }
+        addItems.addEventListener('submit', addItem);
+        // init();
+        populateList(items, itemsList);
+        // const items = [];   // 列表
+    </script>
+</body>
+
+</html>
