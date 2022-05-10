@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            /* input a buttun img 浏览器轮廓不统一*/
+            outline: 0;
+
+        }
+
+        body {
+            color: #111;
+        }
+
+        a {
+            /*  none：没有文本装饰  
+                underline red：红色下划线   
+                underline wavy red：红色波浪形下划线
+            */
+            text-decoration: none;
+            /* 继承body的颜色 */
+            color: inherit;
+        }
+
+        .yh_tabbar {
+            display: flex;
+        }
+
+        .yh_tababbar__item {
+            flex: 1;
+            height: 50px;
+            border-bottom: 1px solid gray;
+        }
+
+        .yh_tababbar__item a {
+            /* 行内元素变块级元素 */
+            display: block;
+            line-height: 50px;
+            text-align: center;
+        }
+
+        .yh_tababbar__item a:first-child() {
+            border-right: 1px solid gray;
+        }
+
+        .yh_tababbar__item_on {
+            background-color: pink;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="yh_tabbar">
+        <div class="yh_tababbar__item yh_tababbar__item_on">
+            <a href="#" data-type="basic">
+                basic
+            </a>
+        </div>
+        <div class="yh_tababbar__item">
+            <a href="#" data-type="super">
+                super
+            </a>
+        </div>
+    </div>
+    <div id="list">
+    </div>
+    <script>
+        const list = document.getElementById('list');
+        const links = document.querySelectorAll('.yh_tababbar__item a');
+
+        // const tabTypes = {
+        //     basic: Symbol(),   /* es6 里新的简单数据类型，独一无二 */
+        //     super: Symbol()
+        // }
+        /* java等大型语言，tab切换时，为了可读性，tabTypes对象常量 */
+        /* 所有tab类型的管理 */
+        const tabTypes = {
+            basic: 'basic',
+            super: 'super',
+        }
+
+        links.forEach(link => {
+            link.addEventListener('click', function (event) {
+                event.preventDefault();
+                const type = event.target.dataset.type;
+                const parent = this.parentNode;
+                // console.log(parent);
+                if (!parent.classList.contains('yh_tababbar__item_on')) {
+                    document.querySelector('.yh_tababbar__item_on').classList.remove('yh_tababbar__item_on');
+                    parent.classList.add('yh_tababbar__item_on')
+                }
+                // if (type == 'basic') 
+                if (type == tabTypes.basic) {
+                    list.innerText = 'basic';
+                }
+                // if (type == 'super') 
+                if (type == tabTypes.super) {
+                    list.innerText = 'super';
+                }
+            });
+        })
+    </script>
+</body>
+
+</html>
