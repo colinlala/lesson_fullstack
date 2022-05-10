@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root {
+            /* -- css变量 */
+            --blue: #1e90ff;
+            color: pink;
+        }
+
+        body {
+            /* 更改成orange */
+            color: orange;
+            background-color: var(--blue);
+        }
+
+        h1 {
+            color: inherit;
+            /* 默认继承，不需要写*/
+        }
+
+        a {
+            /* 继承到了orange */
+            color: inherit;
+        }
+
+        p {
+            /* 缩进 */
+            text-indent: 20px;
+            /* 鼠标样式 */
+            cursor: pointer;
+        }
+
+        .nowrap {
+            /* \n\r 文字只在一行显示 */
+            white-space: nowrap;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CSS继承</h1>
+    <a href="#">链接如何放弃浏览器的着色，继承父元素的颜色</a>
+    <p class="nowrap">U盾双缝干涉地方那日嘎搭嘎电饭锅广东分公司的风格上空间和空间开发个地方改变你的风格</p>
+</body>
+
+</html>
