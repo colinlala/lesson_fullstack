@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 格式化上下文是怎么样的 IFC -->
+    <!--    1. html创建 body参与共建 第一个BFC 
+            2. p标签 block container ，对内产生一个IFC。
+                由于一行没办法显示完全，所以产生3个线盒（line box）
+            3. It can get  匿名的inline box
+            4. very complicated  strong标签产生的inline box
+            5. once you 匿名的inline box
+            6. start looking into it.  匿名的inline box
+    -->
+    <p>
+        It can get <strong>very complicated</strong> once you start looking into it.
+    </p>
+</body>
+
+</html>
