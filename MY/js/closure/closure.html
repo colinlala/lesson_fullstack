@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>闭包的应用场景之一防抖</title>
+</head>
+
+<body>
+    <h1>防抖：当我们停止操作的一定时间之后执行一次</h1>
+    <br />
+    不用防抖：<input type="text" id="root1" />
+    <br />
+    <br />
+    <br />
+
+    使用防抖：<input type="text" id="root2" />
+
+    <script>
+        const test1 = document.getElementById('root1')
+        const test2 = document.getElementById('root2')
+        test1.addEventListener('input', function (event) {
+            console.log(event.target.value)
+        })
+        function debounce(fn, delay) {
+            let time = null;
+            return function () {
+                let context = this, args = arguments;
+                if (time) {
+                    clearTimeout(time)
+                    // 思考题：这里要不要清空
+                    // time=null
+                }
+                time = setTimeout(function () {
+                    fn.apply(context.args);
+                }, delay)
+            }
+        }
+        function ajax(content) {
+            console.log(content)
+        }
+        const textFn = debounce(ajax, 500)
+        test2.addEventListener('input', function (event) {
+            textFn(event.target.value)
+        })
+
+
+
+
+    </script>
+</body>
+
+</html>
