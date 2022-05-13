@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <script src="./2.js"></script> -->
+    <input type="text" id="searchInput">
+    <span id="searchSpan"></span>
+    <script>
+        // 双向绑定
+        const searchInput = document.getElementById('searchInput');
+        const searchSpan = document.getElementById('searchSpan');
+        const obj = { value: '' };  // 被代理对象
+        // 数据绑定
+        // Proxy
+        // const proxyObj = new Proxy(obj, {
+        //     set: function (target, key, val) {
+        //         searchSpan.innerHTML = val;
+        //         target[key] = val;
+        //     }
+        // })
+
+        // Object.defineProperty
+        Object.defineProperty(obj, 'value', {
+            set: function (newVal) {
+                // console.log('set val:' + newVal);
+                searchInput.value = newVal;
+                searchSpan.innerText = newVal;
+            }
+        })
+
+
+        searchInput.addEventListener('keyup', function (event) {
+            // proxyObj.value = event.target.value
+
+            obj.value = event.target.value
+        })
+
+    </script>
+</body>
+
+</html>
