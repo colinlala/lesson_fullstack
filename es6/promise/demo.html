@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const posts = [
+            { title: 'I Love JavaScript', author: 'zyh', id: 1 },
+            { title: 'I Love CSS', author: 'colin', id: 2 },
+            { title: 'Dev tools webpack', author: 'lala', id: 3 }
+        ];
+        const authors = [
+            { name: 'zyh', hometown: '南昌', bio: 'cccccc' },
+        ]
+        function getPostById(id) {
+            // 根据id 找到文章
+            // const post = posts.find(post => post.id === id)
+            // // const post = posts.filter(post => post.id === id);
+            // const { author } = post;
+            // console.log(authors.find(item => item.name == author))
+            // return post;
+
+            return new Promise((resolve, reject) => {
+                // resolve()
+                console.log('过2s再展示搜索的结果!!')
+                setTimeout(() => {
+                    const post = posts.find(post => post.id == id);
+                    // console.log(post)
+                    if (post) {
+                        resolve(post);  // 还可以传参
+                    } else {
+                        let err = new Error('没有数据！')
+                        reject(err);
+                    }
+                }, 2000)
+            })
+        }
+        getPostById(10)
+            .then((data) => {
+                console.log(data, '最后展示这个')
+            })
+            // reject()展示错误
+            .catch((err) => {
+                console.log(err.message)
+            })
+        // console.log(JSON.stringify(posts))  // json转字符串
+        // console.log(JSON.parse(JSON.stringify(posts)))  // 字符串转json
+        // localStorage.setItem('posts', JSON.stringify(posts))  // 存储在本地浏览器
+    </script>
+</body>
+
+</html>
