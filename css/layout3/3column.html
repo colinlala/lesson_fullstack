@@ -1,0 +1,100 @@
+<!--
+ * @Author: ZYH
+ * @Email: 1522302196@qq.com
+ * @GiteeId: colincclala
+ * @Date: 2022-05-15 19:07:09
+ * @LastEditTime: 2022-05-15 20:05:23
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            outline: 0;
+        }
+
+        .clearfix::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .green {
+            background-color: green;
+        }
+
+        .orange {
+            background-color: orange;
+        }
+
+        .w150 {
+            width: 150px;
+            height: 150px;
+        }
+
+        main {
+            height: 100px;
+        }
+
+        .left {
+            /* 浮动：往左方向浮动，当如果父元素的宽度不够，会在新的一行继续浮动*/
+            float: left;
+        }
+
+        .right {
+            /* 浮动：往右方向浮动，当如果父元素的宽度不够，会在新的一行继续浮动*/
+            float: right;
+        }
+
+        .grail {
+            /* 圣杯三栏布局 padding 把左右侧边栏的位置让出来 */
+            padding: 0 150px;
+        }
+
+        .grail main {
+            float: left;
+            /* 如果不设置宽度（浮动了）只能由里面的内容撑起来宽度 */
+            width: 100%;
+        }
+
+        .grail .left {
+            /* 放到main一行上去，与main左边重叠 */
+            /* margin-left: -100%; */
+
+            /* 得定位 */
+            position: relative;
+            left: -150px;
+            margin-left: -100%;
+        }
+
+        .grail .right {
+            float: left;
+            margin-left: -150px;
+            /* 越小越近 */
+            right: -150px;
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="layout">
+        <h4>方法一：圣杯布局</h4>
+        <section class="grail clearfix">
+            <!-- main实现适应性 -->
+            <main class="green">main</main>
+            <aside class="w150 left orange">aside</aside>
+            <aside class="w150 right orange">aside</aside>
+        </section>
+    </div>
+</body>
+
+</html>
