@@ -1,0 +1,61 @@
+<!--
+ * @Author: ZYH
+ * @Email: 1522302196@qq.com
+ * @GiteeId: colincclala
+ * @Date: 2022-05-15 18:42:00
+ * @LastEditTime: 2022-05-15 19:05:05
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            border: 1px solid #000;
+            /* 
+                父元素如何得到子元素高度？
+                计算BFC高度时，浮动元素也参与计算。
+                    1. box成为BFC区域
+                    2. box也浮动
+                    3.清除浮动
+            */
+            /* overflow: hidden; */
+        }
+
+        .item {
+            float: left;
+            width: 50%;
+            height: 100px;
+            border: 1px solid pink;
+            /* float left 然后 50%应该一行两个，
+            但是border 1px一行会占据4px（左右），所以改变盒子计算方式 */
+            box-sizing: border-box;
+
+            /* 为什么高度塌陷？float：left离开了文档流，父元素无法感知浮动元素 */
+        }
+
+        /* 清除浮动 */
+        .box::after {
+            content: '';
+            /* 添加display是为了
+                伪元素是行内元素，block会把行内元素变块级元素，就可以占据父容器的宽度*/
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+</body>
+
+</html>
