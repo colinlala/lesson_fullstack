@@ -1,0 +1,94 @@
+<!--
+ * @Author: ZYH
+ * @Email: 1522302196@qq.com
+ * @GiteeId: colincclala
+ * @Date: 2022-05-16 19:10:55
+ * @LastEditTime: 2022-05-16 20:27:24
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        .box {
+            width: 500px;
+            height: 500px;
+            background-color: pink;
+            /* margin: 0 auto;水平居中 */
+
+            /* 居中 */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            /* transform: translate(-50%, -50%); */
+            margin-left: -250px;
+            margin-top: -250px;
+            line-height: 500px;
+            font-size: 50px;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">1</div>
+    <script>
+        let count = 1;
+        const box = document.querySelector('.box');
+
+        function getUserAction(e) {
+            console.log(e);
+            box.innerHTML = ++count;
+        }
+
+        function debounce(func, wait, immediate) {
+            // 闭包空间
+            // 运行一次 闭包函数的声明阶段
+            // 闭包函数在执行期间，可以访问到声明时，位于闭包空间中的变量
+            var timeout;
+            // 返回函数
+            function debounced(e) {
+                // 执行期间  运行n次
+                var context = this;   //上下文  this指向事件box
+                var args = arguments;
+                if (timeout) clearTimeout(timeout);   //防抖的关键
+                if (immediate) {
+                    var callNow = !timeout;   // 首次是true
+                    // callNow  false
+                    timeout = setTimeout(function () {
+                        // timeout设置了就有值了true，！timeout就是false
+                        timeout = null;  // 执行完后，再次执行又是首次执行的感觉
+                    }, wait);
+                    if (callNow) func.apply(context, args);
+                } else {
+                    timeout = setTimeout(function () {
+                        func.apply(context, args)  // 使用call的话
+                    }, wait);
+                }
+            }
+            return debounced;
+        }
+        // debounce 给我们要执行的getUserAction带来防抖能力，较少执行次数到最后一次
+        //  增加需求 1.先执行，还是最后执行   立即执行  2. 支持取消功能
+        const setUserAction = debounce(getUserAction, 1000, true)
+        box.addEventListener('mousemove', setUserAction);
+    </script>
+</body>
+
+</html>
