@@ -1,0 +1,90 @@
+<!--
+ * @Author: ZYH
+ * @Email: 1522302196@qq.com
+ * @GiteeId: colincclala
+ * @Date: 2022-05-16 12:33:11
+ * @LastEditTime: 2022-05-16 13:18:22
+ * @Description: 刮刮乐
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            /* 弹性布局的居中 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box {
+            width: 500px;
+            height: 500px;
+            background-color: green;
+            text-align: center;
+            color: aqua;
+            line-height: 500px;
+            font-style: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">0</div>
+    <script>
+
+        const box = document.querySelector('.box');
+        let count = 0;
+        // 过于频繁，降到1s执行一次？定时器
+        // box.addEventListener('mousemove', function () {
+        //     box.innerHTML = ++count;
+        // })
+
+        // 降低频率
+        // 闭包-函数嵌套函数，内部函数返回了
+        function debounce(func, wait) {
+            // 闭包空间 变量
+            // 时间处理函数
+            var timeout;   // 永生
+            return function () {
+                // 反复移动鼠标时，不执行，最后一次执行
+                // func(event);
+                var context = this;  // this指向box（事件发生的对象）
+                var args = arguments;  // event 是arguments数组下标1的内容
+                // 使用定时器，在wait后getUserAction执行。
+
+                // 降低了频率，清除
+                clearTimeout(timeout);
+                // timeout ID
+                timeout = setTimeout(function () {
+                    func.apply(context, args);
+                }, wait)
+            }
+        }
+        // mouseover 要做的事情
+        function getUserAction(event) {
+            console.log(event)
+            box.innerText = ++count;
+        }
+        // 函数的参数或函数的返回值是函数时，叫高阶函数
+        box.addEventListener('mousemove', debounce(getUserAction, 1000))
+
+    </script>
+</body>
+
+</html>
