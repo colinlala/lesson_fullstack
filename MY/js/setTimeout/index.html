@@ -1,0 +1,28 @@
+<!--
+ * @Author: ZYH
+ * @Email: 1522302196@qq.com
+ * @GiteeId: colincclala
+ * @Date: 2022-05-17 10:24:42
+ * @LastEditTime: 2022-05-17 10:26:01
+ * @Description: setTimeout
+-->
+<!DOCTYPE html>
+
+<head>
+    <title>setTimeout</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+
+<body>
+    <h1>setTimeout</h1>
+    <h2>span标签里面的内容一秒之后由“测试”变成了“一秒后”。</h2>
+    <span id="content">测试</span>
+    <script>
+        setTimeout(function () {
+            let content = document.getElementById('content');
+            content.innerHTML = "<div>一秒后</div>";
+        }, 1000);
+    </script>
+</body>
+
+</html>
