@@ -1,0 +1,69 @@
+<!--
+ * @Author: ZYH
+ * @Email: 1522302196@qq.com
+ * @GiteeId: colincclala
+ * @Date: 2022-05-18 10:52:12
+ * @LastEditTime: 2022-05-18 11:21:49
+ * @Description: 怎么数组下标负数访问数组成员最后一位？
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [1, 2, 3, 4];
+        function createArray(arr) {
+            let handle = {
+                get(target, index, receiver) {
+                    index = Number(index);
+                    if (index < 0) {
+                        index += target.length;
+                    }
+                    return Reflect.get(target, index, receiver);
+                }
+            }
+            return new Proxy(arr, handle)
+        }
+
+        arr = createArray(arr);
+        // 怎么数组下标负数访问数组成员4？
+        console.log(arr[-1]);
+
+
+
+
+
+
+
+        // var star = {
+        //     name: '周杰伦',
+        //     age: 18,
+        //     phone: '1234567890'
+        // };
+        // // 代理陷阱
+        // var proxy = new Proxy(star, {
+        //     get: function (target, key, receiver) {
+        //         // console.log(target, key, receiver)
+        //         if (key === 'phone') {
+        //             return '经纪人电话：110'
+        //         } else {
+        //             return Reflect.get(target, key, receiver);
+        //         }
+        //     }
+        // });
+
+        // console.log(proxy.name)
+        // console.log(proxy.age)
+        // console.log(proxy.phone)
+
+    </script>
+</body>
+
+</html>
