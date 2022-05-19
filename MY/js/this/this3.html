@@ -1,0 +1,58 @@
+<!--
+ * @Author: ZYH
+ * @Email: 1522302196@qq.com
+ * @GiteeId: colincclala
+ * @Date: 2022-05-19 10:40:19
+ * @LastEditTime: 2022-05-19 10:52:12
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class MyClass {
+
+            constructor() {
+                // this.fn = this.fn.bind(this);  // 将fn方法的this绑定为当前实例，写法太死，不好
+            }
+
+            /**
+             *      类中的所有代码都会在严格模式下执行
+             *          严格模式下其中一个特点就是，函数的this不是在window，而是undefined
+             * 
+             *      注意：
+             *          在类中的方法的this不是固定的
+             *              以方法形式调用时，this就是当前的实例
+             *              以函数形式调用时，this是undefined
+             *          在开发时，有些场景下，我们希望方法中的this是固定的，不会因为调用方式的不同而改变
+             *              如果遇到上诉需求，可以使用箭头函数来定义类中的方法
+             *              如果类中的方法是以箭头函数定义的，则方法中的this恒为当前实例，不会改变
+            */
+
+
+            // fn() {
+            //     console.log('-->', this);
+            // }
+
+            fn = () => {
+                console.log('-->', this);
+            }
+        }
+
+        const mc = new MyClass();
+
+        const test = mc.fn;
+        mc.fn(); // MyClass{}    箭头函数：MyClass{}
+        test(); // undefined     箭头函数：MyClass{}
+    </script>
+</body>
+
+</html>
