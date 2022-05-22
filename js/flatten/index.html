@@ -1,0 +1,81 @@
+<!--
+ * @Author: ZYH
+ * @Email: 1522302196@qq.com
+ * @GiteeId: colincclala
+ * @Date: 2022-05-22 19:15:50
+ * @LastEditTime: 2022-05-22 19:39:51
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>双飞翼布局</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .green {
+            background-color: green;
+        }
+
+        .orange {
+            background-color: orange;
+        }
+
+        .clearfix:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .w150 {
+            width: 150px;
+            height: 50px;
+        }
+
+        .wings main {
+            float: left;
+            width: 100%;
+        }
+
+        .wings .inner {
+            margin: 0 150px;
+            height: 100px;
+        }
+
+        .wings .left {
+            float: left;
+            margin-left: -100%;
+        }
+
+        .wings .right {
+            float: left;
+            margin-left: -150px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="layout">
+        <h4>方法二：双飞翼布局</h4>
+        <section class="wings clearfix">
+            <main>
+                <div class="green inner">inner</div>
+            </main>
+            <aside class="w150 left orange">
+                aside
+            </aside>
+            <aside class="w150 right orange">
+                aside
+            </aside>
+        </section>
+    </div>
+</body>
+
+</html>
