@@ -1,0 +1,70 @@
+<!--
+ * @Author: ZYH
+ * @Email: 1522302196@qq.com
+ * @GiteeId: colincclala
+ * @Date: 2022-05-23 17:04:54
+ * @LastEditTime: 2022-05-23 17:37:54
+ * @Description: JSX的补充
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSX的注意</title>
+    <script src="../script/react.development.js"></script>
+    <script src="../script/react-dom.development.js"></script>
+    <!-- 引入babel -->
+    <script src="../script/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+    <!-- 设置js代码被babel处理 -->
+    <script type="text/babel">
+        /**
+         *          JSX的注意事项：
+         *              1. JSX不是字符串，不要加引号
+         *              2. JSX中html标签应该小写，React组件应该大写开头
+         *              3. JSX中有且只有一个根标签
+         *              4. JSX的标签必须正确结束
+         *              5. 在JSX中可以使用{}嵌入表达式
+         *                  - 有值的语句就是表达式
+         *              6. 如果表达式是空值、布尔值、undefined，将不会显示
+         *              7. JSX中，属性可以直接在标签中设置
+         *                  - style中必须使用对象(有-的后改大写)
+         * */
+        const name = '孙悟空'
+        function fn() {
+            return 'hello'
+        }
+
+        const div1 = "<div>我是一个div</div>";   // 这就是一个字符串
+        const div = <div id="box"
+            onClick={() => { alert('hahahaha') }}
+            style={{ backgroundColor: "yellowgreen" }}
+        >
+            我是一个div
+            <ul>
+                <li>列表项</li>
+            </ul>
+            <input type="text" />
+            <div>
+                {name} <br />
+                {fn()} <br />
+                {true}
+            </div>
+        </div>;
+
+
+
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(div)
+
+    </script>
+</body>
+
+</html>
