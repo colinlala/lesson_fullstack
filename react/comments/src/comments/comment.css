@@ -1,0 +1,13 @@
+/* css变量传统写法 */
+:root {
+    --white: #fff;
+}
+
+.wrapper {
+    width: 500px;
+    margin: 10px auto;
+    font-style: 14px;
+    background-color: var(--white);
+    border: 1px solid #f1f1f1;
+    padding: 20px;
+}
