@@ -1,0 +1,33 @@
+<!--
+ * @Author: ZYH
+ * @Email: 1522302196@qq.com
+ * @GiteeId: colincclala
+ * @Date: 2022-05-24 15:31:30
+ * @LastEditTime: 2022-05-24 16:39:10
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">按钮</button>
+    <script>
+        const btn = document.getElementById('btn');
+        // async  异步事件执行函数  存到 event loop
+        // js 是事件驱动的语言
+        btn.addEventListener('click', () => {
+            console.log('-----------')
+        })
+        // sync
+        console.log('1111111111111111')
+    </script>
+</body>
+
+</html>
