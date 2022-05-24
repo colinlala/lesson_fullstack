@@ -1,0 +1,43 @@
+<!--
+ * @Author: ZYH
+ * @Email: 1522302196@qq.com
+ * @GiteeId: colincclala
+ * @Date: 2022-05-24 19:12:22
+ * @LastEditTime: 2022-05-24 20:02:38
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/src/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite App</title>
+</head>
+
+<body>
+  <div class="container"></div>
+  <div id="root"></div>
+
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
+<script>
+  const container = document.getElementById('container');
+  const span1 = document.createElement('span');
+  span1.innerText = 'span1';
+  const span2 = document.createElement('span');
+  span2.innerText = 'span2';
+
+
+  // const wrapper = document.createElement('div');
+  const wrapper = document.createDocumentFragment();   // 文档碎片
+
+  wrapper.appendChild(span1);
+  wrapper.appendChild(span2);
+  container.appendChild(wrapper);   // 功成身退
+
+</script>
+
+</html>
