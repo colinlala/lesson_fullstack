@@ -1,0 +1,22 @@
+{
+  "name": "babel-dome",
+  "version": "1.0.0",
+  "description": "<!--\r  * @Author: ZYH\r  * @Email: 1522302196@qq.com\r  * @GiteeId: colincclala\r  * @Date: 2022-05-23 19:14:29\r  * @LastEditTime: 2022-05-23 19:14:42\r  * @Description: \r -->\r # babel js的编译器",
+  "main": "1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.17.10",
+    "@babel/core": "^7.18.0",
+    "@babel/preset-env": "^7.18.0",
+    "@babel/preset-react": "^7.17.12"
+  }
+}
