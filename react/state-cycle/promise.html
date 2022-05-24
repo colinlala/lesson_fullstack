@@ -1,0 +1,72 @@
+<!--
+ * @Author: ZYH
+ * @Email: 1522302196@qq.com
+ * @GiteeId: colincclala
+ * @Date: 2022-05-24 20:54:53
+ * @LastEditTime: 2022-05-24 21:24:16
+ * @Description: Promise  es6解决异步任务、Promise.all()
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 什么是promise？ es6解决异步任务  代码编写顺序和执行顺序不一致的统一方案
+        // callback回调有缺点，
+        const weather = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve({ temp: 29, conditions: 'Sunny with Clouds' })
+            }, 5000)
+        });
+        const tweets = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve(['I like beer', 'BBQ is also good!'])
+            }, 3000)
+        })
+
+        // 1s后tweets,再1s后weather
+        // weather
+        //     .then((data) => {
+        //         // 拿到了天气
+        //         console.log(data)
+        //     })
+        // tweets
+        //     .then((data) => {
+        //         console.log(data)
+        //     })
+
+
+        // 一定是让weather做完再tweets做
+        // weather
+        //     .then((data) => {
+        //         // 拿到了天气
+        //         console.log(data)
+        //         // 又返回了一个promise
+        //         return tweets
+        //     })
+        //     .then((data) => {
+        //         // tweets
+        //         console.log(data)
+        //     })
+
+
+
+        // 所有都执行完再全返回(耗时最长的，不管时间，都是保持promise顺序执行)
+        Promise
+            .all([weather, tweets])  // 静态的 static
+            .then(response => {
+                // console.log(response)
+                const [weatherInfo, tweetsInfo] = response;
+                console.log(weatherInfo, tweetsInfo)
+            })
+    </script>
+</body>
+
+</html>
