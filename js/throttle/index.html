@@ -1,0 +1,55 @@
+<!--
+ * @Author: ZYH
+ * @Email: 1522302196@qq.com
+ * @GiteeId: colincclala
+ * @Date: 2022-05-27 21:14:52
+ * @LastEditTime: 2022-05-27 21:42:48
+ * @Description: Promise.all
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // url => 资源    接口  json
+        // promise实例
+        // fetch('https://api.github.com/users/colinlala')
+        //     .then(data => data.json())
+        //     .then(data => {
+        //         console.log(data);
+        //     })
+
+        (async function () {
+            // [object Response]
+            // console.log(Object.prototype.toString.call(await fetch('https://api.github.com/users/wesbos')));
+            // await 后 promise执行的，resolve把结果给左边
+            // const response = await fetch('https://api.github.com/users/wesbos')
+            // // promise 实例 
+            // const data = await response.json();
+            // console.log(data)
+
+            // const response2 = await fetch('https://api.github.com/users/shunwuyu')
+            // const data2 = await response2.json();
+            // console.log(data2)
+
+            // 优化
+            // static方法
+            const p1 = fetch('https://api.github.com/users/wesbos')
+            const p2 = fetch('https://api.github.com/users/shunwuyu')
+            // 返回值 Promise
+            const res = await Promise.all([p1, p2]);  // 并发执行
+            // console.log(res);
+            const [wesbos, shunwuyu] = await Promise.all([res.map(r => r.json())])
+            console.log(wesbos, shunwuyu);
+        })();
+    </script>
+</body>
+
+</html>
