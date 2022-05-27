@@ -1,0 +1,44 @@
+<!--
+ * @Author: ZYH
+ * @Email: 1522302196@qq.com
+ * @GiteeId: colincclala
+ * @Date: 2022-05-27 15:35:47
+ * @LastEditTime: 2022-05-27 16:20:15
+ * @Description: promise-Q2
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1,2,4,3
+        // 1,2  promise构造函数 同步
+        const promise2 = new Promise((resolve, reject) => {
+            // pending  PromiseState
+            console.log(1);
+            resolve('success');   // 下一轮任务 状态变成 fulfilled
+            console.log(2);
+        })
+        // event loop 下一轮任务
+        // 宏任务  不急
+        setTimeout(() => {
+            console.log(5)
+        }, 0)
+        // 进入 event loop 异步
+        // event loop 下一轮任务   微任务
+        promise2
+            .then((data) => {
+                console.log(3, data);
+            })
+        console.log(4);
+    </script>
+</body>
+
+</html>
