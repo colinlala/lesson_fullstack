@@ -1,0 +1,42 @@
+<!--
+ * @Author: ZYH
+ * @Email: 1522302196@qq.com
+ * @GiteeId: colincclala
+ * @Date: 2022-05-27 14:39:43
+ * @LastEditTime: 2022-05-27 15:16:40
+ * @Description: promise + event loop
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>promise + event loop</title>
+</head>
+
+<body>
+    <script>
+        // 前端环境下
+        // promise 进入异步？
+        // 同步任务   异步任务
+        // 同步任务  promise 构造函数运行
+        const promise1 = new Promise((resolve, reject) => {
+            // 立刻进入 padding状态
+            console.log('promise1');
+            setTimeout(() => {
+                resolve();
+            }, 1000)
+            // resolve();
+        })
+        promise1    // 异步 等待？   then 代码放入event loop
+            .then(() => {
+                console.log('11111111', promise1)
+            })
+        // 同步任务
+        console.log('promise2', promise1);
+    </script>
+</body>
+
+</html>
