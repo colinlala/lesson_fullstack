@@ -1,0 +1,58 @@
+<!--
+ * @Author: ZYH
+ * @Email: 1522302196@qq.com
+ * @GiteeId: colincclala
+ * @Date: 2022-06-04 16:01:13
+ * @LastEditTime: 2022-06-04 17:09:55
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 控制何时实例化？
+        // function runp1() {
+        //     // Promise 实例化
+        //     const p1 = new Promise(r => console.log('立即打印'))
+        //     return p1
+        // }
+
+        // async 异步     sync 同步
+        function runAsync(x) {
+            // Promise 实例化
+            const p = new Promise(resolve => setTimeout(() => resolve(x, console.log(x)), 1000))
+            return p
+        }
+        // 1. 代码的编译阶段，完成了函数的声明
+        // 2. 从36行开始运行，runAsync放入执行栈中
+        // 3. Promise构造函数会立马运行，运行到setTimeout时，会把setTimeout放入任务队列，宏任务中，等待下一次的event loop
+        // 4. 运行完了，出栈runAsync(1)
+        // 5. p.then()放入微任务中，idel状态，寻找任务队列中的任务
+        // 6. setTimeout运行，console先执行，最后微任务中的任务再执行
+        // runAsync(1)
+        //     .then(data => {
+        //         console.log(data)
+        //     })
+
+
+        // js 单线程  同步任务
+        // 过一秒后同时输出1,2,3
+        // Promise.all 可以并发
+        Promise.all([runAsync(1), runAsync(2), runAsync(3)])
+            // 等到所有的promise fulfilled才能
+            // 保持原promise的顺序来返回结果 
+            .then(res => console.log(res))
+
+
+    </script>
+</body>
+
+</html>
