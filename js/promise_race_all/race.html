@@ -1,0 +1,46 @@
+<!--
+ * @Author: ZYH
+ * @Email: 1522302196@qq.com
+ * @GiteeId: colincclala
+ * @Date: 2022-06-04 17:28:40
+ * @LastEditTime: 2022-06-04 17:39:37
+ * @Description: Promise.race()
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function runAsync(x) {
+            // Promise 实例化
+            const p = new Promise(resolve => setTimeout(() => resolve(x, console.log(x)), 1000))
+            return p
+        }
+        function runReject(x) {
+            const p = new Promise(
+                (res, rej) =>
+                    setTimeout(
+                        () => rej(`Error:${x}`, console.log(x)
+                        ), 1000 * x)
+            )
+            return p
+        }
+
+        // 谁先fulfilled谁先打印result
+        // Promise.race([runAsync(1), runAsync(2), runAsync(3)])
+        // 
+        Promise.race([runReject(0), runAsync(1), runAsync(2), runAsync(3)])
+            .then(res => console.log('result:', res))
+            .catch(err => console.log(err))
+
+    </script>
+</body>
+
+</html>
