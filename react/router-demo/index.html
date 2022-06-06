@@ -1,0 +1,35 @@
+<!--
+ * @Author: ZYH
+ * @Email: 1522302196@qq.com
+ * @GiteeId: colincclala
+ * @Date: 2022-06-06 19:05:56
+ * @LastEditTime: 2022-06-06 20:42:13
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- # 锚点 跳转到下面 a标签不跳转页面就可以了 -->
+    <a href="#ccc">hello单车</a>
+    <a href="#about">关于</a>
+    <div style="height:3000px;background-color:green"></div>
+    如何快速来到这里？
+    <a name="ccc" style="background-color: yellow;">跳转</a>
+    <div style="height:3000px;background-color:red"></div>
+    <a name="about" style="background-color: yellow;">跳转about</a>
+    <script>
+        window.onhashchange = function (event) {
+            console.log(event)
+        }
+    </script>
+</body>
+
+</html>
