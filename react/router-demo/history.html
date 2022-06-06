@@ -1,0 +1,58 @@
+<!--
+ * @Author: ZYH
+ * @Email: 1522302196@qq.com
+ * @GiteeId: colincclala
+ * @Date: 2022-06-06 20:55:49
+ * @LastEditTime: 2022-06-06 21:30:30
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <section class="wrap">
+        <div class="nav">
+            <li><a href="javascript:;" data-path="index">首页</a></li>
+            <li><a href="javascript:;" data-path="news">新闻</a></li>
+            <li><a href="javascript:;" data-path="about">关于</a></li>
+        </div>
+    </section>
+    <div id="router" class="router">
+
+    </div>
+    <script>
+        (function () {
+            // 作用域？不去污染全局
+            const routeEle = document.getElementById('router');
+            routeEle.innerHTML = '<p>显示内容区域</p>';
+            [...document.querySelectorAll('a')].forEach(
+                link => link.addEventListener('click', function () {
+                    var text = this.innerText;
+                    // console.log(text);
+                    var url = this.dataset.path;
+                    // console.log(url)
+                    routeEle.innerText = text
+                    // html5   history
+                    // 页面的url改变，spa
+                    history.pushState(null, null, '#/' + url)
+                })
+            )
+            // 
+            // window.onhashchange = function (event) {
+            //     console.log(event);
+            // }
+            window.addEventListener('popstate', function (e) {
+                console.log(e);
+            })
+        })()
+    </script>
+</body>
+
+</html>
