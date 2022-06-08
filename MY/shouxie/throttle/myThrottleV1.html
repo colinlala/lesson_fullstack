@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">按钮</button>
+    <script>
+        // 节流 
+        // 规定一个单位时间，在这个单位时间内，只能有一次触发事件的回调函数执行，
+        //              如果在同一个单位时间内某事件被触发多次，只有一次能生效。
+        // 节流可以使用在 scroll 函数等的事件监听上，通过事件节流来降低事件调用的频率。
+       
+       
+        // 方案1  连续点击的话，每过 wait 秒执行一次
+        function throttle(fn, wait) {
+            let bool = true
+            return function () {
+                if (!bool) return
+                bool = false
+                setTimeout(() => {
+                    // <button id="btn">按钮</button> 11111111
+                    // console.log(this,'1111111111111')
+
+                    // fn中this指向window
+                    fn.call(this, arguments) // fn中this指向bool
+                    
+                    // <button id="btn">按钮</button> 22222222
+                    // console.log(this,'2222222222222')
+                    bool = true
+                }, wait)
+            }
+        }
+
+        function sayThrottle() {
+            console.log("节流成功！")
+        }
+        btn.addEventListener("click", throttle(sayThrottle, 1000))
+    </script>
+</body>
+
+</html>
