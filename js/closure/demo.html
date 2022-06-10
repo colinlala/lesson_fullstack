@@ -1,0 +1,44 @@
+<!--
+ * @Date         : 2022-06-10 18:11:50
+ * @LastEditors  : colinlala
+ * @LastEditTime : 2022-06-10 18:29:43
+ * @description  : 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // class Box {
+        //     // 私有 
+        //     private name = 'blue'
+        // }
+
+        // 立即执行函数 是闭包吗？ 不是
+        const Box = (function () {  // 作用域
+            let name = 'lala'
+            return class {
+                // 虽然没有private name ，但是间接实现了私有化
+                get name() {
+                    return `名叫${name}`
+                }
+                set name(val) {
+                    name = val;
+                }
+            }
+        })()
+
+        let box = new Box();
+        // 这样就获得了name
+        box.name = '小红'
+    </script>
+</body>
+
+</html>
