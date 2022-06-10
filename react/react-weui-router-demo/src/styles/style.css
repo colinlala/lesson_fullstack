@@ -1,0 +1,13 @@
+.wtab{
+    position: fixed;
+}
+.searchbar{
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+.tabbar{
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+}
