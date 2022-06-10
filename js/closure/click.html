@@ -1,0 +1,35 @@
+<!--
+ * @Date         : 2022-06-10 19:30:58
+ * @LastEditors  : colinlala
+ * @LastEditTime : 2022-06-10 19:38:31
+ * @description  : 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>点赞</button>
+    <button>收藏</button>
+    <button>+关注</button>
+    <script>
+        // 全是 3 
+        let aBtn = document.querySelectorAll('button');
+        // onclick发生相当于未来发生的,此时for已经循环完了
+        for (var i = 0; i < aBtn.length; i++) {   // 同步代码
+            aBtn[i].onclick = function () {  
+                alert(i)   //  异步代码
+            }
+        }
+        // var 改成 let 就正常
+        // 代码块 , let 块级作用域 var 没有 , 循环多次就多个代码块
+    </script>
+</body>
+
+</html>
