@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 闭包的意义
+        // 闭包函数的存在，延长了外部局部变量的生存周期
+        // 1. js 如何知道闭包内部函数，用了哪些父函数的局部变量？
+        //        不用知道，没有显示的引用任何一个父级变量，一直都在
+        //        闭包保留全部父级变量，不论用没用
+        // 2. js 是如何确定onclick 消失后要回收哪些变量？
+        // 3. 父级的变量不回收，那父级的父级呢？
+        //        会一直沿着作用域链影响
+
+
+        // let obj = { c: 1 };
+        // function show() {
+        //     let a = 12;
+        //     let b = 5;
+        //     document.onclick = function () {
+        //         // prompt输入框，此时eval获得prompt输入的值
+        //         alert(eval(prompt("请随便输入一个表达式")))
+        //     }
+        // }
+        // // 输入 a+b 得到 17
+        // show();
+        // setTimeout(() => {
+        //     document.onclick = null;
+        //     obj = null;   // 手动垃圾回收
+        // }, 5000)
+
+
+        // 垃圾回收的原理
+        // js 依靠引用技术机制,确定一个东西是否能回收
+        // 计数器 
+        let a = { name: 'blue', age: 18 };  // a 引用了这个json对象  对这个json引用+1
+        let b = a;  // b 同时引用了这个json对象  +1 -> 2
+        a = null;  // a不再指向这个json对象   -1 -> 1 所以没有回收
+        b = null;  // b不再指向这个json对象   -1 -> 0 
+        // 这个json对象 被标记为可回收
+
+
+        // 闭包 = 外部变量 + 函数 
+        function fn1() {
+            // 如果fn2执行完,a要被回收
+            let a = 12;
+            function fn2() {
+                // a 的引用 +1
+                let b = 5;
+                // 这个事件监听在event loop中不会被销毁(即使fn2执行完),所以a , b永生,除非页面关闭
+                document.onclick = function () {
+
+                }
+            }
+            fn2();  // a -1
+        }
+
+    </script>
+</body>
+
+</html>
