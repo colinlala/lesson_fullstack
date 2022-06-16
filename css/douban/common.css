@@ -1,0 +1,47 @@
+/* css reset */
+body, div, dl, dt, dd, ul, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, blockquote {
+    margin: 0;
+    padding: 0;
+}
+html {
+    color: #111;
+    background: #fff;
+}
+body, td, th {
+    font: 12px Helvetica,Arial,sans-serif;
+    line-height: 1.62;
+}
+/* 下面的优先级比上面高 */
+body {
+    /* 
+        为什么body padding-top: 30px;
+            div margin-top: -30px;
+    */
+    /* margin-top: -30px; 除了logo之外的文档流从30px之后开始 */
+    padding-top: 30px;
+}
+a {
+    cursor: pointer;
+}
+a:visited {
+    color: #669;
+    text-decoration: none;   /* 去除a标签默认样式的下划线 */
+}
+
+
+/* 业务样式 */
+#douban-logo{
+    display: inline-block;
+    zoom: 1; /* pc端有用 */
+    vertical-align: middle;  /* 垂直居中 影响兄弟，不是内部垂直居中*/
+    padding: 0;
+    font-style: 12px;
+    font-weight: normal;
+    /* 获得完整的路径 */
+    background: url(https://img3.doubanio.com/f/sns/19886d443852bee48de2ed91f4a3bdfdaf8c809c/pics/nav/logo_db.png) no-repeat 0 0 ;
+    overflow: hidden;
+}
+#douban-logo a{
+    display: block;
+    line-height: 10em;   /* 10*16=160 */
+}
