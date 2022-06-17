@@ -44,3 +44,12 @@
 - 子组件不做数据请求，由父组件统一并传过来
     子组件不做复杂状态，用props 传过来
 
+
+- 幻灯片功能
+    1. 使用了swiper
+    2. 全局引用css
+    3. 固定的html结构
+        - .swiper-container > .swiper-wrapper > .swiper-slide(n个)
+        - .swiper-pagination 分页
+    4. 组件挂载后，useEffect  实例化幻灯片功能 new Swiper('.btn-banners')
+

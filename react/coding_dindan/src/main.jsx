@@ -16,6 +16,8 @@ import 'font-awesome/css/font-awesome.min.css'
 // import './assets/font/iconfont.css'
 // 做自适应
 import './modules/rem'
+// 幻灯片
+import 'swiper/dist/css/swiper.min.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>
