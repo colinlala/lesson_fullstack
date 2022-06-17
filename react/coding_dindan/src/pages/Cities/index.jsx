@@ -5,6 +5,7 @@
  * @description  : 
  */
 import React from 'react'
+import {getCities} from '../../api/request'
 
 export default function Cities() {
   return (
