@@ -6,6 +6,13 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "629357",
+      "name": "搜索",
+      "font_class": "sousuo",
+      "unicode": "e651",
+      "unicode_decimal": 58961
+    },
+    {
       "icon_id": "637241",
       "name": "发现",
       "font_class": "faxian",
@@ -20,11 +27,32 @@
       "unicode_decimal": 59105
     },
     {
+      "icon_id": "1509762",
+      "name": "查看更多",
+      "font_class": "view-more",
+      "unicode": "e676",
+      "unicode_decimal": 58998
+    },
+    {
+      "icon_id": "2076256",
+      "name": "进入箭头",
+      "font_class": "jinrujiantou",
+      "unicode": "e88e",
+      "unicode_decimal": 59534
+    },
+    {
       "icon_id": "2076312",
       "name": " 我的",
       "font_class": "wode",
       "unicode": "e8a0",
       "unicode_decimal": 59552
+    },
+    {
+      "icon_id": "2787035",
+      "name": "筛选",
+      "font_class": "shaixuan",
+      "unicode": "e64d",
+      "unicode_decimal": 58957
     },
     {
       "icon_id": "4055804",
