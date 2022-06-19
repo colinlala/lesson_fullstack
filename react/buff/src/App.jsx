@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import './App.css'
 import { Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -10,7 +11,7 @@ import Mine from './pages/Mine'
 
 
 function App() {
-  const [count, setCount] = useState(0)
+  
 
   return (
     <div className="App">

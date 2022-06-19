@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function Repertory() {
+export default function Sell() {
   return (
     <div>
-      Repertory
+      Sell
     </div>
   )
 }

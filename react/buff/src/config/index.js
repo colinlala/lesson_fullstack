@@ -8,8 +8,8 @@
 export const pageTitle = {
     '/':'首页',
     '/home':'首页',
-    '/repertory':'库存',
+    '/repertory':'Steam库存',
     '/find':'发现',
     '/mine':'我的',
-    '/sell':'出售',
+    '/sell':'自售',
 }
