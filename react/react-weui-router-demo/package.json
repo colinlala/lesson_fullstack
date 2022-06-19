@@ -13,7 +13,7 @@
     "react-router": "^6.3.0",
     "react-router-dom": "^6.3.0",
     "react-weui": "^1.2.3",
-    "weui": "^2.5.8"
+    "weui": "^2.5.9"
   },
   "devDependencies": {
     "@types/react": "^18.0.0",
