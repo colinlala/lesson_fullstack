@@ -6,13 +6,14 @@
  */
 import { useState } from 'react'
 import {Routes,Route} from 'react-router-dom'
-import Home from './pages/Home'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Order from './pages/Order'
 import Find from './pages/Find'
 import Mine from './pages/Mine'
 import Cities from './pages/Cities'
+import Home from './pages/Home'
+import HomeDetail from './pages/HomeDetail'
 
 
 
@@ -29,6 +30,7 @@ function App() {
         <Route path='/find' element={<Find />}></Route>
         <Route path='/mine' element={<Mine />}></Route>
         <Route path='/cities' element={<Cities />}></Route>
+        <Route path='/homedetail' element={<HomeDetail />}></Route>
       </Routes>
       <Footer />
     </div>

@@ -1,19 +1,20 @@
-/*
- * @Date         : 2022-06-16 15:59:21
- * @LastEditors  : colinlala
- * @LastEditTime : 2022-06-16 21:42:35
- * @description  : 
- */
 import React, { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { FooterWrapper } from './style'
 import classnames from 'classnames'
+import { isPathPartlyExisted } from '../../utils'
 
 
 export default function Footer(props) {
   const { pathname } = useLocation()
-  // 选择城市时不需要Footer
-  if (['/cities'].indexOf(pathname) != -1) return
+  // 选择城市，商品详情时不需要Footer
+  // 动态路由就识别不了，indexOf不能判断数组元素一部分
+  // if (['/cities','/homedetail'].indexOf(pathname) != -1) return
+  // 公共函数的 实现在一个数组里面匹配每一项部分匹配pathname就可以了，不如封装一个函数
+  // if (pathname.indexOf('') ) return
+  // console.log(pathname,isPathPartlyExisted(pathname))    // /homedetail/7345078523695097 false
+  if(isPathPartlyExisted(pathname)) return 
+
 
   return (
     <FooterWrapper>

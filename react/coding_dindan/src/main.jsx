@@ -18,6 +18,8 @@ import 'font-awesome/css/font-awesome.min.css'
 import './modules/rem'
 // 幻灯片
 import 'swiper/dist/css/swiper.min.css'
+// antd移动版
+import 'antd-mobile/dist/antd-mobile.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>
