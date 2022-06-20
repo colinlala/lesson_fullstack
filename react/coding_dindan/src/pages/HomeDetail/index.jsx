@@ -1,4 +1,4 @@
-import React, { } from 'react'
+import React from 'react'
 import { Wrapper } from './style'
 import { NavBar, Icon } from 'antd-mobile'
 import { useNavigate } from 'react-router-dom'
