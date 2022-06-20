@@ -71,3 +71,9 @@
         - 最外层就好，内层会自动嵌套
     4. 在jsx里面直接写className="demo"是没有这个能力的
         - styled-components 等 css in js时，就可以
+
+- 开发套路及最优方案
+    1. 接口都放在api目录下
+    2. 接口请求在路由级别组件发生，子组件不要去做
+    3. 子组件只负责jsx 提供和styled-components css in js 
+    4. font-awesome 图标真的好多 
