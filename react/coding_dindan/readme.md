@@ -53,3 +53,21 @@
         - .swiper-pagination 分页
     4. 组件挂载后，useEffect  实例化幻灯片功能 new Swiper('.btn-banners')
 
+- 仿站原则与做法
+    1. 想去哪家公司就仿哪家 
+    2. 首页面 一模一样
+        - 但又不用完全实现
+    3. 不重要的功能切页面
+    4. 不要让动态部分撑页面的感觉
+        - 给固定高度（rem，不要用px）
+    5. styled-components  生成的类名有点乱？
+
+- css in js 类名逻辑
+    1. 多人协作时，类名可能会冲突
+    2. 页面级别组件，npm第三方组件，一般组件，通用组件，样式组件...
+        - 组件太多了 
+    3. styled-components 生成hash类名
+        - 样式又上去了，但绝对不重复
+        - 最外层就好，内层会自动嵌套
+    4. 在jsx里面直接写className="demo"是没有这个能力的
+        - styled-components 等 css in js时，就可以
