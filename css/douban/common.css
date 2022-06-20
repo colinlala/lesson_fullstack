@@ -11,13 +11,7 @@ body, td, th {
     font: 12px Helvetica,Arial,sans-serif;
     line-height: 1.62;
 }
-/* 下面的优先级比上面高 */
 body {
-    /* 
-        为什么body padding-top: 30px;
-            div margin-top: -30px;
-    */
-    /* margin-top: -30px; 除了logo之外的文档流从30px之后开始 */
     padding-top: 30px;
 }
 a {
@@ -25,23 +19,152 @@ a {
 }
 a:visited {
     color: #669;
-    text-decoration: none;   /* 去除a标签默认样式的下划线 */
+    text-decoration: none;
 }
-
+ul,ol {
+    list-style: none;
+}
+form {
+    margin: 0;
+    padding: 0;
+    border:0px;
+}
+input {
+    margin-right: 3px;
+    vertical-align: middle;
+}
+iframe {
+    width:250px;
+    height: 125px;
+    border-top-width:0px;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+    border-left-width: 0px; 
+}
 
 /* 业务样式 */
-#douban-logo{
+#douban-logo {
     display: inline-block;
-    zoom: 1; /* pc端有用 */
-    vertical-align: middle;  /* 垂直居中 影响兄弟，不是内部垂直居中*/
+    zoom:1;
+    vertical-align: middle;/*影响兄弟*/
     padding: 0;
-    font-style: 12px;
+    font-size:12px;
     font-weight: normal;
-    /* 获得完整的路径 */
-    background: url(https://img3.doubanio.com/f/sns/19886d443852bee48de2ed91f4a3bdfdaf8c809c/pics/nav/logo_db.png) no-repeat 0 0 ;
+    background: url(https://img3.doubanio.com/f/sns/19886d443852bee48de2ed91f4a3bdfdaf8c809c/pics/nav/logo_db.png) no-repeat 0 0;
     overflow: hidden;
 }
-#douban-logo a{
+#douban-logo a {
+    line-height: 10em;
     display: block;
-    line-height: 10em;   /* 10*16=160 */
+}
+#anony-nav {
+    width:1080px;
+    margin:0 auto 25px;
+}
+#anony-nav .anony-nav-links {
+    float: right;
+    margin-top:6px;
+}
+#anony-nav .anony-nav-links li {
+    display:inline-block;
+    zoom:1;
+    margin: 0 14px 0 0px;
+}
+#anony-nav .anony-nav-links li a {
+    display: inline-block;
+    zoom:1;
+    width: 40px;
+    height: 20px;
+    overflow: hidden;
+    margin: 0;
+    line-height: 20em;
+    outline: none;
+    vertical-align: middle;
+    background: transparent url(https://img3.doubanio.com/f/sns/8536084688879cb1137e8efdff30e59614ff2f86/pics/sns/anony_home/anony_nav_logo.png) no-repeat 100% 100%;
+}
+#anony-nav .anony-nav-links li .lnk-book {
+    background-position: 0px 0;
+}
+#anony-nav .anony-nav-links li .lnk-movie {
+    background-position: -60px 0;
+}
+#anony-nav .anony-nav-links li .lnk-music {
+    background-position: -120px 0;
+}
+#anony-nav .anony-nav-links li .lnk-events {
+    background-position: -299px 0;
+}
+#anony-nav .anony-nav-links li .lnk-group {
+    background-position: -180px 0;
+}
+#anony-nav .anony-nav-links li .lnk-read {
+    background:transparent url(https://img3.doubanio.com/f/sns/f3ba00ef46f185989b70ac6841d9f4d67b6e3a25/pics/sns/anony_home/ic_read_home_nav.png) no-repeat 100% 100%;
+    background-size: cover;
+}
+#anony-nav .anony-nav-links li .lnk-shijian {
+    margin-bottom: 1px;
+    background:transparent url(https://img3.doubanio.com/f/sns/b474dd402e4293943146a4789de3dae88ec96636/pics/sns/anony_home/ic_shijian_home_nav.png) no-repeat 100% 100%;
+    background-size: cover;
+}
+#anony-nav .anony-nav-links li .lnk-market {
+    width: 42px;
+    background-position: -421px 0;
+}
+#anony-nav .anony-srh {
+    position: relative;
+    display: inline-block;
+    zoom:1;
+    vertical-align: middle;
+    width: 270px;
+    height: 30px;
+    border:1px solid #c3c3c3;
+}
+#anony-nav .anony-srh .inp{
+    display: block;
+    height: 30px;
+    overflow: hidden;
+}
+#anony-nav .anony-srh .inp input {
+    width: 240px;
+    border:none;
+    font-size: 13px;
+    height: 20px;
+    padding: 5px;
+}
+#anony-nav .anony-srh .bn {
+    position: absolute;
+    right:0;
+    top:0;
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    cursor: pointer;
+    background: url(https://img3.doubanio.com/f/sns/f71f15922ebd7c0ff0ea0e7a25577529efd8981a/pics/icon/bn_srh_1.png) 50% 50% no-repeat;
+}
+#anony-nav .anony-srh .bn input {
+    border: none;
+    background: transparent;
+    overflow: hidden;
+    width:30px;
+    height: 30px;
+    font-size: 0;
+    color:transparent;
+    cursor: pointer;
+}
+.section {
+    padding: 10px 0;
+    margin-bottom: 30px;
+    min-height: 200px;
+}
+.wrapper {
+    width: 950px;
+    margin:0 auto;
+} 
+.section .wrapper {
+    zoom:1;
+}
+.section .side {
+    float: right;
+    width: 265px;
+    margin-left: 30px;
 }
