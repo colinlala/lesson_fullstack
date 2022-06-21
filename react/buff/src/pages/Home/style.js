@@ -1,32 +1,29 @@
 import styled from 'styled-components'
 
 export const Wrapper = styled.div`
-    position: absolute;
     display: flex;
     margin-left: 8px;
-    margin-top: 6px;
-    .icon-sousuo{
-        margin-top: 4px;
-        font-size: 16px;
-        background-color: #81ecec;
-    }
-    .header_search{ 
+    margin-top: 7px;
+    .nav{
+        display: flex;
         flex: 1;
-        input{
-            border: none;
-            background-color: #81ecec;
+        .iconfont{
+            margin-top: 4px;
+            font-size: 16px;
+
         }
-    }
-    .icon-shaixuan{
-        margin-top: 4px;
-    }
-    .link_img{
-        img{
-            
-            margin-left: auto;
-            position: relative;
-            width: 120px;
-            height: 120px;
+        .icon-sousuo{
+                background-color: #81ecec;
+            }
+        .header_search{ 
+            input{
+                width: 100%;
+                border: none;
+                background-color: #81ecec;
+            }
+        }
+        .icon-shaixuan{
+            margin-right: 10%;
         }
     }
     
