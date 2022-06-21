@@ -52,6 +52,11 @@
         - .swiper-container > .swiper-wrapper > .swiper-slide(n个)
         - .swiper-pagination 分页
     4. 组件挂载后，useEffect  实例化幻灯片功能 new Swiper('.btn-banners')
+    5. 遇到的问题
+        - pagination 分页不好使
+        - swiper被实例多次（同一幻灯片）
+            1. useEffect，第二个参数 [] 只会执行一次
+            2. 全局变量 swiper 实例化前判断一下，如果已经实例化就退出
 
 - 仿站原则与做法
     1. 想去哪家公司就仿哪家 

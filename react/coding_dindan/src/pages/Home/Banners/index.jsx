@@ -5,9 +5,16 @@ import Swiper from 'swiper'
 import { Link } from 'react-router-dom'
 
 export default function Banners({ banners }) {
+    let swiper = null;
     // 幻灯片
     useEffect(() => {
-        new Swiper('.btn-banners', {
+        // swiper不能一直实例化，加,[] 或者 添加boolean
+        // 一直打印
+        // console.log('22222222222222222')
+        if(swiper){
+            return
+        }
+        swiper = new Swiper('.btn-banners', {
             loop: true,
             pagination: {
                 el: '.swiper-pagination'
