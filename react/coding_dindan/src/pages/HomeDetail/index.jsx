@@ -1,7 +1,8 @@
 import React from 'react'
 import { Wrapper } from './style'
 import { NavBar } from 'antd-mobile'
-import { useNavigate } from 'react-router-dom'
+// Outlet 二级路由
+import { useNavigate, Outlet } from 'react-router-dom'
 
 export default function HomeDetail() {
     // console.log('-----------------')
@@ -15,12 +16,13 @@ export default function HomeDetail() {
                     // className="detail-left"
                     back='返回'
                     onBack={() => navigate(-1)}
-                    // 出栈
-                    // onLeftClick={() => navigate(-1)}
-                    // icon={<Icon type="left" />}
+                // 出栈
+                // onLeftClick={() => navigate(-1)}
+                // icon={<Icon type="left" />}
                 >
                     详情
                 </NavBar>
+                <Outlet />
             </div>
         </Wrapper>
     )
