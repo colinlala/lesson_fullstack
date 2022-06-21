@@ -1,6 +1,6 @@
 import React from 'react'
 import { Wrapper } from './style'
-import { NavBar, Icon } from 'antd-mobile'
+import { NavBar } from 'antd-mobile'
 import { useNavigate } from 'react-router-dom'
 
 export default function HomeDetail() {
@@ -12,10 +12,12 @@ export default function HomeDetail() {
             {/* 路由出栈需求,返回*/}
             <div className="detail-top">
                 <NavBar
-                    className="detail-left"
+                    // className="detail-left"
+                    back='返回'
+                    onBack={() => navigate(-1)}
                     // 出栈
-                    onLeftClick={() => navigate(-1)}
-                    icon={<Icon type="left" />}
+                    // onLeftClick={() => navigate(-1)}
+                    // icon={<Icon type="left" />}
                 >
                     详情
                 </NavBar>

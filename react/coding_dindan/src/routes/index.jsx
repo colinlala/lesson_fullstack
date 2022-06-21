@@ -3,6 +3,7 @@ import React from 'react'
 import { lazy } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Home from '../pages/Home'
+// import HomeDetail from '../pages/HomeDetail'
 // 这样import浪费资源，影响首页速度，应该不点击就不会加载（推迟加载），切换到路由后加载
 // import HomeDetail from './pages/HomeDetail'
 const HomeDetail = lazy(() => import('../pages/HomeDetail'))

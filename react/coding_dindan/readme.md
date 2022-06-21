@@ -115,3 +115,8 @@
         1. 专事专办，专门处理路由，方便管理，/routes/index.jsx 路由地图
         2. 组件化思维，封装成组件就可以抽离，以一个组件引入
         3. 首页干净了，layout，没有污染ta
+
+- antd-mobile 升级
+    1. 先npm remove antd-mobile移除掉
+    2. 再npm install antd-mobile安装新版
+    3. check版本原来的代码能否运行
