@@ -84,6 +84,9 @@
     2. 只需要首页一个组件就好
         - 如果可以少加载一点，首页打开肯定就更快
     3. 但是router配置，配置所有的路由
+    - React.lazy 延迟，按需（切到路由）加载  import(path)
+    - const HomeDetail = lazy(() => import('./pages/HomeDetail'))
+    4. 非首页，其他页面级别路由应该采用按需加载
 
 - antd-mobile
     - antd 的移动版 ，手机栈
@@ -106,3 +109,9 @@
 - 项目架构，必须utils
     - 工具函数，工具函数 lodash ？没有
     - 跨应用适用
+
+- 最佳项目模板，添加了一个routes文件夹
+    - spa专属的
+        1. 专事专办，专门处理路由，方便管理，/routes/index.jsx 路由地图
+        2. 组件化思维，封装成组件就可以抽离，以一个组件引入
+        3. 首页干净了，layout，没有污染ta
