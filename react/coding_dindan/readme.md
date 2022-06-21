@@ -125,3 +125,15 @@
     1. 先npm remove antd-mobile移除掉
     2. 再npm install antd-mobile安装新版
     3. check版本原来的代码能否运行
+
+- 当组件深入比较大的时候，vite alias 配置
+    - 相对路径变得长（难，../../）
+    - 工程化，得是 vite 支持的工程
+    - 在vite.config.js中配置 alias 路径别名
+        ```js
+        resolve:{
+            alias:{
+            "@":path.resolve(__dirname,'src')
+            }
+        }
+        ```
