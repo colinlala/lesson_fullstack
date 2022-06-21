@@ -3,7 +3,9 @@ import { Wrapper } from './style'
 import { NavBar } from 'antd-mobile'
 // Outlet 二级路由
 import { useNavigate, Outlet, useParams } from 'react-router-dom'
-// import HomeDetailNav from './HomeDetailNav'
+// 快捷方式 @ 代表 /src   工程化  alias
+import HomeDetailNav from '@/components/HomeDetailNav'
+// import HomeDetailNav from '../../components/HomeDetailNav'
 
 export default function HomeDetail() {
     // console.log('-----------------')
@@ -58,7 +60,7 @@ export default function HomeDetail() {
                     </div>
                     <p>公告：本店香锅不单炒，套餐必点！单加菜品需与套餐同时点</p>
                 </div>
-                {/* <HomeDetailNav /> */}
+                <HomeDetailNav />
                 <Outlet />
             </div>
         </Wrapper>

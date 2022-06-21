@@ -20,7 +20,7 @@ export default function Banners({ banners }) {
                 el: '.swiper-pagination'
             }
         })
-    })
+    },[])
 
 
     const renderBtnBannersPage1 = () => {

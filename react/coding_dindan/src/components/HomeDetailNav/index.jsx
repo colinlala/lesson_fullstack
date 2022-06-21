@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function HomeBusiness() {
+export default function HomeDetailNav() {
   return (
     <div>
-      HomeBusiness
+      HomeDetailNav
     </div>
   )
 }
