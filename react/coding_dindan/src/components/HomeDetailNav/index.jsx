@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
-import { Link } from 'react-router-dom'
+// NavLink 比 Link多一个展示的下划线
+import { NavLink } from 'react-router-dom'
 // 父子传值提供保障
 import propTyes from 'prop-types'
 import Swiper from 'swiper'
@@ -11,7 +12,6 @@ export default function HomeDetailNav({ id }) {
     { id: 1, desc: '点餐', path: '/order' },
     { id: 2, desc: '评价', path: '/comment' },
     { id: 3, desc: '商家', path: '/business' },
-
   ]
 
   let swiper = null;
@@ -27,14 +27,15 @@ export default function HomeDetailNav({ id }) {
           {
             homeNavs.map((item, index) => {
               return (
-                <Link
+                <NavLink
                   index={index}
                   to={`/homedetail/${id}${item.path}`}
                   key={item.id}
+                  
                   className="nav-item swiper-slide"
                 >
                   {item.desc}
-                </Link>
+                </NavLink>
               )
             })
           }

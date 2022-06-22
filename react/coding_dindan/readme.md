@@ -92,6 +92,8 @@
     - React.lazy 延迟，按需（切到路由）加载  import(path)
     - const HomeDetail = lazy(() => import('./pages/HomeDetail'))
     4. 非首页，其他页面级别路由应该采用按需加载
+    5. 延迟加载的组件，要为其提供Suspense包一下
+        - react 提供一个组件，在还没有加载js组件前，可以先用fallback先试一下
 
 - antd-mobile
     - antd 的移动版 ，手机栈
@@ -137,3 +139,6 @@
             }
         }
         ```
+
+- NavLink 比 Link 更专业
+    - 如果要给active 激活路由的时候，自带光环

@@ -19,9 +19,11 @@ export default function HomeDetail() {
         return;
     }
 
+    // 到/homedetail/${id}页面自动到order页面
     useEffect(()=>{
-        console.log('----------------')
-    })
+        // console.log('----------------')
+        navigate(`/homedetail/${id}/order`)
+    },[])
 
     return (
         <Wrapper>
