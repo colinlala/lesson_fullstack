@@ -7,6 +7,8 @@ import { BrowserRouter } from 'react-router-dom'
 import './modules/rem'
 // 幻灯片
 import 'swiper/dist/css/swiper.min.css'
+// inconfont
+import './assets/fonts/iconfont.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>

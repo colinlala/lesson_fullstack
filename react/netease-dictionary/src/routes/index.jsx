@@ -1,8 +1,6 @@
-import React from 'react'
-import { lazy } from 'react'
+import React,{ lazy } from 'react'
 import { Routes, Route } from 'react-router-dom'
 // import Home from '../pages/Home'
-import React from 'react'
 import Home from '../pages/Home'
 const Movie = lazy(() => import('../pages/Movie'))
 const Study = lazy(() => import('../pages/Study'))
