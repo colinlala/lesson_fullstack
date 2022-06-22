@@ -13,7 +13,7 @@ export default function Footer(props) {
   return (
     <FooterWrapper>
       <Link to="/home" className={classnames({ active: pathname == '/home' || pathname == '/' })}>
-        <i className='iconfont icon-shouye'></i>
+        <i className='iconfont icon-shouye1'></i>
         <span>首页</span>
       </Link>
       <Link to="/movie" className={classnames({ active: pathname == '/movie' })}>

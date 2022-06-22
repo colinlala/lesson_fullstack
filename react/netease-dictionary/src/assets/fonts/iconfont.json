@@ -20,13 +20,6 @@
       "unicode_decimal": 59217
     },
     {
-      "icon_id": "102150435",
-      "name": "资源",
-      "font_class": "ziyuan",
-      "unicode": "e628",
-      "unicode_decimal": 58920
-    },
-    {
       "icon_id": "102150436",
       "name": "全部",
       "font_class": "quanbu",
@@ -34,11 +27,32 @@
       "unicode_decimal": 58921
     },
     {
+      "icon_id": "102180001",
+      "name": "vip",
+      "font_class": "vip",
+      "unicode": "e6ba",
+      "unicode_decimal": 59066
+    },
+    {
+      "icon_id": "102180002",
+      "name": "标签",
+      "font_class": "biaoqian",
+      "unicode": "e6a4",
+      "unicode_decimal": 59044
+    },
+    {
       "icon_id": "102150437",
       "name": "阅读",
       "font_class": "yuedu",
       "unicode": "e67e",
       "unicode_decimal": 59006
+    },
+    {
+      "icon_id": "102180183",
+      "name": "笑脸",
+      "font_class": "xiaolian",
+      "unicode": "e64a",
+      "unicode_decimal": 58954
     },
     {
       "icon_id": "102150438",
@@ -62,11 +76,25 @@
       "unicode_decimal": 58951
     },
     {
+      "icon_id": "102180003",
+      "name": "本子",
+      "font_class": "shuben",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
       "icon_id": "102150441",
       "name": "题库",
       "font_class": "tiku",
       "unicode": "e6a0",
       "unicode_decimal": 59040
+    },
+    {
+      "icon_id": "102180004",
+      "name": "眉笔",
+      "font_class": "meibi",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
     },
     {
       "icon_id": "102150442",
@@ -76,11 +104,32 @@
       "unicode_decimal": 59082
     },
     {
+      "icon_id": "102180005",
+      "name": "学士帽",
+      "font_class": "xueshimao",
+      "unicode": "e6cf",
+      "unicode_decimal": 59087
+    },
+    {
+      "icon_id": "102180006",
+      "name": "日文字符符号大全",
+      "font_class": "icon-test",
+      "unicode": "e61e",
+      "unicode_decimal": 58910
+    },
+    {
       "icon_id": "102150443",
       "name": "消息中心",
       "font_class": "xiaoxizhongxin",
       "unicode": "e8be",
       "unicode_decimal": 59582
+    },
+    {
+      "icon_id": "102180007",
+      "name": "对话框",
+      "font_class": "duihuakuang",
+      "unicode": "e7c1",
+      "unicode_decimal": 59329
     },
     {
       "icon_id": "102150444",
@@ -90,11 +139,39 @@
       "unicode_decimal": 59005
     },
     {
+      "icon_id": "102180184",
+      "name": "单词",
+      "font_class": "danci",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "102180008",
+      "name": "录音机  收音机  电台",
+      "font_class": "luyinjishouyinjidiantai",
+      "unicode": "e625",
+      "unicode_decimal": 58917
+    },
+    {
+      "icon_id": "102180009",
+      "name": "羽毛笔",
+      "font_class": "yumaobi",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
       "icon_id": "102150445",
       "name": "背包",
       "font_class": "beibao",
       "unicode": "e6b0",
       "unicode_decimal": 59056
+    },
+    {
+      "icon_id": "102180185",
+      "name": "对话",
+      "font_class": "duihua",
+      "unicode": "ec8c",
+      "unicode_decimal": 60556
     },
     {
       "icon_id": "102150446",
@@ -104,72 +181,9 @@
       "unicode_decimal": 58971
     },
     {
-      "icon_id": "1555834",
-      "name": "vip",
-      "font_class": "vip",
-      "unicode": "e6ba",
-      "unicode_decimal": 59066
-    },
-    {
-      "icon_id": "1788965",
-      "name": "标签",
-      "font_class": "biaoqian",
-      "unicode": "e6a4",
-      "unicode_decimal": 59044
-    },
-    {
-      "icon_id": "6555969",
-      "name": "本子",
-      "font_class": "shuben",
-      "unicode": "e604",
-      "unicode_decimal": 58884
-    },
-    {
-      "icon_id": "7977840",
-      "name": "眉笔",
-      "font_class": "meibi",
-      "unicode": "e60a",
-      "unicode_decimal": 58890
-    },
-    {
-      "icon_id": "8361849",
-      "name": "学士帽",
-      "font_class": "xueshimao",
-      "unicode": "e6cf",
-      "unicode_decimal": 59087
-    },
-    {
-      "icon_id": "11330577",
-      "name": "日文字符符号大全",
-      "font_class": "icon-test",
-      "unicode": "e61e",
-      "unicode_decimal": 58910
-    },
-    {
-      "icon_id": "11759966",
-      "name": "对话框",
-      "font_class": "duihuakuang",
-      "unicode": "e7c1",
-      "unicode_decimal": 59329
-    },
-    {
-      "icon_id": "14720839",
-      "name": "录音机  收音机  电台",
-      "font_class": "luyinjishouyinjidiantai",
-      "unicode": "e625",
-      "unicode_decimal": 58917
-    },
-    {
-      "icon_id": "16780958",
-      "name": "羽毛笔",
-      "font_class": "yumaobi",
-      "unicode": "e611",
-      "unicode_decimal": 58897
-    },
-    {
-      "icon_id": "27804873",
+      "icon_id": "102180010",
       "name": "拍照",
-      "font_class": "paizhao1",
+      "font_class": "paizhao2",
       "unicode": "100ac",
       "unicode_decimal": 65708
     }

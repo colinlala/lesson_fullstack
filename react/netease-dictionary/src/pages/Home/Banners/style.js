@@ -33,9 +33,11 @@ height: 1.582rem;
 .swiper-item div p{
     height:14vw;
     width:14vw;
-    background: skyblue;
+    padding:8px;
+
 }
-.swiper-item div img{
+.swiper-item div i{
+    font-size: 40px;
     height:100%;
     width:100%
 }

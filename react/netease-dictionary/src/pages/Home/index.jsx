@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { getBanners } from '../../api/request'
-
 import TopBar from './TopBar'
 import Search from './Search'
 import Banners from './Banners'
+import Adverte from './Adverte'
+import Filter from './Filter'
 
 
 export default function Home() {
@@ -11,9 +12,7 @@ export default function Home() {
   useEffect(() => {
     (async () => {
         let { data: bannerData } = await getBanners()
-        // let { data: resData } = await getRestaurants()
         setBanners(bannerData)
-        // setRestaurants(resData)
     })()
 })
   return (
@@ -24,6 +23,8 @@ export default function Home() {
       <Search/>
       {/* 幻灯片 */}
       <Banners banners={banners} />
+      <Adverte />
+      <Filter />
 
     </div>
   )

@@ -11,7 +11,7 @@ export default function Banners({ banners }) {
         // swiper不能一直实例化，加,[] 或者 添加boolean
         // 一直打印
         // console.log('22222222222222222')
-        if(swiper){
+        if (swiper) {
             return
         }
         swiper = new Swiper('.btn-banners', {
@@ -20,7 +20,7 @@ export default function Banners({ banners }) {
                 el: '.swiper-pagination'
             }
         })
-    },[])
+    }, [])
 
 
     const renderBtnBannersPage1 = () => {
@@ -34,7 +34,7 @@ export default function Banners({ banners }) {
                 >
                     <div>
                         <p>
-                            <img src={item.img} />
+                            <i className={`iconfont ${item.icon_name}`}></i>
                         </p>
                         <span>
                             {item.title}
@@ -56,7 +56,7 @@ export default function Banners({ banners }) {
                 >
                     <div>
                         <p>
-                            <img src={item.img} />
+                            <i className={`iconfont ${item.icon_name}`}></i>
                         </p>
                         <span>
                             {item.title}

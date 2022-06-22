@@ -8,6 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "alias": "^0.0.5",
     "antd-mobile": "^5.15.1",
     "axios": "^0.27.2",
     "classnames": "^2.3.1",
