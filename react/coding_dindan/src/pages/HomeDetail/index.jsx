@@ -52,7 +52,7 @@ export default function HomeDetail() {
                     <div className="sum-detail">
                         <div className="img-deatil">
                             <span className="sale-detail">"满减"</span>
-                            <span className="num-detail">"满四十减一</span>
+                            <span className="num-detail">"满四十减一"</span>
                         </div>
                         <div className="sale">
                             3个优惠
@@ -60,7 +60,7 @@ export default function HomeDetail() {
                     </div>
                     <p>公告：本店香锅不单炒，套餐必点！单加菜品需与套餐同时点</p>
                 </div>
-                <HomeDetailNav />
+                <HomeDetailNav id={id}/>
                 <Outlet />
             </div>
         </Wrapper>
