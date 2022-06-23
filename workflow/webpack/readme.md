@@ -84,3 +84,30 @@
             })
         ]
         ```
+    10. script有三种加载模式：
+        1. 默认加载：会阻塞DOM构建
+        2. defer加载：下载照旧，但执行延后 在页面加载之前不会运行脚本
+        3. async：下载完就立即执行，适合没有依赖的脚本
+
+    11. [name].[hash:8].js
+        - [name] 原来的文件名，hash唯一文件内容，只要改变了内容，就会生成新的hsah，否则绝对不变
+        - 浏览器本地缓存
+        - 如果更新了，main.js ? 
+            - hash值？根据内容计算得到的
+        - 使用hash值创建版本号
+
+    12. `npm i clean-webpack-plugin -D` 在每次构建前清理 /dist 文件夹，只会生成用到的文件
+
+    13. js 和 css 分离 
+
+    14. `npm i mini-css-extract-plugin -D` 把css样式从js文件中提取到单独的css文件中
+
+    15. `npm i webpack-dev-server@3.11.2 -D` 
+
+    16. webpack 全家桶
+        - webpack 5.73.0 
+        - webpack-cli 4.10.0
+        - npx weback npx -> node_modules/webpack-cli -> webpack
+        - webpack-dev-server 启动http server
+
+    17. `npm i @babel/cli @babel/core @babel/preset-env @babel/preset-react -D`
