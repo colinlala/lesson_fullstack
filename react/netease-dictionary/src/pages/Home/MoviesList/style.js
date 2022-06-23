@@ -16,10 +16,15 @@ export const Wrapper = styled.div`
         break-inside: avoid;
         border: 0.1em solid gray;
         border-radius: 1em;
-        .img{
-            object-fit: cover;
-            height: auto;
-            margin-bottom: 10px;
+        .waterfall_item_img{
+            background-size: contain;
+            .img{
+                /* object-fit: cover;
+                height: auto;
+                width: auto;
+                margin-bottom: 10px; */
+                
+            }
         }
         .desc{
                 font-weight: bolder;
@@ -28,7 +33,6 @@ export const Wrapper = styled.div`
             padding: 1em;
             .name{
                 float: left;
-                left: 0.3em;
             }
             .like{
                 float: right;

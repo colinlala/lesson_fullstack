@@ -9,13 +9,15 @@ export default function MoviesList({ movies }) {
                 movies.map(item => (
                     <Link
                         className='movielist'
-                        to={`/moviedetail/${item.author_id}`}
+                        to={`/movielist/${item.author_id}`}
                         key={item.author_id}
                     >
                         <div className="waterfall_conter">
                             <div className="waterfall_detail">
                                 <div className="waterfall_item">
-                                    <img src={item.movie_url} alt="" />
+                                    <div className='waterfall_item_img'>
+                                        <img src={item.movie_url} alt="" />
+                                    </div>
                                     <p className='desc'>{item.desc}</p>
                                     <div className='waterfall_item_desc'>
                                         <div className='name'>{item.author}</div>
