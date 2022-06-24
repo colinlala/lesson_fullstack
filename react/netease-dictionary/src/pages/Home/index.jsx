@@ -6,6 +6,7 @@ import Banners from './Banners'
 import Adverte from './Adverte'
 import Filter from './Filter'
 import MoviesList from './MoviesList'
+import MoviePlay from '../../components/MoviePlay'
 
 
 export default function Home() {
@@ -29,7 +30,9 @@ export default function Home() {
       <Banners banners={banners} />
       <Adverte />
       <Filter />
-      <MoviesList movies={movies} />
+      <MoviesList movies={movies}>
+        <MoviePlay movies={movies}/>
+      </MoviesList>
 
     </div>
   )

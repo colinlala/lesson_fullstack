@@ -2,42 +2,44 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
     .waterfall_conter{
-        width: 88%;
         margin: 0 1em;
-        padding: 1em;
-    }
-    .waterfall_detail{
         column-count: 2;
-        column-gap: 1em;
-    }
-    .waterfall_item{
-        padding: 1em;
-        margin: 0 0 1em 0;
-        break-inside: avoid;
-        border: 0.1em solid gray;
-        border-radius: 1em;
-        .waterfall_item_img{
-            background-size: contain;
-            .img{
-                /* object-fit: cover;
-                height: auto;
-                width: auto;
-                margin-bottom: 10px; */
-                
+        a{
+            background-color:#fff;
+            break-inside:avoid;
+            margin-bottom:1em;
+            text-align:left;
+            /* border-radius:5px; */
+            img{
+                width: 100%;
+                border-radius: 5px;
             }
-        }
-        .desc{
-                font-weight: bolder;
-            } 
-        .waterfall_item_desc{
-            padding: 1em;
+            .desc{
+                width:95%;
+                overflow:hidden;
+                text-overflow:ellipsis;
+                -webkit-line-clamp:2;
+                display:-webkit-box;
+                line-clamp:2;
+                -webkit-box-orient:vertical;
+                color:black;
+                font-size:14px;
+                font-weight:600;
+                padding-left:0.5em;
+                margin-bottom:0.5em;
+            }
             .name{
                 float: left;
+                margin-left: 1em;
+                color: gray;
             }
             .like{
                 float: right;
+                margin-right: 1em;
+                color: gray;
             }
         }
     }
+    
 
 `

@@ -5,30 +5,23 @@ import { Wrapper } from './style'
 export default function MoviesList({ movies }) {
     return (
         <Wrapper>
-            {
-                movies.map(item => (
-                    <Link
-                        className='movielist'
-                        to={`/movielist/${item.author_id}`}
-                        key={item.author_id}
-                    >
-                        <div className="waterfall_conter">
-                            <div className="waterfall_detail">
-                                <div className="waterfall_item">
-                                    <div className='waterfall_item_img'>
-                                        <img src={item.movie_url} alt="" />
-                                    </div>
-                                    <p className='desc'>{item.desc}</p>
-                                    <div className='waterfall_item_desc'>
-                                        <div className='name'>{item.author}</div>
-                                        <div className='like'>{item.like}</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </Link>
-                ))
-            }
+            <div className="waterfall_conter">
+                {
+                    movies.map(item => (
+                        <Link
+                            className='movielist'
+                            to={`/movielist/${item.author_id}`}
+                            key={item.author_id}
+                        >
+                            <img src={item.movie_url} alt="" />
+                            <p className='desc'>{item.desc}</p>
+                            <p className="name">{item.author}</p>
+                            <p className="like">{item.like}</p>
+                        </Link>
+                    ))
+                }
+            </div>
+
         </Wrapper>
     )
 }
