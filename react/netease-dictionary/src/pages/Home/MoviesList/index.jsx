@@ -16,7 +16,10 @@ export default function MoviesList({ movies }) {
                             <img src={item.movie_url} alt="" />
                             <p className='desc'>{item.desc}</p>
                             <p className="name">{item.author}</p>
-                            <p className="like">{item.like}</p>
+                            <p className="like">
+                                {item.like}
+                                <i className='iconfont icon-aixin'></i>
+                            </p>
                         </Link>
                     ))
                 }

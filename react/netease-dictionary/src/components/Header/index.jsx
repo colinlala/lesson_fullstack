@@ -1,9 +1,3 @@
-/*
- * @Date         : 2022-06-16 15:59:14
- * @LastEditors  : colinlala
- * @LastEditTime : 2022-06-16 20:25:00
- * @description  : 
- */
 import React, { useState, useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import { pageTitle } from '../../config'

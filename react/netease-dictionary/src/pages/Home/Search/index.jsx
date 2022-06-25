@@ -1,10 +1,7 @@
 import React from 'react'
 import { SearchBar } from 'antd-mobile'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { Wrapper } from './style'
-
-
-
 
 export default function Search() {
   return (

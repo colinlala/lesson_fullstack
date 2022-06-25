@@ -186,6 +186,13 @@
       "font_class": "paizhao2",
       "unicode": "100ac",
       "unicode_decimal": 65708
+    },
+    {
+      "icon_id": "6775644",
+      "name": "爱心",
+      "font_class": "aixin",
+      "unicode": "eca1",
+      "unicode_decimal": 60577
     }
   ]
 }

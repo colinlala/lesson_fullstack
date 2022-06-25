@@ -1,18 +1,18 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
+            break-inside:avoid;
+
     .waterfall_conter{
         margin: 0 1em;
         column-count: 2;
+        break-inside:avoid;
         a{
-            background-color:#fff;
             break-inside:avoid;
-            margin-bottom:1em;
             text-align:left;
-            /* border-radius:5px; */
             img{
                 width: 100%;
-                border-radius: 5px;
+                border-radius: 6px;
             }
             .desc{
                 width:95%;
@@ -32,11 +32,17 @@ export const Wrapper = styled.div`
                 float: left;
                 margin-left: 1em;
                 color: gray;
+                margin-bottom: 1em;
             }
             .like{
                 float: right;
                 margin-right: 1em;
                 color: gray;
+                margin-bottom: 1em;
+                .icon-aixin{
+                    font-size: 13px;
+                    margin-left: 0.5em;
+                }
             }
         }
     }
