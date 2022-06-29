@@ -1,13 +1,14 @@
 const defaultState = {
-  artists: [
+    rankList: [
+ 
     ]
 }
 const reducer = (state=defaultState,action) => {
     switch (action.type) {
-        case "CHANGE_SINGERLIST":
+        case "CHANGE_RANKLIST":
           return {
             ...state,
-            artists: action.data,
+            rankList: action.data,
           };
       }
     return state

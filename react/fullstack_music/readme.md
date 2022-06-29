@@ -41,3 +41,29 @@
   - 使用styled-components 提供的 createGlobalStyle 全局样式
   - styled.div`` wrapper容器 hash化 
 2. adapter
+
+3. axois 功能点
+  - 网络请求很多，api axios单例模式
+  - 统一了vue react native app三端的请求库
+  - 每个请求 域名 + 端口 没必要重复， 可以配置到baseURL中
+  - 为了切换请求域名的需要   http://localhost:3000/banner
+  - **响应拦截器**  interceptors.response.use()    （接收到数据的时候，进行数据过滤、对状态码判断，进行对应的操作）
+    - 结构好 res.data   处理错误
+  - **请求拦截器**  interceptors.request.use()    （发送请求的时候，携带一些信息）
+  - 登陆时，服务器会给我们授权码 token ，每次请求时，需要手工带上
+    - 拦截器 request     req.headers 请求头  Authorization 授权
+
+- 组件数据管理功能被剥夺
+  1. redux 管理数据更专业
+    - store  store/index.js  
+    - reducer 集合 交给store
+    - combineReducers 提供 reducer
+    - 各个模块 每个模块都是一个reducer函数
+    - reducer 还可以多次运行，dispatch  一个想要的action
+    - 页面会自动更新
+    - connect mapStateToProps 获取状态，mapDispatchToProps 来触发状态的改变
+  2. mapStateToProps 状态读操作
+  3. mapDispatchToProps 写操作
+    - 状态不可直接修改  redux 起因
+    - 有法可依   dispatch({type:'',data: })   在action里
+    - reducer 根据 type 重新计算 ，状态发生改变，应用在有状态的地方 MVVM
