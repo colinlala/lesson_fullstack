@@ -1,13 +1,16 @@
 import styled from 'styled-components'
+import style from '@/assets/global-style'
 
 export const FooterWrapper=styled.div`
     width:100%;
     height:2.5rem;
+    padding-top: 0.4rem;
     background:white;
     position:fixed;
     bottom:0;
     left:0;
     display:flex;
+    background: ${style["theme-color"]};
     // Link生成的a标签
     a{
         flex:1;

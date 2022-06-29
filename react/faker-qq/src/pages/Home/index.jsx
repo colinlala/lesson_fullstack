@@ -1,5 +1,6 @@
 import React from "react";
-import { Avatar, Button, Modal, Popover, Toast } from "antd-mobile";
+import { Avatar, Button, Modal, Popover, Toast,SearchBar } from "antd-mobile";
+import {Link} from 'react-router-dom'
 // import { Action } from "antd-mobile/es/components/popover";
 import {
   AntOutline,
@@ -8,18 +9,21 @@ import {
   TransportQRcodeOutline,
 } from "antd-mobile-icons";
 import { Wrapper } from "./style";
+import MessageList from "./MessageList";
 
 const actions = [
+  { key: "scan", icon: <ScanningOutline />, text: "创建群聊" },
+  { key: "payment", icon: <HandPayCircleOutline />, text: "加好友/群" },
   { key: "scan", icon: <ScanningOutline />, text: "扫一扫" },
-  { key: "payment", icon: <HandPayCircleOutline />, text: "付钱/收钱" },
-  { key: "bus", icon: <TransportQRcodeOutline />, text: "乘车码" },
-  { key: "assistant", icon: <AntOutline />, text: "智能助理" },
+  { key: "assistant", icon: <AntOutline />, text: "面对面快传" },
+  { key: "assistant", icon: <AntOutline />, text: "收付款" },
 ];
 
 export default function Home() {
   return (
     <Wrapper>
-      <div className="left">
+      <div className="top">
+        <div className="left">
         <div className="info_img">
           <Avatar
             src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fblog%2F202009%2F02%2F20200902191544_9a518.thumb.1000_0.jpg&refer=http%3A%2F%2Fc-ssl.duitang.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1659008815&t=4279b801ccf2fcf7ffb81e3a6d2a1542"
@@ -31,10 +35,12 @@ export default function Home() {
           <div className="modal">
             <Button
               // block
+              // color="orange"
               onClick={() => {
                 Modal.alert({
                   content: "点击遮罩关闭",
                   closeOnMaskClick: true,
+                  
                 });
               }}
             >
@@ -56,6 +62,17 @@ export default function Home() {
           <span style={{fontSize:'2.5rem',paddingRight:'-1.3rem'}}>+</span>
         </Popover.Menu>
       </div>
+      </div>
+      <div className="bottom_center" style={{ background: '#ffffff' ,padding:'0.5rem 0.5rem'}}>
+        <Link to='/adada' className="searchbar" style={{textDecoration: 'none'}}>
+          <SearchBar
+            placeholder='搜索'
+            style={{ '--background': '#eeeeee' }}
+          />
+        </Link>
+        
+      </div>
+      <MessageList/>
     </Wrapper>
   );
 }
