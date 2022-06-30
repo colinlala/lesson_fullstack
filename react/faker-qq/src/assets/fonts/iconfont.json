@@ -6,32 +6,74 @@
   "description": "",
   "glyphs": [
     {
-      "icon_id": "15838424",
+      "icon_id": "102434121",
+      "name": "下三角形",
+      "font_class": "xiasanjiaoxing",
+      "unicode": "e642",
+      "unicode_decimal": 58946
+    },
+    {
+      "icon_id": "102434122",
+      "name": "右三角形",
+      "font_class": "yousanjiaoxing",
+      "unicode": "e644",
+      "unicode_decimal": 58948
+    },
+    {
+      "icon_id": "102434123",
+      "name": "加人",
+      "font_class": "jiaren",
+      "unicode": "e614",
+      "unicode_decimal": 58900
+    },
+    {
+      "icon_id": "102434125",
+      "name": "勾选",
+      "font_class": "gouxuan",
+      "unicode": "e70f",
+      "unicode_decimal": 59151
+    },
+    {
+      "icon_id": "102363034",
       "name": "add",
       "font_class": "add",
       "unicode": "e664",
       "unicode_decimal": 58980
     },
     {
-      "icon_id": "15838432",
+      "icon_id": "102363035",
       "name": "browse",
       "font_class": "browse",
       "unicode": "e666",
       "unicode_decimal": 58982
     },
     {
-      "icon_id": "15838508",
-      "name": "more",
-      "font_class": "more",
-      "unicode": "e679",
-      "unicode_decimal": 59001
-    },
-    {
-      "icon_id": "15838547",
+      "icon_id": "102363037",
       "name": "user",
       "font_class": "user",
       "unicode": "e682",
       "unicode_decimal": 59010
+    },
+    {
+      "icon_id": "3879804",
+      "name": "20 龙猫-01",
+      "font_class": "longmao-",
+      "unicode": "e620",
+      "unicode_decimal": 58912
+    },
+    {
+      "icon_id": "5203239",
+      "name": "对话气泡",
+      "font_class": "duihuaqipao",
+      "unicode": "e61e",
+      "unicode_decimal": 58910
+    },
+    {
+      "icon_id": "17883979",
+      "name": "剪短头发",
+      "font_class": "jianduantoufa",
+      "unicode": "e6d1",
+      "unicode_decimal": 59089
     }
   ]
 }

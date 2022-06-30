@@ -40,6 +40,7 @@ export default function Home() {
             <Button
               // block
               // color="orange"
+              style={{'--background-color':'#eeeeee'}}
               onClick={() => {
                 Modal.alert({
                   content: "点击遮罩关闭",
@@ -54,13 +55,13 @@ export default function Home() {
         </div>
       </div>
       <div className="right">
-        <span style={{fontSize:'2.5rem',paddingRight:'1rem'}}>+</span>
-        {/* <i className="iconfont icon-add" style={{fontSize:'2rem'}}></i> */}
+        {/* <span style={{fontSize:'2.5rem',paddingRight:'1rem'}}>+</span> */}
+        <i className="iconfont icon-longmao-" style={{fontSize:'2rem'}}></i>
         <Popover.Menu
           className="popover"
           actions={actions}
           placement="bottom-start"
-          onAction={(node) => Toast.show(`选择了 ${node.text}`)}
+          // onAction={(node) => Toast.show(`选择了 ${node.text}`)}
           trigger="click"
         >
           <span style={{fontSize:'2.5rem',paddingRight:'-1.3rem'}}>+</span>

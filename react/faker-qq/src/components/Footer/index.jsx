@@ -8,7 +8,7 @@ export default function Footer() {
   return (
     <FooterWrapper>
       <Link to="/home" className={classnames({ active: pathname == '/home'})}>
-        <i className='iconfont icon-more'></i>
+        <i className='iconfont icon-duihuaqipao'></i>
         <span>消息</span>
       </Link>
       <Link to="/contacts" className={classnames({ active: pathname == '/contacts' })}>

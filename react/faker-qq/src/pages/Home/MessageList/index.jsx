@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import {  List, SwipeAction,PullToRefresh,DotLoading ,Image } from 'antd-mobile'
+import {  List, SwipeAction,PullToRefresh,DotLoading ,Image,Badge } from 'antd-mobile'
 import { sleep } from 'antd-mobile/es/utils/sleep';
 // import { DragDropContext, Draggable, Droppable, } from 'react-beautiful-dnd';
 
@@ -7,7 +7,7 @@ import { sleep } from 'antd-mobile/es/utils/sleep';
 function getNextData() {
   const ret = [];
   for (let i = 0; i < 18; i++) {
-      ret.unshift(console.log(11111));
+      ret.unshift(console.log('刷新好了'));
   }
   return ret;
 }
@@ -43,14 +43,13 @@ export default function MessageList({message}) {
       // await Loading();
       setData([...getNextData(), ...data]);
     }}>
-      <List>
+      <List style={{ '--border-top': 'none','--border-inner': 'none','--border-bottom': 'none'}}>
         {
           message.map(item => (
             <SwipeAction key={item.id} rightActions={rightActions}>
               <List.Item key={item.id} 
                           clickable
                           arrow={false}
-                          style={{ '--border-bottom': 'none','--border-top': 'none','--border-inner': 'none','--active-background-color':'#eeeeee'}}
                           // 列表项左侧
                           prefix={
                             <Image src={item.img} 
@@ -63,7 +62,8 @@ export default function MessageList({message}) {
                             <div className='right' style={{display:'flex',flexDirection: 'column',alignItems: 'center'}}>
                               <span style={{marginBottom:'0.5rem'}}>{item.time}</span>
                               {/* <div className='nums_box' style={{backgroundColor:'#eeeeee',lineHeight:'1rem',width:'1.8rem',height:'1rem'}}><span>{item.nums}</span></div> */}
-                              <div className='nums_box' style={{backgroundColor:'#eeeeee',lineHeight:'1rem',width:'1.9rem',height:'1rem',borderRadius:'1rem'}}><span style={{textAlign:'center'}}>{item.nums}</span></div>
+                              {/* <div className='nums_box' style={{backgroundColor:'#eeeeee',lineHeight:'1rem',width:'1.9rem',height:'1rem',borderRadius:'1rem'}}><span style={{textAlign:'center'}}>{item.nums}</span></div> */}
+                              <div><Badge content={item.nums} /></div>
                               {/* <span style={{backgroundColor:'#eeeeee',lineHeight:'1rem',width:'1.9rem',height:'1rem',borderRadius:'1rem'}}>{item.nums}</span> */}
                             </div>
                             
