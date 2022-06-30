@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import style from '@/assets/global-style'
 export const Wrapper = styled.div`
-  .top{
+
+  .top{height: 4.35rem;
       display: flex;
       box-sizing: border-box;
       position: sticky;

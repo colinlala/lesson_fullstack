@@ -1,5 +1,5 @@
-import React from "react";
-import { IndexBar, List,Image } from "antd-mobile";
+import React, { useState } from "react";
+import { IndexBar, List, Image } from "antd-mobile";
 
 const getRandomList = (min, max) => {
   return new Array(Math.floor(Math.random() * (max - min) + min)).fill("");
@@ -16,7 +16,7 @@ const groups = Array(26)
 
 export default function Friends({ friendslist }) {
   return (
-    <div style={{ height: window.innerHeight}}>
+    <div style={{ height: window.innerHeight }}>
       <IndexBar>
         {friendslist.map((friend) => {
           return (
@@ -26,19 +26,30 @@ export default function Friends({ friendslist }) {
               key={`${friend.nametitle}`}
               // style={{'--background-color':'white'}}
             >
-              <List style={{ '--border-top': 'none','--border-inner': 'none','--border-bottom': 'none','--active-background-color':'#eeeeee'}}>
-                <List.Item key={friend.id} 
-                            clickable
-                            arrow={false}
-                            // 列表项左侧
-                            prefix={
-                              <Image src={friend.img} 
-                                    style={{ borderRadius: 20 }} 
-                                    fit='cover' width={40} height={40}
-                              />
-                            } 
-                            description={friend.description}
-                  >
+              <List
+                style={{
+                  "--border-top": "none",
+                  "--border-inner": "none",
+                  "--border-bottom": "none",
+                  "--active-background-color": "#eeeeee",
+                }}
+              >
+                <List.Item
+                  key={friend.id}
+                  clickable
+                  arrow={false}
+                  // 列表项左侧
+                  prefix={
+                    <Image
+                      src={friend.img}
+                      style={{ borderRadius: 20 }}
+                      fit="cover"
+                      width={40}
+                      height={40}
+                    />
+                  }
+                  description={friend.description}
+                >
                   {friend.name}
                 </List.Item>
               </List>

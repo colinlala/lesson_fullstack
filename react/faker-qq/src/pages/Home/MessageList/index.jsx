@@ -1,86 +1,135 @@
-import React,{useState} from 'react'
-import {  List, SwipeAction,PullToRefresh,DotLoading ,Image,Badge } from 'antd-mobile'
-import { sleep } from 'antd-mobile/es/utils/sleep';
+import React, { useState } from "react";
+import {
+  List,
+  SwipeAction,
+  PullToRefresh,
+  Image,
+  Badge,
+  InfiniteScroll,
+  SpinLoading,
+  DotLoading,
+} from "antd-mobile";
+import { sleep } from "antd-mobile/es/utils/sleep";
 // import { DragDropContext, Draggable, Droppable, } from 'react-beautiful-dnd';
 
 // 没加拖拉前
 function getNextData() {
   const ret = [];
   for (let i = 0; i < 18; i++) {
-      ret.unshift(console.log('刷新好了'));
+    ret.unshift(console.log("刷新好了"));
   }
   return ret;
 }
-// function Loading() {
-//   return (
-//     <DotLoading color='primary' />
-//   )
-// }
 
-export default function MessageList({message}) {
+const statusRecord = {
+  pulling: "用力拉",
+  canRelease: "松开吧",
+  // refreshing: <SpinLoading color='primary' />,
+  refreshing: 
+    <div style={{ color: '#00b578' }}>
+      <span>死命加载中</span>
+      <DotLoading color='primary' />
+    </div>,
+  complete: "好啦",
+    // <div style={{ color: '#22968c' }}>
+    //   <span>好啦</span>
+    // </div>,
+};
+
+export default function MessageList({ message }) {
   const [data, setData] = useState(() => getNextData());
+  const [data2, setData2] = useState([]);
+  const [hasMore, setHasMore] = useState(true);
   // const items = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
   const rightActions = [
     {
-        key: 'pin',
-        text: '置顶',
-        color: 'primary',
+      key: "pin",
+      text: "置顶",
+      color: "primary",
     },
     {
-        key: 'mute',
-        text: '标为已读',
-        color: 'warning',
+      key: "mute",
+      text: "标为已读",
+      color: "warning",
     },
     {
-        key: 'delete',
-        text: '删除',
-        color: 'danger',
+      key: "delete",
+      text: "删除",
+      color: "danger",
     },
   ];
+
+  async function loadMore() {
+    const append = await mockRequest();
+    setData2((val) => [...val, ...append]);
+    setHasMore(append.length > 0);
+  }
+
   return (
-    <PullToRefresh onRefresh={async () => {
-      await sleep(1000);
-      // await Loading();
-      setData([...getNextData(), ...data]);
-    }}>
-      <List style={{ '--border-top': 'none','--border-inner': 'none','--border-bottom': 'none'}}>
-        {
-          message.map(item => (
+    <>
+      <PullToRefresh
+        onRefresh={async () => {
+          await sleep(1000);
+          setData([...getNextData(), ...data]);
+        }}
+        renderText={(status) => {
+          return <div>{statusRecord[status]}</div>;
+        }}
+      >
+        <List
+          style={{
+            "--border-top": "none",
+            "--border-inner": "none",
+            "--border-bottom": "none",
+          }}
+        >
+          {message.map((item) => (
             <SwipeAction key={item.id} rightActions={rightActions}>
-              <List.Item key={item.id} 
-                          clickable
-                          arrow={false}
-                          // 列表项左侧
-                          prefix={
-                            <Image src={item.img} 
-                                  style={{ borderRadius: 20 }} 
-                                  fit='cover' width={40} height={40}
-                            />
-                          } 
-                          // 右侧
-                          extra={
-                            <div className='right' style={{display:'flex',flexDirection: 'column',alignItems: 'center'}}>
-                              <span style={{marginBottom:'0.5rem'}}>{item.time}</span>
-                              {/* <div className='nums_box' style={{backgroundColor:'#eeeeee',lineHeight:'1rem',width:'1.8rem',height:'1rem'}}><span>{item.nums}</span></div> */}
-                              {/* <div className='nums_box' style={{backgroundColor:'#eeeeee',lineHeight:'1rem',width:'1.9rem',height:'1rem',borderRadius:'1rem'}}><span style={{textAlign:'center'}}>{item.nums}</span></div> */}
-                              <div><Badge content={item.nums} /></div>
-                              {/* <span style={{backgroundColor:'#eeeeee',lineHeight:'1rem',width:'1.9rem',height:'1rem',borderRadius:'1rem'}}>{item.nums}</span> */}
-                            </div>
-                            
-                          }
-                        description={item.description}
-                >
+              <List.Item
+                key={item.id}
+                clickable
+                arrow={false}
+                // 列表项左侧
+                prefix={
+                  <Image
+                    src={item.img}
+                    style={{ borderRadius: 20 }}
+                    fit="cover"
+                    width={40}
+                    height={40}
+                  />
+                }
+                // 右侧
+                extra={
+                  <div
+                    className="right"
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
+                    }}
+                  >
+                    <span style={{ marginBottom: "0.5rem" }}>{item.time}</span>
+                    {/* <div className='nums_box' style={{backgroundColor:'#eeeeee',lineHeight:'1rem',width:'1.8rem',height:'1rem'}}><span>{item.nums}</span></div> */}
+                    {/* <div className='nums_box' style={{backgroundColor:'#eeeeee',lineHeight:'1rem',width:'1.9rem',height:'1rem',borderRadius:'1rem'}}><span style={{textAlign:'center'}}>{item.nums}</span></div> */}
+                    <div>
+                      <Badge content={item.nums} />
+                    </div>
+                    {/* <span style={{backgroundColor:'#eeeeee',lineHeight:'1rem',width:'1.9rem',height:'1rem',borderRadius:'1rem'}}>{item.nums}</span> */}
+                  </div>
+                }
+                description={item.description}
+              >
                 {item.name}
               </List.Item>
             </SwipeAction>
-            )
-          )
-        }
-      </List>
-    </PullToRefresh>
-  )
+          ))}
+        </List>
+      </PullToRefresh>
+      <InfiniteScroll loadMore={loadMore} hasMore={hasMore} />
+    </>
+  );
 }
-
 
 // const reorder = (list, startIndex, endIndex) => {
 //     const result = Array.from(list);
@@ -158,16 +207,16 @@ export default function MessageList({message}) {
 //         {/* {
 //           items.map(item => (
 //             <SwipeAction key={item} rightActions={rightActions}>
-//               <List.Item key={item} 
+//               <List.Item key={item}
 //                           clickable
 //                           arrow={false}
 //                           style={{ '--border-bottom': 'none','--border-top': 'none','--border-inner': 'none','--active-background-color':'#eeeeee'}}
 //                         // prefix={
-//                         //   <Image src={user.avatar} 
-//                         //         style={{ borderRadius: 20 }} 
+//                         //   <Image src={user.avatar}
+//                         //         style={{ borderRadius: 20 }}
 //                         //         fit='cover' width={40} height={40}
 //                         //   />
-//                         // } 
+//                         // }
 //                         // description={user.description}
 //                 >
 //                 {item}

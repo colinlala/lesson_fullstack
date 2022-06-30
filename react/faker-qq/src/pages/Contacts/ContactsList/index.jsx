@@ -4,6 +4,8 @@ import Friends from "../Friends";
 import Grouping from "../Grouping";
 import Groupchat from '../Groupchat'
 import Equipment from "../Equipment";
+import Addresslist from "../Addresslist";
+import Subscription from "../Subscription";
 
 const tabItems = [
   { key: "friends", title: "好友" },
@@ -14,7 +16,7 @@ const tabItems = [
   { key: "subscription", title: "订阅号" },
 ];
 
-export default function ContactsList({friendslist}) {
+export default function ContactsList({friendslist,subscription}) {
   const swiperRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(1);
 
@@ -58,10 +60,10 @@ export default function ContactsList({friendslist}) {
           <Equipment />
         </Swiper.Item>
         <Swiper.Item>
-          <div>通讯录</div>
+          <Addresslist />
         </Swiper.Item>
         <Swiper.Item>
-          <div>订阅号</div>
+          <Subscription subscription={subscription}/>
         </Swiper.Item>
       </Swiper>
     </>

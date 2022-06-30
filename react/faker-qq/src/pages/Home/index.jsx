@@ -56,7 +56,7 @@ export default function Home() {
       </div>
       <div className="right">
         {/* <span style={{fontSize:'2.5rem',paddingRight:'1rem'}}>+</span> */}
-        <i className="iconfont icon-longmao-" style={{fontSize:'2rem'}}></i>
+        <i className="iconfont icon-longmao-" style={{fontSize:'1.8rem',paddingRight:'0.8rem'}}></i>
         <Popover.Menu
           className="popover"
           actions={actions}
@@ -64,7 +64,8 @@ export default function Home() {
           // onAction={(node) => Toast.show(`选择了 ${node.text}`)}
           trigger="click"
         >
-          <span style={{fontSize:'2.5rem',paddingRight:'-1.3rem'}}>+</span>
+          <i className="iconfont icon-add" style={{fontSize:'1.8rem',marginRight:'-1.6rem'}}></i>
+          {/* <span style={{fontSize:'2.5rem',paddingRight:'-1.3rem'}}>+</span> */}
         </Popover.Menu>
       </div>
       </div>
@@ -75,7 +76,6 @@ export default function Home() {
             style={{ '--background': '#eeeeee' }}
           />
         </Link>
-        
       </div>
       <MessageList message={message}/>
     </Wrapper>

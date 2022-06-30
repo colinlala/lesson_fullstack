@@ -1,30 +1,60 @@
 import React, { useState, useEffect } from "react";
-import { Avatar, Button, Modal, Popover, PullToRefresh, SearchBar,Divider } from "antd-mobile";
+import {
+  Avatar,
+  Button,
+  Modal,
+  Popover,
+  PullToRefresh,
+  SearchBar,
+  Divider,
+  DotLoading,
+} from "antd-mobile";
 import { Link } from "react-router-dom";
 import { Wrapper } from "./style";
-import { getFriendsListRequest } from "@/api/request";
-import { sleep } from 'antd-mobile/es/utils/sleep';
+import {
+  getFriendsListRequest,
+  getSubscriptionListRequest,
+} from "@/api/request";
+import { sleep } from "antd-mobile/es/utils/sleep";
 import SmallList from "./SmallList";
-import ContactsList from './ContactsList'
-
+import ContactsList from "./ContactsList";
 
 function getNextData() {
   const ret = [];
   for (let i = 0; i < 18; i++) {
-      ret.unshift(console.log('刷新好了'));
+    ret.unshift(console.log("刷新好了"));
   }
   return ret;
 }
+const statusRecord = {
+  pulling: "用力拉",
+  canRelease: "松开吧",
+  // refreshing: <SpinLoading color='primary' />,
+  refreshing: (
+    <div style={{ color: "#00b578" }}>
+      <span>死命加载中</span>
+      <DotLoading color="primary" />
+    </div>
+  ),
+  complete: "好啦",
+  // <div style={{ color: '#22968c' }}>
+  //   <span>好啦</span>
+  // </div>,
+};
 
 export default function Contacts() {
   const [data, setData] = useState(() => getNextData());
-  const [friendslist, setFriendslist] = useState([])
+  const [friendslist, setFriendslist] = useState([]);
+  const [subscription, setSubscription] = useState([]);
   useEffect(() => {
     (async () => {
-      let { data: friendsListData } = await getFriendsListRequest()
-      setFriendslist(friendsListData)
-    })()
-  })
+      let { data: friendsListData } = await getFriendsListRequest();
+      let { data: subscriptionListData } = await getSubscriptionListRequest();
+      setFriendslist(friendsListData);
+      setSubscription(subscriptionListData);
+    })();
+  });
+
   return (
     <Wrapper>
       <div className="top">
@@ -40,16 +70,24 @@ export default function Contacts() {
           </div>
         </div>
         <div className="right">
-          <Link to='/asdasdasd'>
-            <i className="iconfont icon-jiaren" style={{fontSize:'1.2rem'}}></i>
+          <Link to="/asdasdasd">
+            <i
+              className="iconfont icon-jiaren"
+              style={{ fontSize: "1.2rem",marginRight:'-1.2rem' }}
+            ></i>
           </Link>
         </div>
       </div>
-      <PullToRefresh onRefresh={async () => {
-                  await sleep(1000);
-                  // await Loading();
-                  setData([...getNextData(), ...data]);
-      }}>
+      <PullToRefresh
+        onRefresh={async () => {
+          await sleep(1000);
+          // await Loading();
+          setData([...getNextData(), ...data]);
+        }}
+        renderText={(status) => {
+          return <div>{statusRecord[status]}</div>;
+        }}
+      >
         <div
           className="bottom_center"
           style={{ background: "#ffffff", padding: "0.5rem 0.5rem" }}
@@ -59,12 +97,14 @@ export default function Contacts() {
             className="searchbar"
             style={{ textDecoration: "none" }}
           >
-            <SearchBar placeholder="搜索" style={{ "--background": "#eeeeee" }} />
+            <SearchBar
+              placeholder="搜索"
+              style={{ "--background": "#eeeeee" }}
+            />
           </Link>
         </div>
         <SmallList />
-        {/* <Divider /> */}
-        <ContactsList friendslist={friendslist}/>
+        <ContactsList friendslist={friendslist} subscription={subscription} />
       </PullToRefresh>
     </Wrapper>
   );

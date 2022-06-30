@@ -44,7 +44,6 @@ export const Wrapper = styled.div`
     }
   .bottom_center{
     .searchbar{
-      
     }
   }
     
