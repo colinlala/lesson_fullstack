@@ -8,6 +8,7 @@ export const Wrapper = styled.div`
       top: 0;
       left: 0;
       background: ${style["theme-color"]};
+      z-index: 1000;
     .left {
       flex: 7;
       .info_img {

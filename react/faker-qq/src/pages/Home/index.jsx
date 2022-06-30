@@ -1,15 +1,12 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 import { Avatar, Button, Modal, Popover, Toast,SearchBar } from "antd-mobile";
 import {Link} from 'react-router-dom'
 // import { Action } from "antd-mobile/es/components/popover";
-import {
-  AntOutline,
-  HandPayCircleOutline,
-  ScanningOutline,
-  TransportQRcodeOutline,
-} from "antd-mobile-icons";
+import { AntOutline,HandPayCircleOutline, ScanningOutline} from "antd-mobile-icons";
 import { Wrapper } from "./style";
 import MessageList from "./MessageList";
+import { getMessageListRequest } from '@/api/request'
+
 
 const actions = [
   { key: "scan", icon: <ScanningOutline />, text: "创建群聊" },
@@ -20,6 +17,13 @@ const actions = [
 ];
 
 export default function Home() {
+  const [message, setMessage] = useState([])
+  useEffect(() => {
+    (async () => {
+      let { data: messageData } = await getMessageListRequest()
+      setMessage(messageData)
+    })()
+  })
   return (
     <Wrapper>
       <div className="top">
@@ -72,7 +76,7 @@ export default function Home() {
         </Link>
         
       </div>
-      <MessageList/>
+      <MessageList message={message}/>
     </Wrapper>
   );
 }
