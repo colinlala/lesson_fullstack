@@ -67,3 +67,25 @@
     - 状态不可直接修改  redux 起因
     - 有法可依   dispatch({type:'',data: })   在action里
     - reducer 根据 type 重新计算 ，状态发生改变，应用在有状态的地方 MVVM
+
+
+- 小型项目没必要用redux，如果足够复杂，模块化reducer迁移到pages相应模块下
+  - pages/store  新的目录结构
+  - store 中央  src/store + 模块化  @pages/store{n}
+
+- 修改状态有固有流程
+  - 属于actionCreators
+  - 一般标配两个action，一个同步的，一个异步的
+  - dispatch 才能触发
+  - action 对象固定格式 {type: }
+  - type 方便我们把action为什么要改变记录下来
+  - 从init到任何action 状态，都是可被追溯的
+  - 数据管理的严谨性
+
+- style-components 
+  - 页面播放歌曲动态高度，props传参   ${函数} 函数的返回值  页面的播放状态
+- 移动端一般，必须better-scroll 生成的scroll组件
+  1. 滚动体验更好
+  2. 下拉刷新，上拉加载更多
+  3. 使用神三元封装的scroll组件
+  4. 移动端加载更多的标配

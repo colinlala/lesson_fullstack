@@ -4,11 +4,8 @@
 // 应用开发分成 UI + 数据管理
 
 import { getBannerRequest,getRankListRequest, getSingerListRequest} from "../api/request"
-
-
 // store  redux defaultState -> action api 
 //                  -> reducer 重新计算 -> 通知connnect UI更新
-
 // action 函数
 export const changeBannerList = (data) => ({
     type:'CHANGE_BANNER',
@@ -22,7 +19,6 @@ export const getBannerList = () => {
         })
     }
 }
-
 
 
 export const changeRankList = (data) => ({
