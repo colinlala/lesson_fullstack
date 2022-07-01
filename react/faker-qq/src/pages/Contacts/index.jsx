@@ -14,6 +14,7 @@ import { Wrapper } from "./style";
 import {
   getFriendsListRequest,
   getSubscriptionListRequest,
+  getGroupListRequest,
 } from "@/api/request";
 import { sleep } from "antd-mobile/es/utils/sleep";
 import SmallList from "./SmallList";
@@ -44,14 +45,17 @@ const statusRecord = {
 
 export default function Contacts() {
   const [data, setData] = useState(() => getNextData());
+  const [groups, setGroups] = useState([]);
   const [friendslist, setFriendslist] = useState([]);
   const [subscription, setSubscription] = useState([]);
   useEffect(() => {
     (async () => {
       let { data: friendsListData } = await getFriendsListRequest();
       let { data: subscriptionListData } = await getSubscriptionListRequest();
+      let { data: groupListData } = await getGroupListRequest();
       setFriendslist(friendsListData);
       setSubscription(subscriptionListData);
+      setGroups(groupListData);
     })();
   });
 
@@ -104,7 +108,7 @@ export default function Contacts() {
           </Link>
         </div>
         <SmallList />
-        <ContactsList friendslist={friendslist} subscription={subscription} />
+        <ContactsList friendslist={friendslist} subscription={subscription} groups={groups}/>
       </PullToRefresh>
     </Wrapper>
   );

@@ -8,3 +8,6 @@ export const getFriendsListRequest = () =>
 
 export const getSubscriptionListRequest = () =>
     axios.get('https://www.fastmock.site/mock/be16eda287b24f69cf9baefad9651667/qq/subscription')
+
+export const getGroupListRequest = () =>
+    axios.get('https://www.fastmock.site/mock/be16eda287b24f69cf9baefad9651667/qq/friends')
