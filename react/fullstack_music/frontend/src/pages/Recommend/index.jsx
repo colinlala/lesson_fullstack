@@ -1,45 +1,53 @@
-import React, { useEffect } from "react";
-import { connect } from "react-redux";
+import React, { useEffect } from 'react'
+import { connect } from 'react-redux'
 import { actionCreators } from './store/index'
-import { getBannerList } from "./store/actionCreators";
 import { Content } from './style'
-import Scroll from '@/components/common/Scroll'
+import Scroll  from '@/components/common/Scroll'
 import Slider from '@/components/slider/'
-
+import RecommendList from '@/components/list/'
+// 延迟加载 滑倒哪里加载哪里
+import { forceCheck } from 'react-lazyload'
+import { EnterLoading } from '@/pages/Singers/style'
+import Loading  from '@/components/common/loading-v2/index'
 
 function Recommend(props) {
-  const { banners, getBannerDataDispatch } = props;
-  let songsCount = 2;
+  const { bannerList, songsCount, recommendList, enterLoading } = props
+  const { getBannerDataDispatch, getRecomendListDispatch } = props
+  // let songsCount = 2;
   useEffect(() => {
+    console.log('?????????????????')
     getBannerDataDispatch();
-  }, []);
+    getRecomendListDispatch();
+  }, [])
   return (
     <Content play={songsCount}>
-      <Scroll className="list">
+      <Scroll className="list" onScroll={forceCheck}>
         <div>
-          <Slider bannerList={banners}>
-
-          </Slider>
+          <Slider bannerList={bannerList}></Slider>
+          <RecommendList recommendList={recommendList}/>
         </div>
       </Scroll>
+      { enterLoading ? <EnterLoading><Loading></Loading></EnterLoading> : null }
     </Content>
   )
 }
-
-// 把rudux中的数据通过mapStateToProps函数映射到此组件
-// 对状态树的读操作
+// state 状态树
 const mapStateToProps = (state) => {
   return {
-    banners: state.recommend.banners,
-  };
-};
-// 
+    enterLoading:state.recommend.enterLoading,
+    bannerList: state.recommend.bannerList,
+    recommendList: state.recommend.recommendList,
+    songsCount: state.player.playList.length
+  }
+}
 const mapDispatchToProps = (dispatch) => {
   return {
     getBannerDataDispatch() {
-      dispatch(actionCreators.getBannerList());
+      dispatch(actionCreators.getBannerList())
     },
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Recommend);
+    getRecomendListDispatch() {
+      dispatch(actionCreators.getRecommendList())
+    }
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Recommend)
