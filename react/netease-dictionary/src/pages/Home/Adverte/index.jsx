@@ -7,9 +7,7 @@ import Swiper from 'swiper'
 
 export default function Adverte() {
   useEffect(() => {
-    // 幻灯片可能用的很多，取第一个类名 home_info_banners swiper-container
     new Swiper('.home_info_banners', {
-      // 自动轮播
       loop: true,
       autoplay: {
         delay: 1000

@@ -5,7 +5,7 @@ import classnames from 'classnames'
 // import { isPathPartlyExisted } from '../../utils'
 
 
-export default function Footer(props) {
+export default function Footer() {
   const { pathname } = useLocation()
   // if(isPathPartlyExisted(pathname)) return 
 

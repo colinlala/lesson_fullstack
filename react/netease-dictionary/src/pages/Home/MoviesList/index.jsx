@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { Wrapper } from './style'
 
 export default function MoviesList({ movies }) {
+    console.log(movies,'------------------------')
     return (
         <Wrapper>
             <div className="waterfall_conter">

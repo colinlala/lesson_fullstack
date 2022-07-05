@@ -9,9 +9,15 @@ import './modules/rem'
 import 'swiper/dist/css/swiper.min.css'
 // inconfont
 import './assets/fonts/iconfont.css'
+import store from './store'
+import { Provider } from 'react-redux'
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
+  <Provider store={store}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </Provider>
+  
 )

@@ -1,10 +1,11 @@
-import axios from 'axios'
+import { axiosInstance } from "./config";
 
 
-export const getBanners = () =>
-    axios.get('https://www.fastmock.site/mock/d42a33041be6d65c4184abbecade8d1c/beers/flter')
+
+export const getBannerRequest = 
+    () => axiosInstance.get('/flter')
 
 
-export const getMovies = () =>
-    axios.get('https://www.fastmock.site/mock/d42a33041be6d65c4184abbecade8d1c/beers/movies')
+export const getMoviesRequest = 
+    () => axiosInstance.get('/movies')
 
