@@ -14,11 +14,11 @@ const groups = Array(26)
     // items: getRandomList(3, 10).map(() => ),
   }));
 
-export default function Friends({ friendslist }) {
+export default function Friends({ friendList }) {
   return (
     <div style={{ height: window.innerHeight }}>
       <IndexBar>
-        {friendslist.map((friend) => {
+        {friendList.map((friend) => {
           return (
             <IndexBar.Panel
               index={friend.nametitle}

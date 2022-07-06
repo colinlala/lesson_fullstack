@@ -1,11 +1,11 @@
 import React,{useState,useEffect} from "react";
-import { Avatar, Button, Modal, Popover, Toast,SearchBar } from "antd-mobile";
+import { Avatar, Button, Modal, Popover,SearchBar } from "antd-mobile";
 import {Link} from 'react-router-dom'
-// import { Action } from "antd-mobile/es/components/popover";
 import { AntOutline,HandPayCircleOutline, ScanningOutline} from "antd-mobile-icons";
 import { Wrapper } from "./style";
 import MessageList from "./MessageList";
-import { getMessageListRequest } from '@/api/request'
+import { actionCreators } from './store/index'
+import { connect } from "react-redux";
 
 
 const actions = [
@@ -16,14 +16,12 @@ const actions = [
   { key: "assistant", icon: <AntOutline />, text: "收付款" },
 ];
 
-export default function Home() {
-  const [message, setMessage] = useState([])
+function Home(props) {
+  const { messages } = props
+  const { getMesageDataDispatch } = props
   useEffect(() => {
-    (async () => {
-      let { data: messageData } = await getMessageListRequest()
-      setMessage(messageData)
-    })()
-  })
+    getMesageDataDispatch()
+  },[])
   return (
     <Wrapper>
       <div className="top">
@@ -77,7 +75,20 @@ export default function Home() {
           />
         </Link>
       </div>
-      <MessageList message={message}/>
+      <MessageList messages={messages}/>
     </Wrapper>
   );
 }
+const mapStateToProps = (state) => {
+  return {
+    messages:state.home.messages,
+  }
+}
+const mapDispatchToProps = (dispatch) => {
+  return {
+    getMesageDataDispatch() {
+      dispatch(actionCreators.getMessageList())
+    },
+  }
+}
+export default connect(mapStateToProps,mapDispatchToProps)(Home)

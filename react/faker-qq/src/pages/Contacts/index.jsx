@@ -1,24 +1,17 @@
 import React, { useState, useEffect } from "react";
 import {
   Avatar,
-  Button,
-  Modal,
-  Popover,
   PullToRefresh,
   SearchBar,
-  Divider,
   DotLoading,
 } from "antd-mobile";
 import { Link } from "react-router-dom";
 import { Wrapper } from "./style";
-import {
-  getFriendsListRequest,
-  getSubscriptionListRequest,
-  getGroupListRequest,
-} from "@/api/request";
 import { sleep } from "antd-mobile/es/utils/sleep";
 import SmallList from "./SmallList";
 import ContactsList from "./ContactsList";
+// import { actionCreators } from './store/index'
+// import { connect } from "react-redux";
 
 function getNextData() {
   const ret = [];
@@ -28,36 +21,32 @@ function getNextData() {
   return ret;
 }
 const statusRecord = {
-  pulling: "用力拉",
-  canRelease: "松开吧",
-  // refreshing: <SpinLoading color='primary' />,
-  refreshing: (
-    <div style={{ color: "#00b578" }}>
+  pulling: 
+    <div style={{ color: '#1c81ed' }}>
+      <span>用力拉呀</span>
+    </div>,
+  canRelease: 
+    <div style={{ color: '#1c81ed' }}>
+      <span>松开吧</span>
+    </div>,
+  refreshing: 
+    <div style={{ color: '#1c81ed' }}>
       <span>死命加载中</span>
-      <DotLoading color="primary" />
-    </div>
-  ),
-  complete: "好啦",
-  // <div style={{ color: '#22968c' }}>
-  //   <span>好啦</span>
-  // </div>,
+      <DotLoading color='primary' />
+    </div>,
+  complete: 
+    <div style={{ color: '#1c81ed' }}>
+      <span>好啦</span>
+    </div>,
 };
 
 export default function Contacts() {
   const [data, setData] = useState(() => getNextData());
-  // const [groups, setGroups] = useState([]);
-  const [friendslist, setFriendslist] = useState([]);
-  // const [subscription, setSubscription] = useState([]);
-  useEffect(() => {
-    (async () => {
-      let { data: friendsListData } = await getFriendsListRequest();
-      // let { data: subscriptionListData } = await getSubscriptionListRequest();
-      // let { data: groupListData } = await getGroupListRequest();
-      setFriendslist(friendsListData);
-      // setSubscription(subscriptionListData);
-      // setGroups(groupListData);
-    })();
-  });
+  // const { friendList } = props
+  // const { getFriendsDataDispatch } = props
+  // useEffect(() => {
+  //   getFriendsDataDispatch()
+  // });
 
   return (
     <Wrapper>
@@ -108,8 +97,21 @@ export default function Contacts() {
           </Link>
         </div>
         <SmallList />
-        <ContactsList friendslist={friendslist}/>
+        <ContactsList/>
       </PullToRefresh>
     </Wrapper>
   );
 }
+// const mapStateToProps = (state) => {
+//   return {
+//     friendList:state.contacts.friendList,
+//   }
+// }
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     getFriendsDataDispatch() {
+//       dispatch(actionCreators.getFriendsList())
+//     },
+//   }
+// }
+// export default connect(mapStateToProps,mapDispatchToProps)(Contacts)

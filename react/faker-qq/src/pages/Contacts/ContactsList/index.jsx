@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState,useEffect } from "react";
 import { Tabs, Swiper } from "antd-mobile";
 import {Wrapper} from './style'
 import Friends from "./Friends";
@@ -7,6 +7,8 @@ import Groupchat from './Groupchat'
 import Equipment from "./Equipment";
 import Addresslist from "./Addresslist";
 import Subscription from "./Subscription";
+import { actionCreators } from './store/index'
+import { connect } from "react-redux";
 
 const tabItems = [
   { key: "friends", title: "好友" },
@@ -17,10 +19,14 @@ const tabItems = [
   { key: "subscription", title: "订阅号" },
 ];
 
-export default function ContactsList({friendslist}) {
+function ContactsList(props) {
   const swiperRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(1);
-
+  const { friendList } = props
+  const { getFriendsDataDispatch } = props
+  useEffect(() => {
+    getFriendsDataDispatch()
+  });
   return (
     <Wrapper>
       <Tabs
@@ -50,7 +56,7 @@ export default function ContactsList({friendslist}) {
         }}
       >
         <Swiper.Item>
-          <Friends friendslist={friendslist}/>
+          <Friends friendList={friendList}/>
         </Swiper.Item>
         <Swiper.Item>
           <Grouping />
@@ -71,3 +77,17 @@ export default function ContactsList({friendslist}) {
     </Wrapper>
   );
 }
+
+const mapStateToProps = (state) => {
+  return {
+    friendList:state.contacts.friendList,
+  }
+}
+const mapDispatchToProps = (dispatch) => {
+  return {
+    getFriendsDataDispatch() {
+      dispatch(actionCreators.getFriendsList())
+    },
+  }
+}
+export default connect(mapStateToProps,mapDispatchToProps)(ContactsList)

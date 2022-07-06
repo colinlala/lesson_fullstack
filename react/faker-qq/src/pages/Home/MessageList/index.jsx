@@ -41,7 +41,7 @@ const statusRecord = {
     </div>,
 };
 
-export default function MessageList({ message }) {
+export default function MessageList({ messages }) {
   const [data, setData] = useState(() => getNextData());
   const [data2, setData2] = useState([]);
   const [hasMore, setHasMore] = useState(true);
@@ -88,7 +88,7 @@ export default function MessageList({ message }) {
             "--border-bottom": "none",
           }}
         >
-          {message.map((item) => (
+          {messages.map((item) => (
             <SwipeAction key={item.id} rightActions={rightActions}>
               <List.Item
                 key={item.id}
