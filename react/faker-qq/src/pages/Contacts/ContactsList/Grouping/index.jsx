@@ -5,7 +5,7 @@ import {  AddOutline, MinusOutline, } from 'antd-mobile-icons';
 
 
 
-export default function Grouping({groups}) {
+export default function Grouping() {
   // const isTb = (titles) =>{
   //   let arr = groups.map(item => item.group)
   //   for(let i of arr){

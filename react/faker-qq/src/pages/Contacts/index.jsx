@@ -45,17 +45,17 @@ const statusRecord = {
 
 export default function Contacts() {
   const [data, setData] = useState(() => getNextData());
-  const [groups, setGroups] = useState([]);
+  // const [groups, setGroups] = useState([]);
   const [friendslist, setFriendslist] = useState([]);
-  const [subscription, setSubscription] = useState([]);
+  // const [subscription, setSubscription] = useState([]);
   useEffect(() => {
     (async () => {
       let { data: friendsListData } = await getFriendsListRequest();
-      let { data: subscriptionListData } = await getSubscriptionListRequest();
-      let { data: groupListData } = await getGroupListRequest();
+      // let { data: subscriptionListData } = await getSubscriptionListRequest();
+      // let { data: groupListData } = await getGroupListRequest();
       setFriendslist(friendsListData);
-      setSubscription(subscriptionListData);
-      setGroups(groupListData);
+      // setSubscription(subscriptionListData);
+      // setGroups(groupListData);
     })();
   });
 
@@ -108,7 +108,7 @@ export default function Contacts() {
           </Link>
         </div>
         <SmallList />
-        <ContactsList friendslist={friendslist} subscription={subscription} groups={groups}/>
+        <ContactsList friendslist={friendslist}/>
       </PullToRefresh>
     </Wrapper>
   );

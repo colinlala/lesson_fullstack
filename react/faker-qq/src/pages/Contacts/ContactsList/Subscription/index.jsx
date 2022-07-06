@@ -15,7 +15,7 @@ import { IndexBar, List, Image } from "antd-mobile";
 //   }));
 
 
-export default function Subscription({ subscription }) {
+export default function Subscription() {
   return (
     // <div style={{ height: window.innerHeight }}>
     //   <IndexBar>

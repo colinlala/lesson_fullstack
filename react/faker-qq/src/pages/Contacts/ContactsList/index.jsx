@@ -1,12 +1,12 @@
 import React, { useRef, useState } from "react";
 import { Tabs, Swiper } from "antd-mobile";
 import {Wrapper} from './style'
-import Friends from "../Friends";
-import Grouping from "../Grouping";
-import Groupchat from '../Groupchat'
-import Equipment from "../Equipment";
-import Addresslist from "../Addresslist";
-import Subscription from "../Subscription";
+import Friends from "./Friends";
+import Grouping from "./Grouping";
+import Groupchat from './Groupchat'
+import Equipment from "./Equipment";
+import Addresslist from "./Addresslist";
+import Subscription from "./Subscription";
 
 const tabItems = [
   { key: "friends", title: "好友" },
@@ -17,7 +17,7 @@ const tabItems = [
   { key: "subscription", title: "订阅号" },
 ];
 
-export default function ContactsList({friendslist,subscription,groups}) {
+export default function ContactsList({friendslist}) {
   const swiperRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(1);
 
@@ -53,7 +53,7 @@ export default function ContactsList({friendslist,subscription,groups}) {
           <Friends friendslist={friendslist}/>
         </Swiper.Item>
         <Swiper.Item>
-          <Grouping groups={groups}/>
+          <Grouping />
         </Swiper.Item>
         <Swiper.Item>
           <Groupchat />
@@ -65,7 +65,7 @@ export default function ContactsList({friendslist,subscription,groups}) {
           <Addresslist />
         </Swiper.Item>
         <Swiper.Item>
-          <Subscription subscription={subscription}/>
+          <Subscription />
         </Swiper.Item>
       </Swiper>
     </Wrapper>
