@@ -7,35 +7,35 @@ import {  AddOutline, MinusOutline, } from 'antd-mobile-icons';
 
 export default function Grouping() {
   // const isTb = (titles) =>{
-  //   let arr = groups.map(item => item.group)
-  //   for(let i of arr){
-  //     if(arr.group==titles){
-  //       return (
-  //         <List.Item 
-  //                           key={arr.id} 
-  //                           clickable 
-  //                           arrow={false}
-  //                           prefix={
-  //                             <Image
-  //                                 src={arr.img}
-  //                                 style={{ borderRadius: 20 }}
-  //                                 fit="cover"
-  //                                 width={40}
-  //                                 height={40}
-  //                             />
-  //                           }
-  //                           description={arr.description}
-  //                       >
-  //                       {arr.name}
-  //         </List.Item> 
-  //       )
-  //     }
-  //   }
+  //   groups.filter(item => {
+  //     return (item.group == titles)
+  //   }).map(item => {
+  //     return (
+  //       <List.Item 
+  //         key={arr.id} 
+  //         clickable 
+  //         arrow={false}
+  //         prefix={
+  //           <Image
+  //               src={arr.img}
+  //               style={{ borderRadius: 20 }}
+  //               fit="cover"
+  //               width={40}
+  //               height={40}
+  //           />
+  //         }
+  //         description={arr.description}
+  //       >
+  //         {arr.name}
+  //       </List.Item> 
+  //     )
+  //   })
   // }
   return (
     <div>
       <Collapse arrow={active => (active ? <MinusOutline /> : <AddOutline />)}>
           <Collapse.Panel key='1' title='特别关心' arrow={active => active ? <i className="iconfont icon-xiasanjiaoxing" /> : <i className="iconfont icon-yousanjiaoxing" />}>
+            {/* {isTb('特别关心')} */}
             <List style={{ '--border-bottom': 'none','--border-inner': 'none','--border-top': 'none' }}>
               <List.Item 
                 key="1" 

@@ -10,8 +10,6 @@ import { Wrapper } from "./style";
 import { sleep } from "antd-mobile/es/utils/sleep";
 import SmallList from "./SmallList";
 import ContactsList from "./ContactsList";
-// import { actionCreators } from './store/index'
-// import { connect } from "react-redux";
 
 function getNextData() {
   const ret = [];
@@ -42,11 +40,6 @@ const statusRecord = {
 
 export default function Contacts() {
   const [data, setData] = useState(() => getNextData());
-  // const { friendList } = props
-  // const { getFriendsDataDispatch } = props
-  // useEffect(() => {
-  //   getFriendsDataDispatch()
-  // });
 
   return (
     <Wrapper>
@@ -74,7 +67,6 @@ export default function Contacts() {
       <PullToRefresh
         onRefresh={async () => {
           await sleep(1000);
-          // await Loading();
           setData([...getNextData(), ...data]);
         }}
         renderText={(status) => {
@@ -102,16 +94,4 @@ export default function Contacts() {
     </Wrapper>
   );
 }
-// const mapStateToProps = (state) => {
-//   return {
-//     friendList:state.contacts.friendList,
-//   }
-// }
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     getFriendsDataDispatch() {
-//       dispatch(actionCreators.getFriendsList())
-//     },
-//   }
-// }
-// export default connect(mapStateToProps,mapDispatchToProps)(Contacts)
+

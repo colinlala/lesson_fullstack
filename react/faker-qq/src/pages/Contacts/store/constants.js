@@ -1,1 +1,0 @@
-export const CHANGE_FRIENDS = 'CHANGE_FRIENDS';
