@@ -18,9 +18,10 @@ const actions = [
 
 function Home(props) {
   const { messages } = props
-  const { getMesageDataDispatch } = props
+  const { getMessageDataDispatch } = props
+  const [visible, setVisible] = useState(false)
   useEffect(() => {
-    getMesageDataDispatch()
+    getMessageDataDispatch()
   },[])
   return (
     <Wrapper>
@@ -36,14 +37,11 @@ function Home(props) {
           <span>路旁的彩虹你别采</span>
           <div className="modal">
             <Button
-              // block
-              // color="orange"
               style={{'--background-color':'#eeeeee'}}
               onClick={() => {
                 Modal.alert({
                   content: "点击遮罩关闭",
                   closeOnMaskClick: true,
-                  
                 });
               }}
             >
@@ -53,7 +51,6 @@ function Home(props) {
         </div>
       </div>
       <div className="right">
-        {/* <span style={{fontSize:'2.5rem',paddingRight:'1rem'}}>+</span> */}
         <i className="iconfont icon-longmao-" style={{fontSize:'1.8rem',paddingRight:'0.8rem'}}></i>
         <Popover.Menu
           className="popover"
@@ -63,7 +60,6 @@ function Home(props) {
           trigger="click"
         >
           <i className="iconfont icon-add" style={{fontSize:'1.8rem',marginRight:'-1.6rem'}}></i>
-          {/* <span style={{fontSize:'2.5rem',paddingRight:'-1.3rem'}}>+</span> */}
         </Popover.Menu>
       </div>
       </div>
@@ -86,7 +82,7 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch) => {
   return {
-    getMesageDataDispatch() {
+    getMessageDataDispatch() {
       dispatch(actionCreators.getMessageList())
     },
   }

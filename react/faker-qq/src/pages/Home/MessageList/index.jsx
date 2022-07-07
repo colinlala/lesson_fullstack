@@ -11,7 +11,7 @@ import {
 } from "antd-mobile";
 import { sleep } from "antd-mobile/es/utils/sleep";
 // import { DragDropContext, Draggable, Droppable, } from 'react-beautiful-dnd';
-
+import {Wrapper} from './style'
 function getNextData() {
   const ret = [];
   for (let i = 0; i < 18; i++) {
@@ -71,7 +71,7 @@ export default function MessageList({ messages }) {
   }
 
   return (
-    <>
+    <Wrapper>
       <PullToRefresh
         onRefresh={async () => {
           await sleep(1000);
@@ -129,6 +129,6 @@ export default function MessageList({ messages }) {
         </List>
       </PullToRefresh>
       {/* <InfiniteScroll loadMore={loadMore} hasMore={hasMore} /> */}
-    </>
+    </Wrapper>
   );
 }
