@@ -122,3 +122,109 @@
 - 图片延迟加载
   1. react-lazyload 声明式组件  LazyLoad + placeholder 包住原来的图片
   2. Scroll onScroll react-lazyload 去 forceCheck
+
+
+## 复杂组件业务分析
+
+  1. 这个阶段练习复杂组件
+    - 搜索
+    - 登录
+  2. redux的设计思路
+    - api请求的
+    - 跨模块共享状态
+  3. 热词
+    - 建议
+
+
+- 神三元 react 风格
+  1. 命名风格：
+    - api 请求 getXXXRequest
+    - 页面级别组件中 getXXXDispatch
+    - action 异步 getXXX
+    - action 同步 changeXXX
+    - actionTypes SET_XXX
+  2. redux 流程风格
+    - 分析页面，看透业务，网络请求和状态 XHR
+    - mapStateToProps 需要哪些状态
+    - store 模块 defaultState
+    - reducer case 修改
+    - constants写完了
+    - actionCreators
+    - api 填写
+
+- CSSTransition 页面交互组件
+  1. 给页面的路由切换带来动画效果
+  2. 来自react-transition-group
+  3. in  + 私有的useState（show）
+    - 初始时 show={false} 内存
+    - useEffect mounted 浏览器上
+  4. classname fly
+  5. fly-enter 先立马上
+    - opacity:0
+    - transfrom:translate3d(100%,0,0)   一小会，因为transition需要，transition：all .3s
+    - opacity:1
+    - transfrom:translate3d(0%,0,0)
+  6. fly-exit
+    - fly-exit-active
+  7. transform-origin
+  8. GPU加速
+  9. 页面后退按钮只需要setShow（false) , CSSTransition 组件的 onExit 接管
+
+- 界面技巧
+  1. 带有后退、第二按钮 页面 弹性布局
+    - flex
+    - align-items:center
+    - margin: 0 0.3rem
+  2. input 搜索用户体验
+    - focus 自动聚焦
+    - useRef() dom关联对象  {current：null}
+    - jsx dom ref={refObj}
+    - useEffect current 被关联成功了 DomElement
+    - refObject.current.focus()
+  3. 清除能力
+    - style-loader 行内样式 、 display:动态的
+
+
+- useMemo 用法 吹牛指南
+  1. input change 事件需要 debounce 的（utils）
+  2. debounce 的计算结果 useMemo 的前提条件 缓存计算结果
+  3. react 父组件有 MVVM 更新，通知所有子组件更新
+  4. 组件更新本质，组件是一个函数，函数重复运行，jsx重新运行
+  5. debounce只需要计算一次，结果缓存就好，没必要重新运算
+  6. 如useEffect 如果万一计算过时了呢？
+    - 第二个参数 [handleQuery]  三元表达对useMemo理解的地方
+
+- 内外双修 query
+  - 页面级别组件 query 为 action display 做准备
+  - useEffect query  去 dispatch action
+  - input 子组件  query debounce useMemo
+  - useEffect query 向父组件报告通信
+
+- hooks 是react 编程风格
+  1. use开头的函数式编程风格
+  2. 这种面向对象编程
+    ```js
+    class Search extends Components {
+      constructor(){
+
+      }
+      render(){
+        return(
+          ...jsx
+        )
+      }
+    }
+    ```
+    - 缺点：为了面向对象而面向对象（很多形式主义代码）
+  3. useState useEffect useMemo useCallback...
+    - 函数 带来快捷功能
+  4. useEffect 高级使用技巧和模板
+    - 一个组件内可以多次使用useEffect
+    - useEffect 可以匹配多个生命周期
+      - mounted、updated、unmounted
+    - search 中 分而治之  逻辑条理清晰
+      - mounted 生命周期完成 input ref useRef 聚焦功能  第一个
+      - query 改变的时候 与父组件通信 useEffect(...,[query])
+      - input value 是可以被父组件管理的，newQuery
+      - 发生改变，重新运行
+  5. useMemo
