@@ -27,11 +27,25 @@
       "unicode_decimal": 58900
     },
     {
-      "icon_id": "102434125",
-      "name": "勾选",
-      "font_class": "gouxuan",
-      "unicode": "e70f",
-      "unicode_decimal": 59151
+      "icon_id": "102434599",
+      "name": "20 龙猫-01",
+      "font_class": "longmao-",
+      "unicode": "e621",
+      "unicode_decimal": 58913
+    },
+    {
+      "icon_id": "102434600",
+      "name": "对话气泡",
+      "font_class": "duihuaqipao",
+      "unicode": "e61f",
+      "unicode_decimal": 58911
+    },
+    {
+      "icon_id": "102896768",
+      "name": "设置",
+      "font_class": "shezhi",
+      "unicode": "e8b7",
+      "unicode_decimal": 59575
     },
     {
       "icon_id": "102363034",
@@ -48,32 +62,18 @@
       "unicode_decimal": 58982
     },
     {
+      "icon_id": "102363036",
+      "name": "more",
+      "font_class": "more",
+      "unicode": "e679",
+      "unicode_decimal": 59001
+    },
+    {
       "icon_id": "102363037",
       "name": "user",
       "font_class": "user",
       "unicode": "e682",
       "unicode_decimal": 59010
-    },
-    {
-      "icon_id": "3879804",
-      "name": "20 龙猫-01",
-      "font_class": "longmao-",
-      "unicode": "e620",
-      "unicode_decimal": 58912
-    },
-    {
-      "icon_id": "5203239",
-      "name": "对话气泡",
-      "font_class": "duihuaqipao",
-      "unicode": "e61e",
-      "unicode_decimal": 58910
-    },
-    {
-      "icon_id": "17883979",
-      "name": "剪短头发",
-      "font_class": "jianduantoufa",
-      "unicode": "e6d1",
-      "unicode_decimal": 59089
     }
   ]
 }

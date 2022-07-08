@@ -17,23 +17,27 @@ export const Wrapper = styled.div`
             padding-left: 0.43rem;
         }
         .top_center{
-            flex: 1;
-            /* justify-content: center; */
-            align-items: center;
-            display: flex;
-            font-size: 1.2rem;
-            padding-left: 7rem;
-            font-weight: 600;
+            /* flex: 1; */
+            /* align-items: center; */
+            /* display: flex; */
+            /* float: left; */
+            width: 15rem;
+            font-size: ${style["icon-size-mini"]};
+            padding-left: 1rem;
+            font-weight: ${style["font-weight-l"]};
         }
         .top_right{
             width: 5rem;
             display: flex;
+            flex: 1;
             justify-content: space-around;
-            /* div{
+            div{
                 i{
-                    font-size: 0.3rem;
+                    font-size: ${style["icon-size-s"]};
+                    font-weight: ${style["font-weight-s"]};
+                    margin-right: -2rem;
                 }
-            } */
+            }
         }
     }
 `;

@@ -17,22 +17,21 @@ export const Wrapper = styled.div`
             padding-left: 0.43rem;
         }
         .top_center{
-            flex: 1;
-            /* justify-content: center; */
-            align-items: center;
-            display: flex;
-            font-size: 1.2rem;
-            padding-left: 7rem;
-            font-weight: 600;
+            width: 15rem;
+            font-size: ${style["icon-size-mini"]};
+            padding-left: 1rem;
+            font-weight: ${style["font-weight-l"]};
         }
         .top_right{
             width: 5rem;
             display: flex;
+            flex: 1;
             justify-content: space-around;
             div{
                 i{
-                    font-size: 0.6rem;
-                    font-weight: 500;
+                    font-size: ${style["icon-size-m"]};
+                    font-weight: ${style["font-weight-s"]};
+                    margin-right: -2rem;
                 }
             }
         }

@@ -27,5 +27,10 @@ export const FooterWrapper=styled.div`
         i{
             font-size:1.5rem;
         }
+        .num{
+            position: absolute;
+            top: -0.05rem;
+            left: 4.2rem;
+        }
     }
 `

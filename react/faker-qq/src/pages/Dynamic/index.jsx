@@ -6,8 +6,14 @@ import {
   List, 
 } from "antd-mobile";
 import {
-  UnorderedListOutline,
-  PayCircleOutline,
+  StarOutline,
+  GlobalOutline,
+  VideoOutline,
+  AppstoreOutline,
+  MessageOutline,
+  EnvironmentOutline,
+  PicturesOutline,
+  PlayOutline,
 } from 'antd-mobile-icons'
 import {Link} from 'react-router-dom'
 
@@ -27,16 +33,13 @@ export default function Dynamic() {
         </div>
         <div className="top_right">
           <div>
-            <i className="iconfont icon-add" style={{fontSize:'1.8rem'}}></i>
-          </div>
-          <div>
-            <i className="iconfont icon-add" style={{fontSize:'1.8rem'}}></i>
+            <i className="iconfont icon-shezhi"></i>
           </div>
         </div>
       </div>           
       <div
           className="bottom_center"
-          style={{ background: "#ffffff", padding: "0.5rem 0.5rem" }}
+          style={{ background: "white", padding: "0.5rem 0.5rem" }}
         >
           <Link
             to="/adada"
@@ -45,7 +48,7 @@ export default function Dynamic() {
           >
             <SearchBar
               placeholder="搜索"
-              style={{ "--background": "#eeeeee" }}
+              style={{ "--background": "rgb(245, 246, 249)" }}
             />
           </Link>
       </div>
@@ -56,10 +59,10 @@ export default function Dynamic() {
             "--border-bottom": "none",
           }}
         >
-          <List.Item prefix={<UnorderedListOutline />} onClick={() => {}}>
+          <List.Item prefix={<StarOutline />} onClick={() => {}}>
             好友动态
           </List.Item>
-          <List.Item prefix={<PayCircleOutline />} onClick={() => {}}>
+          <List.Item prefix={<GlobalOutline />} onClick={() => {}}>
             小世界
           </List.Item>
         </List>
@@ -71,7 +74,7 @@ export default function Dynamic() {
               "--border-bottom": "none",
             }}
         >
-          <List.Item prefix={<UnorderedListOutline />} onClick={() => {}}>
+          <List.Item prefix={<EnvironmentOutline />} onClick={() => {}}>
             附近
           </List.Item>
         </List>
@@ -83,19 +86,19 @@ export default function Dynamic() {
                 "--border-bottom": "none",
               }}
         >
-          <List.Item prefix={<UnorderedListOutline />} onClick={() => {}}>
-            小窝
+          <List.Item prefix={<PicturesOutline />} onClick={() => {}}>
+            相册
           </List.Item>
-          <List.Item prefix={<UnorderedListOutline />} onClick={() => {}}>
-            结伴（测试版）
+          <List.Item prefix={<PlayOutline />} onClick={() => {}}>
+            微视
           </List.Item>
-          <List.Item prefix={<UnorderedListOutline />} onClick={() => {}}>
-            坦白说
+          <List.Item prefix={<MessageOutline />} onClick={() => {}}>
+            说说
           </List.Item>
-          <List.Item prefix={<UnorderedListOutline />} onClick={() => {}}>
-            运动
+          <List.Item prefix={<VideoOutline />} onClick={() => {}}>
+            直播
           </List.Item>
-          <List.Item prefix={<UnorderedListOutline />} onClick={() => {}}>
+          <List.Item prefix={<AppstoreOutline />} onClick={() => {}}>
             更多
           </List.Item>
         </List>

@@ -6,6 +6,8 @@ import { Wrapper } from "./style";
 import MessageList from "./MessageList";
 import { actionCreators } from './store/index'
 import { connect } from "react-redux";
+import Scroll  from '@/components/common/Scroll'
+import { forceCheck } from 'react-lazyload'
 
 
 const actions = [
@@ -37,7 +39,7 @@ function Home(props) {
           <span>路旁的彩虹你别采</span>
           <div className="modal">
             <Button
-              style={{'--background-color':'#eeeeee'}}
+              style={{'--background-color':'rgb(245, 246, 249)'}}
               onClick={() => {
                 Modal.alert({
                   content: "点击遮罩关闭",
@@ -51,7 +53,7 @@ function Home(props) {
         </div>
       </div>
       <div className="right">
-        <i className="iconfont icon-longmao-" style={{fontSize:'1.8rem',paddingRight:'0.8rem'}}></i>
+        <i className="iconfont icon-longmao-" ></i>
         <Popover.Menu
           className="popover"
           actions={actions}
@@ -59,19 +61,23 @@ function Home(props) {
           // onAction={(node) => Toast.show(`选择了 ${node.text}`)}
           trigger="click"
         >
-          <i className="iconfont icon-add" style={{fontSize:'1.8rem',marginRight:'-1.6rem'}}></i>
+          <i className="iconfont icon-add"></i>
         </Popover.Menu>
       </div>
       </div>
-      <div className="bottom_center" style={{ background: '#ffffff' ,padding:'0.5rem 0.5rem'}}>
+      <div className="bottom_center" style={{ background: 'white' ,padding:'0.5rem 0.5rem'}}>
         <Link to='/adada' className="searchbar" style={{textDecoration: 'none'}}>
           <SearchBar
             placeholder='搜索'
-            style={{ '--background': '#eeeeee' }}
+            style={{ '--background': 'rgb(245, 246, 249)' }}
           />
         </Link>
       </div>
-      <MessageList messages={messages}/>
+      <Scroll className="list" onScroll={forceCheck}>
+        <div>
+          <MessageList messages={messages}/>
+        </div>
+      </Scroll>
     </Wrapper>
   );
 }

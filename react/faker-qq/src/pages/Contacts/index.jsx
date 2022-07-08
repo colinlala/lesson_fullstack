@@ -55,7 +55,7 @@ export default function Contacts() {
         </div>
         <div className="top_right">
           <div>
-            <i className="iconfont icon-jiaren" style={{fontSize:'1.2rem',paddingRight:'-1rem',fontWeight:'600'}}></i>
+            <i className="iconfont icon-jiaren"></i>
           </div>
         </div>
       </div>      
@@ -70,7 +70,7 @@ export default function Contacts() {
       >
         <div
           className="bottom_center"
-          style={{ background: "#ffffff", padding: "0.5rem 0.5rem" }}
+          style={{ background: "white", padding: "0.5rem 0.5rem" }}
         >
           <Link
             to="/adada"
@@ -79,7 +79,7 @@ export default function Contacts() {
           >
             <SearchBar
               placeholder="搜索"
-              style={{ "--background": "#eeeeee" }}
+              style={{ "--background": "rgb(245, 246, 249)" }}
             />
           </Link>
         </div>

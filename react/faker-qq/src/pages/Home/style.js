@@ -19,7 +19,7 @@ export const Wrapper = styled.div`
         float: left;
         margin: 1rem 0.3rem 0.1rem;
         span {
-          font-weight: 900;
+          font-weight: ${style["font-weight-l"]};
           font-size: 1rem;
         }
         .modal {
@@ -37,9 +37,17 @@ export const Wrapper = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
-        
-        .popover{ 
+        i{
+          font-size: ${style["icon-size-l"]};
+          font-weight: ${style["font-weight-s"]};
         }
+        .icon-longmao-{ 
+            padding-right: 0.8rem;
+        }
+        .icon-add{
+            margin-right: -1.6rem;
+        }
+        
       }
     }
   .bottom_center{

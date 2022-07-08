@@ -16,7 +16,7 @@ const groups = Array(26)
 
 export default function Friends({ friendList }) {
   return (
-    <div style={{ height: window.innerHeight }}>
+    <div style={{ height: window.innerHeight,paddingBottom:'2.9rem' }}>
       <IndexBar>
         {friendList.map((friend) => {
           return (

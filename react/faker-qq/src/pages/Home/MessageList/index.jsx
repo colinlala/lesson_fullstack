@@ -11,7 +11,10 @@ import {
 } from "antd-mobile";
 import { sleep } from "antd-mobile/es/utils/sleep";
 // import { DragDropContext, Draggable, Droppable, } from 'react-beautiful-dnd';
-import {Wrapper} from './style'
+import { Wrapper } from "./style";
+import Scroll from "@/components/common/Scroll";
+import { forceCheck } from "react-lazyload";
+
 function getNextData() {
   const ret = [];
   for (let i = 0; i < 18; i++) {
@@ -21,31 +24,34 @@ function getNextData() {
 }
 
 const statusRecord = {
-  pulling: 
-    <div style={{ color: '#1c81ed' }}>
+  pulling: (
+    <div style={{ color: "#1c81ed" }}>
       <span>用力拉呀</span>
-    </div>,
-  canRelease: 
-    <div style={{ color: '#1c81ed' }}>
+    </div>
+  ),
+  canRelease: (
+    <div style={{ color: "#1c81ed" }}>
       <span>松开吧</span>
-    </div>,
-  // refreshing: <SpinLoading color='primary' />,
-  refreshing: 
-    <div style={{ color: '#1c81ed' }}>
+    </div>
+  ),
+  refreshing: (
+    <div style={{ color: "#1c81ed" }}>
       <span>死命加载中</span>
-      <DotLoading color='primary' />
-    </div>,
-  complete: 
-    <div style={{ color: '#1c81ed' }}>
+      <DotLoading color="primary" />
+    </div>
+  ),
+  complete: (
+    <div style={{ color: "#1c81ed" }}>
       <span>好啦</span>
-    </div>,
+    </div>
+  ),
 };
 
 export default function MessageList({ messages }) {
   const [data, setData] = useState(() => getNextData());
   const [data2, setData2] = useState([]);
   const [hasMore, setHasMore] = useState(true);
-  // const items = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+
   const rightActions = [
     {
       key: "pin",
@@ -72,62 +78,69 @@ export default function MessageList({ messages }) {
 
   return (
     <Wrapper>
-      <PullToRefresh
-        onRefresh={async () => {
-          await sleep(1000);
-          setData([...getNextData(), ...data]);
-        }}
-        renderText={(status) => {
-          return <div>{statusRecord[status]}</div>;
-        }}
-      >
-        <List
-          style={{
-            "--border-top": "none",
-            "--border-inner": "none",
-            "--border-bottom": "none",
-          }}
-        >
-          {messages.map((item) => (
-            <SwipeAction key={item.id} rightActions={rightActions}>
-              <List.Item
-                key={item.id}
-                clickable
-                arrow={false}
-                // 列表项左侧
-                prefix={
-                  <Image
-                    src={item.img}
-                    style={{ borderRadius: 20 }}
-                    fit="cover"
-                    width={40}
-                    height={40}
-                  />
-                }
-                // 右侧
-                extra={
-                  <div
-                    className="right"
-                    style={{
-                      display: "flex",
-                      flexDirection: "column",
-                      alignItems: "center",
-                    }}
+      {/* <Scroll className="list" onScroll={forceCheck}>
+        <div> */}
+          <PullToRefresh
+            onRefresh={async () => {
+              await sleep(1000);
+              setData([...getNextData(), ...data]);
+            }}
+            renderText={(status) => {
+              return <div>{statusRecord[status]}</div>;
+            }}
+          >
+            <List
+              style={{
+                "--border-top": "none",
+                "--border-inner": "none",
+                "--border-bottom": "none",
+              }}
+            >
+              {messages.map((item) => (
+                <SwipeAction key={item.id} rightActions={rightActions}>
+                  <List.Item
+                    key={item.id}
+                    clickable
+                    arrow={false}
+                    // 列表项左侧
+                    prefix={
+                      <Image
+                        src={item.img}
+                        style={{ borderRadius: 20 }}
+                        fit="cover"
+                        width={40}
+                        height={40}
+                      />
+                    }
+                    // 右侧
+                    extra={
+                      <div
+                        className="right"
+                        style={{
+                          display: "flex",
+                          flexDirection: "column",
+                          alignItems: "center",
+                        }}
+                      >
+                        <span style={{ marginBottom: "0.5rem" }}>
+                          {item.time}
+                        </span>
+                        <div>
+                          <Badge content={item.nums} />
+                        </div>
+                      </div>
+                    }
+                    description={item.description}
                   >
-                    <span style={{ marginBottom: "0.5rem" }}>{item.time}</span>
-                    <div>
-                      <Badge content={item.nums} />
-                    </div>
-                  </div>
-                }
-                description={item.description}
-              >
-                {item.name}
-              </List.Item>
-            </SwipeAction>
-          ))}
-        </List>
-      </PullToRefresh>
+                    {item.name}
+                  </List.Item>
+                </SwipeAction>
+              ))}
+            </List>
+          </PullToRefresh>
+        {/* </div>
+      </Scroll> */}
+
       {/* <InfiniteScroll loadMore={loadMore} hasMore={hasMore} /> */}
     </Wrapper>
   );
