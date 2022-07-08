@@ -228,3 +228,22 @@
       - input value 是可以被父组件管理的，newQuery
       - 发生改变，重新运行
   5. useMemo
+
+- styled-component 2.0阶段
+  1. 接受props的，并在css中动态输出
+    - 和行内样式一样的效果
+  2. 是否要构建多个样式组件
+    - styled-component 支持嵌套的
+    - 如果样式有复用的需要 List ListItem
+  3. 当有了css不具备的变量、嵌套模块化等功能
+    - 当styled-component 方便复用，多写样式组件，少写UI组件（大部分的UI组件业务简单）
+  4. 项目风格主题，文件可以参考神三元的global-style.js
+
+- 热搜 hotkey 绝对定位
+  - show 切换 不会影响正常文档流
+
+- 搜索 对歌手、专辑、歌单提供列表，模糊查询
+  1. 接口数据
+    - 接口文档 /search/suggest?keywords=${query}
+  2. 推荐
+  3. 页面级别组件，比较长的，jsx的函数模块化

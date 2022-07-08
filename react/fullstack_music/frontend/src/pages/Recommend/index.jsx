@@ -15,7 +15,6 @@ function Recommend(props) {
   const { getBannerDataDispatch, getRecomendListDispatch } = props
   // let songsCount = 2;
   useEffect(() => {
-    console.log('?????????????????')
     getBannerDataDispatch();
     getRecomendListDispatch();
   }, [])

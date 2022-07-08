@@ -34,32 +34,34 @@ export const Container = styled.div`
   }
 `
 
-// export const ShortcutWrapper = styled.div`
-//   position: absolute;
-//   top: 40px;
-//   bottom: 0;
-//   width: 100%;
-//   display: ${props => props.show ? "": "none"};
-// `
+export const ShortcutWrapper = styled.div`
+  /* 定位给后面呼吸灯提供 */
+  position: absolute;
+  top: 40px;
+  bottom: 0;
+  width: 100%;
+  display: ${props => props.show ? "": "none"};
+`
 
-// export const HotKey = styled.div`
-//   margin: 0 20px 20px 20px;
-//   .title{
-//     padding-top: 35px;
-//     margin-bottom: 20px;
-//     font-size: ${style["font-size-m"]};
-//     color: ${style["font-color-desc-v2"]};
-//   }
-//   .item{
-//     display: inline-block;
-//     padding: 5px 10px;
-//     margin: 0 20px 10px 0;
-//     border-radius: 6px;
-//     background: ${style["highlight-background-color"]};
-//     font-size: ${style["font-size-m"]};
-//     color: ${style["font-color-desc"]};
-//   }
-// `
+// 样式组件可以提供可复用的样式
+export const Hotkey = styled.div`
+  margin: 0 1rem 1rem 1rem;
+  .title{
+    padding-top: 1.75rem;
+    margin-bottom: 1rem;
+    font-size: ${style["font-size-m"]};
+    color: ${style["font-color-desc-v2"]};
+  }
+  .item{
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    margin: 0 1rem 0.5rem 0;
+    border-radius: 0.3rem;
+    background: ${style["highlight-background-color"]};
+    font-size: ${style["font-size-m"]};
+    color: ${style["font-color-desc"]};
+  }
+`
 
 // export const SearchHistory = styled.div`
 //   position: relative;

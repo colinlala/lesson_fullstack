@@ -4,6 +4,6 @@ import * as constants from './constants'
 
 export { 
     reducer, 
-    actionCreators,
-    constants
+    actionCreators, 
+    constants 
 }

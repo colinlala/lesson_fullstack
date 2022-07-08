@@ -14,11 +14,11 @@ export const getHotKeyWordsRequest =
     () => axiosInstance.get('/search/hot')
 
 export const getSuggestListRequest = 
-    () => axiosInstance.get(`/search/suggest?keywords=${query}`)
+    (query) => axiosInstance.get(`/search/suggest?keywords=${query}`)
 
 export const getResultSongsListRequest = 
-    () => axiosInstance.get(`/search?keywords=${query}`)
+    (query) => axiosInstance.get(`/search?keywords=${query}`)
 
 // export const getSongDetailRequest = 
-//     () => axiosInstance.get(`/song/detail?ids=${id}`)
+//     (id) => axiosInstance.get(`/song/detail?ids=${id}`)
 

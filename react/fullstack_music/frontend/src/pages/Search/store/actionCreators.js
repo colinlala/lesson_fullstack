@@ -7,7 +7,7 @@ import {
 } from '@/api/request';
 
 const changeHotKeyWords = (data) => ({
-  type: actionTypes.SET_HOT_KEYWRODS,
+  type: actionTypes.SET_HOT_KEYWORDS,
   data
 });
 
@@ -40,6 +40,7 @@ export const getSuggestList = (query) => {
       let res = data.result || [];
       dispatch(changeSuggestList(res));
     })
+    
     getResultSongsListRequest(query).then(data => {
       if(!data)return;
       let res = data.result.songs || [];

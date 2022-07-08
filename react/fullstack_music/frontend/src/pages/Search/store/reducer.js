@@ -10,7 +10,7 @@ const defaultState = {
 // redux 状态就是
 export default (state = defaultState, action) => {
     switch (action.type) {
-        case actionTypes.SET_HOT_KEYWRODS:
+        case actionTypes.SET_HOT_KEYWORDS:
             return {
                 ...state,
                 hotList:action.data
