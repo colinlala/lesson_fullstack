@@ -5,12 +5,13 @@ import style from '@/assets/global-style';
 
 export const Container = styled.div`
   position: fixed;
-  top: 4.5rem;
-  bottom: ${props => props.play > 0 ? "60px": 0};
+  text-align: left;
+  top: 90px;
+  bottom: ${props => props.play > 0?"60px": 0};
   width: 100%;
   .offical,.global {
-    margin: 0.5rem 0.25rem;
-    padding-top: 0.75rem;
+    margin: 10px 5px;
+    padding-top: 15px;
     font-weight: 700;
     font-size: ${style["font-size-m"]};
     color: ${style["font-color-desc"]};

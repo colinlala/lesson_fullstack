@@ -11,6 +11,7 @@ import {
     getHotKeyWords,
     changeEnterLoading,
     getSuggestList,
+    // getSongDetail,
 } from './store/actionCreators'
 import { CSSTransition } from 'react-transition-group'
 import { 
@@ -250,9 +251,9 @@ const mapDispatchToProps = (dispatch) => {
      getSuggestListDispatch(data) {
          dispatch(getSuggestList(data))
      },
-     getSongDetailDispatch(id) {
-        dispatch(getSongDetail(id));
-    }
+    //  getSongDetailDispatch(id) {
+    //     dispatch(getSongDetail(id));
+    // }
  }
 }
 export default connect(mapStateToProps, 

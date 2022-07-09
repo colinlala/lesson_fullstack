@@ -1,51 +1,66 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { getRankList } from './store/actionCreators'
+import { getRankList } from "./store/actionCreators";
 import Loading from "@/components/common/loading";
 import { List, ListItem, SongList, Container } from "./style";
 import Scroll from "@/components/common/Scroll";
 import { EnterLoading } from "@/pages/Singers/style";
-import { filterIndex } from '@/api/utils';
+import { filterIndex } from "@/api/utils";
 // import { renderRoutes } from 'react-router-config';
 
 function Rank(props) {
-  const { rankList,enterLoading, songsCount } = props;
+  const { rankList, enterLoading, songsCount } = props;
   const { getRankListDataDispatch } = props;
 
+  // toJS 把一个 immutable 数据改成正常的数组（在）
   // let rankList = list ? list.toJS() : [];
 
   useEffect(() => {
-    // if(!rankList.length){
-      getRankListDataDispatch();
-    // }
+    getRankListDataDispatch();
   }, []);
 
-  // const enterDetail = (detail) => {
-  //   props.history.push(`/rank/${detail.id}`)
-  // }
-  // const renderSongList = (list) => {
-  //   return list.length ? (
-  //     <SongList>
-  //       {
-  //         list.map((item, index) => {
-  //           return <li key={index}>{index+1}. {item.first} - {item.second}</li>
-  //         })
-  //       }
-  //     </SongList>
-  //   ) : null;
-  // }
-  const renderRankList = () => {
-    return (
-      <div>
-      </div>
-    )
+  const renderSongList = (list) => {
+    return list.length ? (
+      <SongList>
+        {
+          list.map((item, index) => {
+            return <li key={index}>{index+1}. {item.first} - {item.second}</li>
+          })
+        }
+      </SongList>
+    ) : null;
   }
 
+  const renderRankList = (list,global) => {
+    return (
+      <List globalRank={global}>
+       {
+        list.map((item, index) => {
+          return (
+            <ListItem key={`${item.coverImgId}${index}`} tracks={item.tracks}>
+              <div className="img_wrapper">
+                <img src={item.coverImgUrl} alt=""/>
+                <div className="decorate"></div>
+                <span className="update_frequecy">{item.updateFrequency}</span>
+              </div>
+              {/* item.tracks */}
+              { renderSongList(item.tracks)  }
+            </ListItem>
+          )
+       })
+      } 
+      </List>
+    );
+  };
+
+  // globalStartIndex 4
   let globalStartIndex = filterIndex(rankList);
+  // 4个榜单
   let officialList = rankList.slice(0, globalStartIndex);
-  console.log(globalStartIndex, officialList, rankList)
-  // let globalList = rankList.slice(globalStartIndex);
-  let displayStyle = enterLoading ? {"display":"none"}  :  {"display":""};
+  // console.log(globalStartIndex, '---------------------',officialList, '=====================',rankList);
+  let globalList = rankList.slice(globalStartIndex);
+  // console.log(globalList);
+  let displayStyle = enterLoading ? { display: "none" } : { display: "" };
 
   return (
     <Container play={songsCount}>
@@ -58,7 +73,7 @@ function Rank(props) {
           <h1 className="global" style={displayStyle}>
             全球榜
           </h1>
-          {/* {renderRankList(globalList, true)} */}
+          {renderRankList(globalList, true)}
           {enterLoading && (
             <EnterLoading>
               <Loading></Loading>
@@ -83,7 +98,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     getRankListDataDispatch() {
       dispatch(getRankList());
-    }
+    },
   };
 };
-export default connect(mapStateToProps, mapDispatchToProps)(Rank);
+export default connect(mapStateToProps, mapDispatchToProps)(React.memo(Rank));
