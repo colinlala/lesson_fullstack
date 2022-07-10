@@ -42,7 +42,7 @@ function Home(props) {
               style={{'--background-color':'rgb(245, 246, 249)'}}
               onClick={() => {
                 Modal.alert({
-                  content: "点击遮罩关闭",
+                  content: "模块暂时未开放",
                   closeOnMaskClick: true,
                 });
               }}
