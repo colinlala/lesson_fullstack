@@ -2,6 +2,7 @@
 export default{
   // "theme-color": "#eeeeee"
   "theme-color": "rgb(245, 246, 249)",
+  "search-box-color":"rgb(245, 245, 245)",
   "icon-size-mini":"1.2rem",
   "icon-size-s":"1.3rem",
   "icon-size-m":"1.5rem",

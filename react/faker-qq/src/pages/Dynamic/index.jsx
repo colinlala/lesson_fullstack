@@ -58,7 +58,7 @@ export default function Dynamic() {
         style={{ background: "white", padding: "0.5rem 0.5rem" }}
       >
         <Link
-          to="/dynamicSearch"
+          to="/Search"
           className="searchbar"
           style={{ textDecoration: "none" }}
         >

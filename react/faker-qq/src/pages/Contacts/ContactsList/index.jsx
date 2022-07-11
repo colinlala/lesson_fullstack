@@ -1,13 +1,13 @@
-import React, { useRef, useState,useEffect } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { Tabs, Swiper } from "antd-mobile";
-import {Wrapper} from './style'
+import { Wrapper } from "./style";
 import Friends from "./Friends";
 import Grouping from "./Grouping";
-import Groupchat from './Groupchat'
+import Groupchat from "./Groupchat";
 import Equipment from "./Equipment";
 import Addresslist from "./Addresslist";
 import Subscription from "./Subscription";
-import { actionCreators } from './store/index'
+import { actionCreators } from "./store/index";
 import { connect } from "react-redux";
 
 const tabItems = [
@@ -22,29 +22,31 @@ const tabItems = [
 function ContactsList(props) {
   const swiperRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(1);
-  const { friendList } = props
-  const { getFriendsDataDispatch } = props
+  const { friendList } = props;
+  const { getFriendsDataDispatch } = props;
   useEffect(() => {
-    getFriendsDataDispatch()
+    getFriendsDataDispatch();
   });
   return (
     <Wrapper>
-      <Tabs
-        activeKey={tabItems[activeIndex].key}
-        onChange={(key) => {
-          var _a;
-          const index = tabItems.findIndex((item) => item.key === key);
-          setActiveIndex(index);
-          (_a = swiperRef.current) === null || _a === void 0
-            ? void 0
-            : _a.swipeTo(index);
-        }}
-        style={{backgroundColor:'white'}}
-      >
-        {tabItems.map((item) => (
-          <Tabs.Tab title={item.title} key={item.key} />
-        ))}
-      </Tabs>
+      <div className="tabs">
+        <Tabs
+          activeKey={tabItems[activeIndex].key}
+          onChange={(key) => {
+            var _a;
+            const index = tabItems.findIndex((item) => item.key === key);
+            setActiveIndex(index);
+            (_a = swiperRef.current) === null || _a === void 0
+              ? void 0
+              : _a.swipeTo(index);
+          }}
+          style={{ backgroundColor: "white" }}
+        >
+          {tabItems.map((item) => (
+            <Tabs.Tab title={item.title} key={item.key} />
+          ))}
+        </Tabs>
+      </div>
       <Swiper
         // className="swiper"
         direction="horizontal"
@@ -55,10 +57,9 @@ function ContactsList(props) {
         onIndexChange={(index) => {
           setActiveIndex(index);
         }}
-        
       >
         <Swiper.Item>
-          <Friends friendList={friendList}/>
+          <Friends friendList={friendList} />
         </Swiper.Item>
         <Swiper.Item>
           <Grouping />
@@ -82,14 +83,14 @@ function ContactsList(props) {
 
 const mapStateToProps = (state) => {
   return {
-    friendList:state.contacts.friendList,
-  }
-}
+    friendList: state.contacts.friendList,
+  };
+};
 const mapDispatchToProps = (dispatch) => {
   return {
     getFriendsDataDispatch() {
-      dispatch(actionCreators.getFriendsList())
+      dispatch(actionCreators.getFriendsList());
     },
-  }
-}
-export default connect(mapStateToProps,mapDispatchToProps)(ContactsList)
+  };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(ContactsList);
