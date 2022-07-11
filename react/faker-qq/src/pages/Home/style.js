@@ -1,58 +1,46 @@
 import styled from "styled-components";
-import style from '@/assets/global-style'
+import style from "@/assets/global-style";
 export const Wrapper = styled.div`
-  .top{
+  .top {
+    display: flex;
+    box-sizing: border-box;
+    position: sticky;
+    top: 0;
+    left: 0;
+    background: ${style["theme-color"]};
+    align-items: center;
+    z-index: 1000;
+    height: 4.46rem;
+    .top_left {
+      width: 3rem;
+      padding-left: 0.43rem;
+    }
+    .top_center {
+      width: 12rem;
+      padding-left: 1rem;
+      margin-top: 1rem;
+      span {
+        font-size: 0.95rem;
+        font-weight: ${style["font-weight-l"]};
+      }
+      Button {
+        border-width: 0rem;
+        background-color: ${style["theme-color"]};
+        font-size: 0.5rem;
+      }
+    }
+    .top_right {
       display: flex;
-      box-sizing: border-box;
-      position: sticky;
-      top: 0;
-      left: 0;
-      background: ${style["theme-color"]};
-      z-index: 1000;
-    .left {
-      flex: 7;
-      .info_img {
-        float: left;
-        margin: 0.5rem 0.5rem 0.1rem;
+      flex: 1;
+      justify-content: space-around;
+      .icon-longmao-{
+        padding-left:1rem;
       }
-      .info_desc {
-        float: left;
-        margin: 1rem 0.3rem 0.1rem;
-        span {
-          font-weight: ${style["font-weight-l"]};
-          font-size: 1rem;
-        }
-        .modal {
-
-          button{
-              border: none;
-              font-size: 0.8rem;
-          }
-
-        }
+      i {
+        font-size: 1.9rem;
+        font-weight: ${style["font-weight-s"]};
+        margin-right: -0.8rem;
       }
-    }
-      .right{
-        flex: 3;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        i{
-          font-size: ${style["icon-size-l"]};
-          font-weight: ${style["font-weight-s"]};
-        }
-        .icon-longmao-{ 
-            padding-right: 0.8rem;
-        }
-        .icon-add{
-            margin-right: -1.6rem;
-        }
-        
-      }
-    }
-  .bottom_center{
-    .searchbar{
     }
   }
-    
 `;

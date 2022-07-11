@@ -10,6 +10,7 @@ export const Wrapper = styled.div`
         padding-top: 0.6rem;
         padding-left: 0.3rem;
         padding-right: 0.3rem;
+        background-color: white;
     }
     .desc{
         color: gray;
@@ -17,8 +18,8 @@ export const Wrapper = styled.div`
         display: flex;
         justify-content: center;
         background-color: white;
-        padding-top: 0.6rem;
-        padding-bottom:0.6rem;
+        padding-top: 0.9rem;
+        padding-bottom:0.9rem;
     }
     .icon{
         display: flex;

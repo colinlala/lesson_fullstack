@@ -11,16 +11,12 @@ export const Wrapper = styled.div`
         background: ${style["theme-color"]};
         align-items: center;
         height:4.46rem;
-        z-index: 9999;
+        z-index: 999;
         .top_left{
             width: 3rem;
             padding-left: 0.43rem;
         }
         .top_center{
-            /* flex: 1; */
-            /* align-items: center; */
-            /* display: flex; */
-            /* float: left; */
             width: 15rem;
             font-size: ${style["icon-size-mini"]};
             padding-left: 1rem;

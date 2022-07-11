@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import {
-  Avatar,
   PullToRefresh,
   SearchBar,
   DotLoading,
@@ -10,6 +9,7 @@ import { Wrapper } from "./style";
 import { sleep } from "antd-mobile/es/utils/sleep";
 import SmallList from "./SmallList";
 import ContactsList from "./ContactsList";
+import LeftPopup from "@/components/common/LeftPopup";
 
 function getNextData() {
   const ret = [];
@@ -19,23 +19,27 @@ function getNextData() {
   return ret;
 }
 const statusRecord = {
-  pulling: 
-    <div style={{ color: '#1c81ed' }}>
+  pulling: (
+    <div style={{ color: "#1c81ed" }}>
       <span>用力拉呀</span>
-    </div>,
-  canRelease: 
-    <div style={{ color: '#1c81ed' }}>
+    </div>
+  ),
+  canRelease: (
+    <div style={{ color: "#1c81ed" }}>
       <span>松开吧</span>
-    </div>,
-  refreshing: 
-    <div style={{ color: '#1c81ed' }}>
+    </div>
+  ),
+  refreshing: (
+    <div style={{ color: "#1c81ed" }}>
       <span>死命加载中</span>
-      <DotLoading color='primary' />
-    </div>,
-  complete: 
-    <div style={{ color: '#1c81ed' }}>
+      <DotLoading color="primary" />
+    </div>
+  ),
+  complete: (
+    <div style={{ color: "#1c81ed" }}>
       <span>好啦</span>
-    </div>,
+    </div>
+  ),
 };
 
 export default function Contacts() {
@@ -44,12 +48,7 @@ export default function Contacts() {
   return (
     <Wrapper>
       <div className="top">
-        <div className="top_left">
-          <Avatar
-              src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fblog%2F202009%2F02%2F20200902191544_9a518.thumb.1000_0.jpg&refer=http%3A%2F%2Fc-ssl.duitang.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1659008815&t=4279b801ccf2fcf7ffb81e3a6d2a1542"
-              style={{ "--size": "3.4rem", "--border-radius": "8rem" }}
-            />
-        </div>
+        <LeftPopup />
         <div className="top_center">
           <span>联系人</span>
         </div>
@@ -58,7 +57,7 @@ export default function Contacts() {
             <i className="iconfont icon-jiaren"></i>
           </div>
         </div>
-      </div>      
+      </div>
       <PullToRefresh
         onRefresh={async () => {
           await sleep(1000);
@@ -84,9 +83,8 @@ export default function Contacts() {
           </Link>
         </div>
         <SmallList />
-        <ContactsList/>
+        <ContactsList />
       </PullToRefresh>
     </Wrapper>
   );
 }
-
