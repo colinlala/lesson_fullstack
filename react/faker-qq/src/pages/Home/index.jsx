@@ -66,18 +66,18 @@ function Home(props) {
       </div>
       </div>
       <div className="bottom_center" style={{ background: 'white' ,padding:'0.5rem 0.5rem'}}>
-        <Link to='/adada' className="searchbar" style={{textDecoration: 'none'}}>
+        <Link to='/home_contacts_Search' className="searchbar" style={{textDecoration: 'none'}}>
           <SearchBar
             placeholder='搜索'
             style={{ '--background': 'rgb(245, 246, 249)' }}
           />
         </Link>
       </div>
-      <Scroll className="list" onScroll={forceCheck}>
+      {/* <Scroll className="list" onScroll={forceCheck}> */}
         <div>
           <MessageList messages={messages}/>
         </div>
-      </Scroll>
+      {/* </Scroll> */}
     </Wrapper>
   );
 }

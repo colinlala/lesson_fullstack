@@ -39,6 +39,7 @@ function ContactsList(props) {
             ? void 0
             : _a.swipeTo(index);
         }}
+        style={{backgroundColor:'white'}}
       >
         {tabItems.map((item) => (
           <Tabs.Tab title={item.title} key={item.key} />
@@ -54,6 +55,7 @@ function ContactsList(props) {
         onIndexChange={(index) => {
           setActiveIndex(index);
         }}
+        
       >
         <Swiper.Item>
           <Friends friendList={friendList}/>

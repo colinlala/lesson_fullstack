@@ -73,7 +73,7 @@ export default function Contacts() {
           style={{ background: "white", padding: "0.5rem 0.5rem" }}
         >
           <Link
-            to="/adada"
+            to="/home_contacts_Search"
             className="searchbar"
             style={{ textDecoration: "none" }}
           >

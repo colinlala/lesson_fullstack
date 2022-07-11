@@ -3,9 +3,14 @@ import classnames from "classnames";
 import { Link, useLocation } from "react-router-dom";
 import { FooterWrapper } from "./style";
 import { Badge } from "antd-mobile";
+import { isPathPartlyExisted } from '@/utils'
+
 
 export default function Footer() {
-  const { pathname } = useLocation();
+  const { pathname } = useLocation()
+  // 搜索时不需要Footer
+  if(isPathPartlyExisted(pathname)) return 
+
   return (
     <FooterWrapper>
       <Link to="/home" className={classnames({ active: pathname == "/home" })}>
