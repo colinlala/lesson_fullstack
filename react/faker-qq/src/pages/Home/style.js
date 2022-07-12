@@ -11,10 +11,6 @@ export const Wrapper = styled.div`
     align-items: center;
     z-index: 1000;
     height: 4.46rem;
-    .top_left {
-      width: 3rem;
-      padding-left: 0.43rem;
-    }
     .top_center {
       width: 12rem;
       padding-left: 1rem;

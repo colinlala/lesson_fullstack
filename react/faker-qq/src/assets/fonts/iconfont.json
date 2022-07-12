@@ -20,6 +20,13 @@
       "unicode_decimal": 58948
     },
     {
+      "icon_id": "103041181",
+      "name": "等级",
+      "font_class": "dengji",
+      "unicode": "e62a",
+      "unicode_decimal": 58922
+    },
+    {
       "icon_id": "102434123",
       "name": "加人",
       "font_class": "jiaren",
@@ -41,11 +48,32 @@
       "unicode_decimal": 58911
     },
     {
+      "icon_id": "103041182",
+      "name": "太阳",
+      "font_class": "taiyang",
+      "unicode": "e635",
+      "unicode_decimal": 58933
+    },
+    {
+      "icon_id": "103041183",
+      "name": "月亮",
+      "font_class": "yueliang",
+      "unicode": "e63e",
+      "unicode_decimal": 58942
+    },
+    {
       "icon_id": "102896768",
       "name": "设置",
       "font_class": "shezhi",
       "unicode": "e8b7",
       "unicode_decimal": 59575
+    },
+    {
+      "icon_id": "103063238",
+      "name": "打卡",
+      "font_class": "daka",
+      "unicode": "e62b",
+      "unicode_decimal": 58923
     },
     {
       "icon_id": "102363034",
@@ -74,6 +102,20 @@
       "font_class": "user",
       "unicode": "e682",
       "unicode_decimal": 59010
+    },
+    {
+      "icon_id": "4251756",
+      "name": "设置",
+      "font_class": "shezhi1",
+      "unicode": "e64c",
+      "unicode_decimal": 58956
+    },
+    {
+      "icon_id": "6185501",
+      "name": "编辑",
+      "font_class": "bianji",
+      "unicode": "e655",
+      "unicode_decimal": 58965
     }
   ]
 }

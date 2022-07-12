@@ -9,6 +9,8 @@ import {
 } from "antd-mobile";
 import { sleep } from "antd-mobile/es/utils/sleep";
 import { Wrapper } from "./style";
+// import Lazyload, { forceCheck } from "react-lazyload";
+// import musicImg from "@/pages/Home/MessageList/singer.png";
 
 function getNextData() {
   const ret = [];
@@ -123,7 +125,18 @@ export default function MessageList({ messages }) {
                 }
                 description={item.description}
               >
+                {/* <Lazyload
+                  placeholder={
+                    <img
+                      src={musicImg}
+                      alt="music"
+                      width="100%"
+                      height="100%"
+                    />
+                  }
+                > */}
                 {item.name}
+                {/* </Lazyload> */}
               </List.Item>
             </SwipeAction>
           ))}

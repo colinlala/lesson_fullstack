@@ -8,9 +8,39 @@ export const Wrapper = styled.div`
         background: white;
         box-sizing: border-box;
         padding-top: 0.6rem;
-        padding-left: 0.3rem;
+        padding-left: 0.4rem;
         padding-right: 0.3rem;
         background-color: white;
+    }
+    .search_history{
+        .search_history_list{
+            background-color: white;
+            display: flex;
+            padding-top: 0.5rem;
+            .avatar_img{
+                width: 4rem;
+                margin-left: 0.7rem;
+            }
+            .search_history_list_name{
+                flex: 1;
+                display: flex;
+                align-items: center;
+                margin-left: -1.5rem;
+                font-size:0.9rem;
+            }
+            .button_x{
+                button{
+                    background-color: white;
+                    border: 0;
+                    font-size:1.2rem;
+                    color: rgb(190, 190, 190);
+                }
+                width: 3rem; 
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
     }
     .desc{
         color: gray;

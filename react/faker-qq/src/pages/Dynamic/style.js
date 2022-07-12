@@ -12,10 +12,6 @@ export const Wrapper = styled.div`
     background: ${style["theme-color"]};
     align-items: center;
     height: 4.46rem;
-    .top_left {
-      width: 3rem;
-      padding-left: 0.43rem;
-    }
     .top_center {
       width: 15rem;
       font-size: ${style["icon-size-mini"]};
