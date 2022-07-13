@@ -13,7 +13,7 @@ import MessageList from "./MessageList";
 import { actionCreators } from "./store/index";
 import { connect } from "react-redux";
 import LeftPopup from "@/components/common/LeftPopup";
-
+import Scroll from "@/components/common/Scroll";
 
 const actions = [
   { key: "scan", icon: <ChatAddOutline />, text: "创建群聊" },
@@ -76,7 +76,9 @@ function Home(props) {
           />
         </Link>
       </div>
-      <MessageList messages={messages} />
+      <Scroll>
+        <MessageList messages={messages} />
+      </Scroll>
     </Wrapper>
   );
 }

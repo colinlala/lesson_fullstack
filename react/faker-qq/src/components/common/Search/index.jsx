@@ -1,134 +1,206 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Wrapper } from "./style";
-import { SearchBar, Avatar } from "antd-mobile";
+import {
+    OtherWrapper,
+    PublicWrapper,
+    HistoryWrapper,
+    SearchResWrapper,
+} from "./style";
+import { Avatar } from "antd-mobile";
 import {
     SmileOutline,
     StarOutline,
     UserAddOutline,
     GlobalOutline,
 } from "antd-mobile-icons";
-import OtherPng from "@/assets/images/other.png";
 import { actionCreators } from "./store/index";
 import { connect } from "react-redux";
-
+import SearchBox from "../SearchBox";
+// import { CSSTransition } from "react-transition-group";
+// import Scroll from "@/components/common/Scroll";
+// import Lazyload from "react-lazyload";
+import OtherImg from "@/assets/images/dyj.png";
 
 function Search(props) {
     const navigate = useNavigate();
 
-    // const [visible, setVisible] = useState(true);
-    // const [visible1, setVisible1] = useState(true);
     const { searchList, searchHistoryList } = props;
     const { getSearchDataDispatch, getSearchHistoryDataDispatch } = props;
+    const [query, setQuery] = useState("");
+    const [show, setShow] = useState(false);
+
     useEffect(() => {
-        getSearchDataDispatch();
-        getSearchHistoryDataDispatch();
+        setShow(true);
     }, []);
 
+    useEffect(() => {
+        if (searchHistoryList.length == 0) {
+            getSearchHistoryDataDispatch();
+        }
+    }, []);
 
-    // const letVisible = () => {
-    //     setVisible(false)
-    // }
-    // const letVisible1 = () => {
-    //     setVisible1(false)
-    // }
+    useEffect(() => {
+        getSearchDataDispatch(query);
+    }, [query]);
+    //用于在子组件searchBox执行，更新父组件的query
+    const handleQuery = (q) => {
+        setQuery(q);
+    };
 
+    const renderHistoryList = (index) => {
+        return (
+            <>
+                {index.map((item) => {
+                    return (
+                        <HistoryWrapper key={item.id}>
+                            <div className="avatar_img">
+                                {/* <Lazyload
+                                    placeholder={
+                                        <img
+                                            width="100%"
+                                            height="100%"
+                                            src={OtherImg}
+                                        />
+                                    }
+                                > */}
+                                    <Avatar
+                                        src={item.img}
+                                        style={{
+                                            "--size": "2rem",
+                                            "--border-radius": "8rem",
+                                        }}
+                                    />
+                                {/* </Lazyload> */}
+                            </div>
+                            <span className="search_history_list_name">
+                                {item.name}
+                            </span>
+                            <div className="button_x">
+                                <button
+                                    onClick={() => {
+                                        alert("暂时不写！");
+                                    }}
+                                >
+                                    x
+                                </button>
+                            </div>
+                        </HistoryWrapper>
+                    );
+                })}
+            </>
+        );
+    };
 
-    // const searchHistoryListItem = () => {
-    //     return (
-    //         <div className="search_history_list">
-    //             <div className="avatar_img">
-    //                 <Avatar
-    //                     src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fblog%2F202009%2F02%2F20200902191544_9a518.thumb.1000_0.jpg&refer=http%3A%2F%2Fc-ssl.duitang.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1659008815&t=4279b801ccf2fcf7ffb81e3a6d2a1542"
-    //                     style={{
-    //                         "--size": "2rem",
-    //                         "--border-radius": "8rem",
-    //                     }}
-    //                 />
-    //             </div>
-    //             <span className="search_history_list_name">爱女神</span>
-    //             <div className="button_x">
-    //                 <button onClick={() => {letVisible()}}>x</button>
-    //             </div>
-    //         </div>
-    //     );
-    // };
-    // const searchHistoryListItem1 = () => {
-    //     return (
-    //         <div className="search_history_list">
-    //             <div className="avatar_img">
-    //                 <Avatar
-    //                     src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg3.doubanio.com%2Fview%2Fnote%2Fl%2Fpublic%2Fp83642840.jpg&refer=http%3A%2F%2Fimg3.doubanio.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1659153126&t=3bf3383eec2b9d063ba2270bbd204eaa"
-    //                     style={{
-    //                         "--size": "2rem",
-    //                         "--border-radius": "8rem",
-    //                     }}
-    //                 />
-    //             </div>
-    //             <span className="search_history_list_name">纯纯粹粹</span>
-    //             <div className="button_x">
-    //                 <button onClick={() => {letVisible1()}}>x</button>
-    //             </div>
-    //         </div>
-    //     );
-    // };
+    const renderSearchList = () => {
+        return (
+            <>
+                {searchList.map((item) => {
+                    return (
+                        <SearchResWrapper key={item.id}>
+                            <div className="avatar_img">
+                                {/* <Lazyload
+                                    placeholder={
+                                        <img
+                                            width="100%"
+                                            height="100%"
+                                            src={OtherImg}
+                                        />
+                                    }
+                                > */}
+                                    <Avatar
+                                        src={item.img}
+                                        style={{
+                                            "--size": "2rem",
+                                            "--border-radius": "8rem",
+                                        }}
+                                    />
+                                {/* </Lazyload> */}
+                            </div>
+                            <span className="search_history_list_name">
+                                {item.name}
+                            </span>
+                        </SearchResWrapper>
+                    );
+                })}
+            </>
+        );
+    };
 
+    const renderOther = () => {
+        return (
+            <OtherWrapper>
+                <div className="desc">
+                    <span>搜索指定内容</span>
+                </div>
+                <div className="icon">
+                    <div className="icon_box">
+                        <UserAddOutline />
+                        <span>找人/群</span>
+                    </div>
+                    <div className="icon_box">
+                        <SmileOutline />
+                        <span>表情</span>
+                    </div>
+                    <div className="icon_box">
+                        <GlobalOutline />
+                        <span>小程序</span>
+                    </div>
+                    <div className="icon_box">
+                        <StarOutline />
+                        <span>动态</span>
+                    </div>
+                </div>
+            </OtherWrapper>
+        );
+    };
 
     return (
-        <Wrapper>
-            <div className="search_div">
-                <SearchBar
-                    placeholder="搜索"
-                    showCancelButton={() => true}
-                    onCancel={() => {
-                        navigate(-1);
-                    }}
-                />
-            </div>
-            <div className="search_history">
-                {/* { visible && searchHistoryListItem()} 
-                { visible1 && searchHistoryListItem1()}  */}
-
-            </div>
-            <div className="desc">
-                <span>搜索指定内容</span>
-            </div>
-            <div className="icon">
-                <div className="icon_box">
-                    <UserAddOutline />
-                    <span>找人/群</span>
-                </div>
-                <div className="icon_box">
-                    <SmileOutline />
-                    <span>表情</span>
-                </div>
-                <div className="icon_box">
-                    <GlobalOutline />
-                    <span>小程序</span>
-                </div>
-                <div className="icon_box">
-                    <StarOutline />
-                    <span>动态</span>
-                </div>
-            </div>
-        </Wrapper>
+        // <CSSTransition
+        //     in={show}
+        //     timeout={400}
+        //     appear={true}
+        //     classNames="fly"
+        //     unmountOnExit
+        //     onExit={() => {
+        //         navigate(-1);
+        //     }}
+        // >
+        <>
+            <SearchBox newQuery={query} handleQuery={handleQuery} />
+            <PublicWrapper show={!query}>
+                {/* <Scroll> */}
+                    {!query && (
+                        <div>
+                            {renderHistoryList(searchHistoryList)}
+                            {renderOther()}
+                        </div>
+                    )}
+                {/* </Scroll> */}
+            </PublicWrapper>
+            <PublicWrapper show={query}>
+                {/* <Scroll> */}
+                    {query && renderSearchList()}
+                    {/* </Scroll> */}
+            </PublicWrapper>
+        </>
+        // </CSSTransition>
     );
 }
 
 const mapStateToProps = (state) => {
     return {
-      searchList: state.search.searchList,
-      searchHistoryList: state.search.searchHistoryList,
+        searchList: state.search.searchList,
+        searchHistoryList: state.search.searchHistoryList,
     };
-  };
-  const mapDispatchToProps = (dispatch) => {
+};
+const mapDispatchToProps = (dispatch) => {
     return {
-      getSearchDataDispatch() {
-        dispatch(actionCreators.getSearchList());
-      },
-      getSearchHistoryDataDispatch() {
-        dispatch(actionCreators.getSearchHistoryList());
-      },
+        getSearchDataDispatch(query) {
+            dispatch(actionCreators.getSearchList(query));
+        },
+        getSearchHistoryDataDispatch() {
+            dispatch(actionCreators.getSearchHistoryList());
+        },
     };
-  };
+};
 export default connect(mapStateToProps, mapDispatchToProps)(Search);

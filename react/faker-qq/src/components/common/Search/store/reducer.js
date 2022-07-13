@@ -12,7 +12,7 @@ export default (state = defaultState, action) => {
                 ...state,
                 searchList: action.data,
             };
-        case actionTypes.CHANGE_SEARCH_LIST:
+        case actionTypes.CHANGE_SEARCH_HISTORY_LIST:
             return {
                 ...state,
                 searchHistoryList: action.data,
