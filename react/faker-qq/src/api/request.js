@@ -16,6 +16,9 @@ import { axiosInstance } from "./config";
 
 export const getMessageListRequest = 
         () => axiosInstance.get('/massages')
+        
+export const getSearchListRequest = 
+        () => axiosInstance.get('/searchHistoryList')
 
 export const getFriendsListRequest =
         () => axiosInstance.get('/friends')

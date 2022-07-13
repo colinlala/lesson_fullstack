@@ -1,0 +1,2 @@
+export const CHANGE_SEARCH = 'CHANGE_SEARCH';
+export const CHANGE_SEARCH_LIST = 'CHANGE_SEARCH_LIST';

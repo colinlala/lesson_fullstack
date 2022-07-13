@@ -4,8 +4,10 @@ import { combineReducers } from "redux";
 // 地方
 import { reducer as homeReducer } from '@/pages/Home/store/index'
 import { reducer as contactsReducer } from '@/pages/Contacts/ContactsList/store/index'
+import { reducer as searchReducer } from '@/components/common/Search/store/index'
 
 export default combineReducers({
     home: homeReducer,
     contacts: contactsReducer,
+    search: searchReducer,
 })
