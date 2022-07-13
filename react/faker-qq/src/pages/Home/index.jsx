@@ -10,43 +10,49 @@ import {
 } from "antd-mobile-icons";
 import { Wrapper } from "./style";
 import MessageList from "./MessageList";
+import HomeModal from "./HomeModal";
 import { actionCreators } from "./store/index";
 import { connect } from "react-redux";
 import LeftPopup from "@/components/common/LeftPopup";
 import Scroll from "@/components/common/Scroll";
 
 const actions = [
-  { key: "scan", icon: <ChatAddOutline />, text: "创建群聊" },
+  { key: "add", icon: <ChatAddOutline />, text: "创建群聊" },
   { key: "payment", icon: <UserAddOutline />, text: "加好友/群" },
   { key: "scan", icon: <ScanningOutline />, text: "扫一扫" },
-  { key: "assistant", icon: <FileOutline />, text: "面对面快传" },
-  { key: "assistant", icon: <ScanCodeOutline />, text: "收付款" },
+  { key: "fast", icon: <FileOutline />, text: "面对面快传" },
+  { key: "money", icon: <ScanCodeOutline />, text: "收付款" },
 ];
 
 function Home(props) {
   const { messages } = props;
   const { getMessageDataDispatch } = props;
+  const [modalVisible, setModalVisible] = useState(false)
   useEffect(() => {
     getMessageDataDispatch();
   }, []);
+  const onModalClose = () => {
+    setModalVisible(false)
+  }
   return (
     <Wrapper>
       <div className="top">
         <LeftPopup />
         <div className="top_center">
-          <span>路旁的彩虹你别采</span>
+          <span className="top_center_span">路旁的彩虹你别采</span>
           <div className="modal">
-            <Button
+            {/* <Button
               onClick={() => {
-                Modal.alert({
-                  content: "模块暂时未开放",
+                Modal.show({
+                  content:<HomeModal/>,
                   closeOnMaskClick: true,
                 });
               }}
-              size="mini"
             >
               手机在线&nbsp;&gt;
-            </Button>
+            </Button> */}
+            <HomeModal modalVisible={modalVisible} onClose={onModalClose}/>
+            <button onClick={() => setModalVisible(true)}>手机在线&nbsp;&gt;</button>
           </div>
         </div>
         <div className="top_right">

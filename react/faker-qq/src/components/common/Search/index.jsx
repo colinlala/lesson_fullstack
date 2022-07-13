@@ -78,7 +78,7 @@ function Search(props) {
                             <div className="button_x">
                                 <button
                                     onClick={() => {
-                                        alert("暂时不写！");
+                                       alert("删除功能写不下去了，下次一定，敬请期待:)")
                                     }}
                                 >
                                     x

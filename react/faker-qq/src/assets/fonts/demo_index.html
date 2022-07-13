@@ -47,6 +47,8 @@
         <li class="dib"><span>Symbol</span></li>
       </ul>
       
+      <a href="https://www.iconfont.cn/manage/index?manage_type=myprojects&projectId=3520559" target="_blank" class="nav-more">查看项目</a>
+      
     </div>
     <div class="tab-container">
       <div class="content unicode" style="display: block;">
@@ -83,6 +85,18 @@
               </li>
           
             <li class="dib">
+              <span class="icon iconfont">&#xe64c;</span>
+                <div class="name">设置</div>
+                <div class="code-name">&amp;#xe64c;</div>
+              </li>
+          
+            <li class="dib">
+              <span class="icon iconfont">&#xe638;</span>
+                <div class="name">退出</div>
+                <div class="code-name">&amp;#xe638;</div>
+              </li>
+          
+            <li class="dib">
               <span class="icon iconfont">&#xe61f;</span>
                 <div class="name">对话气泡</div>
                 <div class="code-name">&amp;#xe61f;</div>
@@ -98,6 +112,12 @@
               <span class="icon iconfont">&#xe63e;</span>
                 <div class="name">月亮</div>
                 <div class="code-name">&amp;#xe63e;</div>
+              </li>
+          
+            <li class="dib">
+              <span class="icon iconfont">&#xe655;</span>
+                <div class="name">编辑</div>
+                <div class="code-name">&amp;#xe655;</div>
               </li>
           
             <li class="dib">
@@ -137,15 +157,9 @@
               </li>
           
             <li class="dib">
-              <span class="icon iconfont">&#xe64c;</span>
-                <div class="name">设置</div>
-                <div class="code-name">&amp;#xe64c;</div>
-              </li>
-          
-            <li class="dib">
-              <span class="icon iconfont">&#xe655;</span>
-                <div class="name">编辑</div>
-                <div class="code-name">&amp;#xe655;</div>
+              <span class="icon iconfont">&#xe715;</span>
+                <div class="name">加</div>
+                <div class="code-name">&amp;#xe715;</div>
               </li>
           
           </ul>
@@ -166,7 +180,9 @@
 <pre><code class="language-css"
 >@font-face {
   font-family: 'iconfont';
-  src: url('iconfont.ttf?t=1657618344065') format('truetype');
+  src: url('iconfont.woff2?t=1657713579466') format('woff2'),
+       url('iconfont.woff?t=1657713579466') format('woff'),
+       url('iconfont.ttf?t=1657713579466') format('truetype');
 }
 </code></pre>
           <h3 id="-iconfont-">第二步：定义使用 iconfont 的样式</h3>
@@ -238,6 +254,24 @@
           </li>
           
           <li class="dib">
+            <span class="icon iconfont icon-shezhi2"></span>
+            <div class="name">
+              设置
+            </div>
+            <div class="code-name">.icon-shezhi2
+            </div>
+          </li>
+          
+          <li class="dib">
+            <span class="icon iconfont icon-tuichu"></span>
+            <div class="name">
+              退出
+            </div>
+            <div class="code-name">.icon-tuichu
+            </div>
+          </li>
+          
+          <li class="dib">
             <span class="icon iconfont icon-duihuaqipao"></span>
             <div class="name">
               对话气泡
@@ -261,6 +295,15 @@
               月亮
             </div>
             <div class="code-name">.icon-yueliang
+            </div>
+          </li>
+          
+          <li class="dib">
+            <span class="icon iconfont icon-bianji"></span>
+            <div class="name">
+              编辑
+            </div>
+            <div class="code-name">.icon-bianji
             </div>
           </li>
           
@@ -319,20 +362,11 @@
           </li>
           
           <li class="dib">
-            <span class="icon iconfont icon-shezhi1"></span>
+            <span class="icon iconfont icon-jia"></span>
             <div class="name">
-              设置
+              加
             </div>
-            <div class="code-name">.icon-shezhi1
-            </div>
-          </li>
-          
-          <li class="dib">
-            <span class="icon iconfont icon-bianji"></span>
-            <div class="name">
-              编辑
-            </div>
-            <div class="code-name">.icon-bianji
+            <div class="code-name">.icon-jia
             </div>
           </li>
           
@@ -405,6 +439,22 @@
           
             <li class="dib">
                 <svg class="icon svg-icon" aria-hidden="true">
+                  <use xlink:href="#icon-shezhi2"></use>
+                </svg>
+                <div class="name">设置</div>
+                <div class="code-name">#icon-shezhi2</div>
+            </li>
+          
+            <li class="dib">
+                <svg class="icon svg-icon" aria-hidden="true">
+                  <use xlink:href="#icon-tuichu"></use>
+                </svg>
+                <div class="name">退出</div>
+                <div class="code-name">#icon-tuichu</div>
+            </li>
+          
+            <li class="dib">
+                <svg class="icon svg-icon" aria-hidden="true">
                   <use xlink:href="#icon-duihuaqipao"></use>
                 </svg>
                 <div class="name">对话气泡</div>
@@ -425,6 +475,14 @@
                 </svg>
                 <div class="name">月亮</div>
                 <div class="code-name">#icon-yueliang</div>
+            </li>
+          
+            <li class="dib">
+                <svg class="icon svg-icon" aria-hidden="true">
+                  <use xlink:href="#icon-bianji"></use>
+                </svg>
+                <div class="name">编辑</div>
+                <div class="code-name">#icon-bianji</div>
             </li>
           
             <li class="dib">
@@ -477,18 +535,10 @@
           
             <li class="dib">
                 <svg class="icon svg-icon" aria-hidden="true">
-                  <use xlink:href="#icon-shezhi1"></use>
+                  <use xlink:href="#icon-jia"></use>
                 </svg>
-                <div class="name">设置</div>
-                <div class="code-name">#icon-shezhi1</div>
-            </li>
-          
-            <li class="dib">
-                <svg class="icon svg-icon" aria-hidden="true">
-                  <use xlink:href="#icon-bianji"></use>
-                </svg>
-                <div class="name">编辑</div>
-                <div class="code-name">#icon-bianji</div>
+                <div class="name">加</div>
+                <div class="code-name">#icon-jia</div>
             </li>
           
           </ul>

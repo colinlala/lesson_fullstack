@@ -15,7 +15,7 @@ export const Wrapper = styled.div`
       width: 12rem;
       padding-left: 1rem;
       margin-top: 1rem;
-      span {
+      .top_center_span {
         font-size: 0.95rem;
         font-weight: ${style["font-weight-l"]};
       }
