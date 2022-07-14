@@ -154,7 +154,7 @@ export default function LeftPopup() {
                     </div>
                     <div className="bottom">
                         <div className="bottom_div">
-                            <i className="iconfont icon-shezhi1"></i>
+                            <i className="iconfont icon-shezhi2"></i>
                             <span>设置</span>
                         </div>
                         <div className="bottom_div">

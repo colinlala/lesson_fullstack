@@ -20,6 +20,7 @@ specifiers:
   redux: ^4.2.0
   redux-thunk: ^2.4.1
   styled-components: ^5.3.5
+  swiper: 4.5.0
   vite: ^2.9.9
 
 dependencies:
@@ -39,6 +40,7 @@ dependencies:
   redux: 4.2.0
   redux-thunk: 2.4.1_redux@4.2.0
   styled-components: 5.3.5_biqbaboplfbrettd7655fr4n2y
+  swiper: 4.5.0
 
 devDependencies:
   '@types/react': 18.0.15
@@ -820,6 +822,12 @@ packages:
       csstype: 3.1.0
     dev: false
 
+  /dom7/2.1.5:
+    resolution: {integrity: sha512-xnhwVgyOh3eD++/XGtH+5qBwYTgCm0aW91GFgPJ3XG+jlsRLyJivnbP0QmUBFhI+Oaz9FV0s7cxgXHezwOEBYA==}
+    dependencies:
+      ssr-window: 2.0.0
+    dev: false
+
   /electron-to-chromium/1.4.184:
     resolution: {integrity: sha512-IADi390FRdvxWfVX3hjzfTDNVHiTqVo9ar53/7em/SfhUG9YcjVhyQecY/XwmBHRKden/wFud7RWOUH7+7LFng==}
     dev: true
@@ -1418,6 +1426,14 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
+  /ssr-window/1.0.1:
+    resolution: {integrity: sha512-dgFqB+f00LJTEgb6UXhx0h+SrG50LJvti2yMKMqAgzfUmUXZrLSv2fjULF7AWGwK25EXu8+smLR3jYsJQChPsg==}
+    dev: false
+
+  /ssr-window/2.0.0:
+    resolution: {integrity: sha512-NXzN+/HPObKAx191H3zKlYomE5WrVIkoCB5IaSdvKokxTpjBdWfr0RaP+1Z5KOfDT0ZVz+2tdtiBkhsEQ9p+0A==}
+    dev: false
+
   /staged-components/1.1.3_react@18.2.0:
     resolution: {integrity: sha512-9EIswzDqjwlEu+ymkV09TTlJfzSbKgEnNteUnZSTxkpMgr5Wx2CzzA9WcMFWBNCldqVPsHVnRGGrApduq2Se5A==}
     peerDependencies:
@@ -1459,6 +1475,15 @@ packages:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
     dev: true
+
+  /swiper/4.5.0:
+    resolution: {integrity: sha512-jRCd/CGet9kaHwthHdd/sL/YU8CI157PWLyItnIcn/o/jP4haVky3zTF6f9F3JDpmQIw7jdWihISiYx0/oTHsg==}
+    engines: {node: '>= 4.7.0'}
+    requiresBuild: true
+    dependencies:
+      dom7: 2.1.5
+      ssr-window: 1.0.1
+    dev: false
 
   /to-fast-properties/2.0.0:
     resolution: {integrity: sha512-/OaKK0xYrs3DmxRYqL/yDc+FxFUVYhDlXMhRmv3z915w2HF1tnN1omB354j8VUGO/hbRzyD6Y3sA7v7GS/ceog==}

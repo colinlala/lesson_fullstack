@@ -1,0 +1,1 @@
+export const CHANGE_HOME_SWIPER = 'CHANGE_HOME_SWIPER';

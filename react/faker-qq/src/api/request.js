@@ -24,6 +24,7 @@ export const getFriendsListRequest =
         () => axiosInstance.get('/friends')
 
 export const getSearchListRequest = 
-() => axiosInstance.get('/massages')
-// export const getRecommendListRequest = 
-//         () => axiosInstance.get('/personalized')
+        () => axiosInstance.get('/massages')
+
+export const getHomeSwiperRequest = 
+        () => axiosInstance.get('/swiper')

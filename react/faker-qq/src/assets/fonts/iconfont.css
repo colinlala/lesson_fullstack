@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 3520559 */
-  src: url('iconfont.woff2?t=1657713579466') format('woff2'),
-       url('iconfont.woff?t=1657713579466') format('woff'),
-       url('iconfont.ttf?t=1657713579466') format('truetype');
+  src: url('iconfont.woff2?t=1657797635666') format('woff2'),
+       url('iconfont.woff?t=1657797635666') format('woff'),
+       url('iconfont.ttf?t=1657797635666') format('truetype');
 }
 
 .iconfont {
@@ -11,6 +11,142 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-wangyou:before {
+  content: "\e600";
+}
+
+.icon-xinshouxuetang:before {
+  content: "\e601";
+}
+
+.icon-likaiim:before {
+  content: "\e609";
+}
+
+.icon-mangluim:before {
+  content: "\e60f";
+}
+
+.icon-yinshenim:before {
+  content: "\e616";
+}
+
+.icon-electricquantity2dianchidianliang:before {
+  content: "\e6e8";
+}
+
+.icon-jia1:before {
+  content: "\e60d";
+}
+
+.icon-lianai:before {
+  content: "\e6e2";
+}
+
+.icon-shu:before {
+  content: "\e809";
+}
+
+.icon-ava_nodisturb:before {
+  content: "\e626";
+}
+
+.icon-xigua:before {
+  content: "\e60c";
+}
+
+.icon-yezi:before {
+  content: "\e610";
+}
+
+.icon-yun:before {
+  content: "\eb2c";
+}
+
+.icon-yundong-:before {
+  content: "\ee31";
+}
+
+.icon-ma:before {
+  content: "\e694";
+}
+
+.icon-chuang:before {
+  content: "\e662";
+}
+
+.icon-mifan:before {
+  content: "\e68b";
+}
+
+.icon-yu:before {
+  content: "\e615";
+}
+
+.icon-bangbangtang:before {
+  content: "\e611";
+}
+
+.icon-yuandian:before {
+  content: "\e628";
+}
+
+.icon-jizhang:before {
+  content: "\e75a";
+}
+
+.icon-dianshi:before {
+  content: "\e90a";
+}
+
+.icon-quhaidaowan:before {
+  content: "\ebd5";
+}
+
+.icon-weixiao:before {
+  content: "\e603";
+}
+
+.icon-kouzhao:before {
+  content: "\e678";
+}
+
+.icon-tianqi:before {
+  content: "\e6df";
+}
+
+.icon-chigua:before {
+  content: "\e60a";
+}
+
+.icon-goutou:before {
+  content: "\e60e";
+}
+
+.icon-changjianwenti-mianxing:before {
+  content: "\e612";
+}
+
+.icon-emot:before {
+  content: "\e68c";
+}
+
+.icon-xinhao:before {
+  content: "\e613";
+}
+
+.icon-jinli:before {
+  content: "\e62f";
+}
+
+.icon-xiongmao:before {
+  content: "\e620";
+}
+
+.icon-tingge:before {
+  content: "\e718";
 }
 
 .icon-xiasanjiaoxing:before {
