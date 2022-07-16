@@ -13,6 +13,8 @@ export const WholeModalWrapper = styled.div`
     }
 `;
 export const ModalWrapper = styled.div`
+    /* 字体间隔 */
+    letter-spacing: 1px;
     position: fixed;
     width: 90vw;
     height: 75vh;
@@ -35,8 +37,6 @@ export const TopWrapper = styled.div`
     margin-bottom: 1rem;
     border-radius: 10px;
     .top_world {
-        /* 字体间隔 */
-        letter-spacing: 1px;
         font-size: 0.7rem;
         font-weight: 500;
         display: flex;
@@ -98,9 +98,7 @@ export const CenterWrapper = styled.div`
     border-radius: 10px;
     padding-bottom: 1rem;
     margin-bottom: 1rem;
-    .center_world{
-        /* 字体间隔 */
-        letter-spacing: 1px;
+    .center_world {
         font-size: 0.7rem;
         font-weight: 500;
         display: flex;
@@ -109,27 +107,50 @@ export const CenterWrapper = styled.div`
         padding-bottom: 0.3rem;
         color: rgb(155, 158, 168);
     }
-    .online_state{
+    .online_state {
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
         margin-bottom: 0.8rem;
-        img{
+        img {
             width: 1.5rem;
             height: 1.5rem;
             margin-right: 0.4rem;
             border-radius: 5rem;
         }
-        .online_state_world{
+        .online_state_world {
             font-weight: 700;
             letter-spacing: 1px;
         }
     }
 `;
-export const BottomWrapper = styled.div``;
-
-export const SwiperWrapper = styled.div`
-    background-color: orange;
+export const BottomWrapper = styled.div`
+    .bottom_button {
+        background-color: white;
+        border-radius: 10px;
+        height: 3rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 90vw;
+        .bottom_left {
+            width: 3rem;
+            font-weight: 600;
+            margin-left: 0.6rem;
+        }
+        .bottom_right {
+            flex: 1;
+            color: rgb(178, 178, 178);
+            font-size: 0.5rem;
+            margin-right: -9.2rem;
+        }
+    }
 `;
 
+export const SwiperWrapper = styled.div`
+    background-color: transparent;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+`;

@@ -1,10 +1,10 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const BannersWrapper = styled.div`
-.btn_banners{
+    .swiper{
     width:100%;
     height:50vw;
-    background:#fff;
+    background: transparent;
     
 }
 .swiper-slide{
@@ -14,8 +14,8 @@ export const BannersWrapper = styled.div`
 }
 .swiper-item{
     display:flex;
-    width: 25%;
-    height: 40%;
+    width: 30%;
+    height: 25%;
     justify-content: space-around;
     
 } 
@@ -24,24 +24,26 @@ export const BannersWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top:3vw;
-    
+    margin-top:1vw;
+    background: white;
+    border-radius: 10px;
 }
 .swiper-item div p{
     height:14vw;
     width:14vw;
-    background: skyblue;
+    /* background: skyblue; */
 }
 .swiper-item div img{
     height:100%;
     width:100%
 }
 .swiper-pagination{
-    bottom: 0;
+    bottom: -4px;
     
 }
 .swiper-pagination-bullet{
-    border-radius: 0;
-    height: 2px;
+    border-radius: 10px;
+    height: 5px;
+    width: 5px;
 }
-`
+`;

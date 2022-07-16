@@ -20,7 +20,7 @@ specifiers:
   redux: ^4.2.0
   redux-thunk: ^2.4.1
   styled-components: ^5.3.5
-  swiper: 4.5.0
+  swiper: ^8.3.1
   vite: ^2.9.9
 
 dependencies:
@@ -40,7 +40,7 @@ dependencies:
   redux: 4.2.0
   redux-thunk: 2.4.1_redux@4.2.0
   styled-components: 5.3.5_biqbaboplfbrettd7655fr4n2y
-  swiper: 4.5.0
+  swiper: 8.3.1
 
 devDependencies:
   '@types/react': 18.0.15
@@ -822,10 +822,10 @@ packages:
       csstype: 3.1.0
     dev: false
 
-  /dom7/2.1.5:
-    resolution: {integrity: sha512-xnhwVgyOh3eD++/XGtH+5qBwYTgCm0aW91GFgPJ3XG+jlsRLyJivnbP0QmUBFhI+Oaz9FV0s7cxgXHezwOEBYA==}
+  /dom7/4.0.4:
+    resolution: {integrity: sha512-DSSgBzQ4rJWQp1u6o+3FVwMNnT5bzQbMb+o31TjYYeRi05uAcpF8koxdfzeoe5ElzPmua7W7N28YJhF7iEKqIw==}
     dependencies:
-      ssr-window: 2.0.0
+      ssr-window: 4.0.2
     dev: false
 
   /electron-to-chromium/1.4.184:
@@ -1426,12 +1426,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /ssr-window/1.0.1:
-    resolution: {integrity: sha512-dgFqB+f00LJTEgb6UXhx0h+SrG50LJvti2yMKMqAgzfUmUXZrLSv2fjULF7AWGwK25EXu8+smLR3jYsJQChPsg==}
-    dev: false
-
-  /ssr-window/2.0.0:
-    resolution: {integrity: sha512-NXzN+/HPObKAx191H3zKlYomE5WrVIkoCB5IaSdvKokxTpjBdWfr0RaP+1Z5KOfDT0ZVz+2tdtiBkhsEQ9p+0A==}
+  /ssr-window/4.0.2:
+    resolution: {integrity: sha512-ISv/Ch+ig7SOtw7G2+qkwfVASzazUnvlDTwypdLoPoySv+6MqlOV10VwPSE6EWkGjhW50lUmghPmpYZXMu/+AQ==}
     dev: false
 
   /staged-components/1.1.3_react@18.2.0:
@@ -1476,13 +1472,13 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /swiper/4.5.0:
-    resolution: {integrity: sha512-jRCd/CGet9kaHwthHdd/sL/YU8CI157PWLyItnIcn/o/jP4haVky3zTF6f9F3JDpmQIw7jdWihISiYx0/oTHsg==}
+  /swiper/8.3.1:
+    resolution: {integrity: sha512-oASYsulsERlbQVTZ8FjlTDJSN4YZwhp+AkvepOj8EOhgpvxzKoMpWpBPrk7ypkMioQUx6x2NPvkRU0Qv9mpS0A==}
     engines: {node: '>= 4.7.0'}
     requiresBuild: true
     dependencies:
-      dom7: 2.1.5
-      ssr-window: 1.0.1
+      dom7: 4.0.4
+      ssr-window: 4.0.2
     dev: false
 
   /to-fast-properties/2.0.0:
