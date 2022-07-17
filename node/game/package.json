@@ -1,0 +1,15 @@
+{
+  "name": "game",
+  "version": "1.0.0",
+  "description": "- 石头 rock  剪刀  scissor  布  paper \r - 怎么玩？\r     - 选择协议？ http  网页游戏  服务器端是不可以组东发送数据的\r     - 双方都可以相互通信，发送接收信息 TCP/IP 连接，ws-websocket协议（**全双工：同时可进行双向数据传输**）\r - 和电脑来玩  应用层\r     1. 输入设备  键盘 把选择交给电脑\r     2. 内存 \r     3. cpu 内存中 调入cpu 计算，得到结果 computer赢了\r     4. 输出设备（显示器）   computer赢了",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
