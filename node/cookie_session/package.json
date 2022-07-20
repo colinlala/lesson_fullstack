@@ -1,0 +1,15 @@
+{
+  "name": "cookie_session",
+  "version": "1.0.0",
+  "description": "- cookie session\r     - 识别用户状态\r - http服务怎么启动？\r     - 用到的是 node 的哪个模块？ 用什么方法 \r     1. node 内置了http模块，少数几行代码就可以\r     2. http 设置成请求响应且无状态\r         - 分布式的概念  git分布式？  本地  remote 合作者的不同的电脑上\r         - 互联  IP   http://localhost/      127.0.0.1\r             - TCP IP 双方\r         - 端口？ \r             - 系统 linux centos ubuntu  就好像某一个进程，web server ，端口\r             - A IP -> B (web server)\r             - 多项服务  mysql 数据库服务  3306  邮件服务",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^2.13.4"
+  }
+}
