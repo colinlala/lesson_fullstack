@@ -16,9 +16,9 @@ import {
 import { actionCreators } from "./store/index";
 import { connect } from "react-redux";
 import SearchBox from "../SearchBox";
-// import { CSSTransition } from "react-transition-group";
-// import Scroll from "@/components/common/Scroll";
-// import Lazyload from "react-lazyload";
+import { CSSTransition } from "react-transition-group";
+import Scroll from "@/components/common/Scroll";
+import Lazyload from "react-lazyload";
 import OtherImg from "@/assets/images/dyj.png";
 
 function Search(props) {
@@ -54,7 +54,7 @@ function Search(props) {
                     return (
                         <HistoryWrapper key={item.id}>
                             <div className="avatar_img">
-                                {/* <Lazyload
+                                <Lazyload
                                     placeholder={
                                         <img
                                             width="100%"
@@ -62,7 +62,7 @@ function Search(props) {
                                             src={OtherImg}
                                         />
                                     }
-                                > */}
+                                >
                                     <Avatar
                                         src={item.img}
                                         style={{
@@ -70,7 +70,7 @@ function Search(props) {
                                             "--border-radius": "8rem",
                                         }}
                                     />
-                                {/* </Lazyload> */}
+                                </Lazyload>
                             </div>
                             <span className="search_history_list_name">
                                 {item.name}
@@ -98,7 +98,7 @@ function Search(props) {
                     return (
                         <SearchResWrapper key={item.id}>
                             <div className="avatar_img">
-                                {/* <Lazyload
+                                <Lazyload
                                     placeholder={
                                         <img
                                             width="100%"
@@ -106,7 +106,7 @@ function Search(props) {
                                             src={OtherImg}
                                         />
                                     }
-                                > */}
+                                >
                                     <Avatar
                                         src={item.img}
                                         style={{
@@ -114,7 +114,7 @@ function Search(props) {
                                             "--border-radius": "8rem",
                                         }}
                                     />
-                                {/* </Lazyload> */}
+                                </Lazyload>
                             </div>
                             <span className="search_history_list_name">
                                 {item.name}
@@ -168,21 +168,21 @@ function Search(props) {
         <>
             <SearchBox newQuery={query} handleQuery={handleQuery} />
             <PublicWrapper show={!query}>
-                {/* <Scroll> */}
+                <Scroll>
                     {!query && (
                         <div>
                             {renderHistoryList(searchHistoryList)}
                             {renderOther()}
                         </div>
                     )}
-                {/* </Scroll> */}
+                </Scroll>
             </PublicWrapper>
             <PublicWrapper show={query}>
-                {/* <Scroll> */}
+                <Scroll>
                     {query && renderSearchList()}
-                    {/* </Scroll> */}
+                </Scroll>
             </PublicWrapper>
-        </>
+        </> 
         // </CSSTransition>
     );
 }
