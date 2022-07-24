@@ -85,7 +85,61 @@
     - 跨域有安全问题，按这些规则来
         1. cors 
             1. 后端解决方案：
- 
 
+
+- js 浏览器有个 同源机制
+
+
+- 搜索API
+    1. 通过chrome 找到了b站的API地址，拿到了结果
+    2. 不放到fastmock
+    3. 自己的bilibili-api提供
+        - `  router.get('/search/suggest',async(ctx,next)=>{})  `
+        - ctx.query.w   查询字符串拿出来，koa  qs查询字符串变成了对象，encodeURI
+        - try catch  确保后端容错处理
+            - js 单线程，出错了，web程序就挂了，无法提供访问
+            - try { 可能会出错的代码 } catch(e) {...}
+    4. node-fetch 是 node 的 fetch ，原因是node对js最新功能的支持，没有那么快。可以用于node发送fetch请求，和es6的fetch一样
+    5. node 去向B站发送远程接口请求的时候，B站是接受这次跨域请求的
+        - 路由 + 假数据  代替fastmock ，自建web后端服务，为前端提供api
+        - 如果像B站一样，跨域请求API
+            1. chrome network  xhr  查看请求，拿到url、method、query...
+            2. node 在api里面  封装这次请求
+                - 把url的domian/path作为常量
+                - 把query用数组装成[key=value]
+                - 最后 = url + array.join('&')
+                - then 
+                - try {  } catch ()
+
+- api 服务准备res响应数据
+    ```js
+        let resData = {
+            code: "1",   // 1 成功
+            msg: "success"  // 成功  |  失败原因
+        }
+    ```
+    - B站code为0表示成功
+    - data.result 写入resData
+
+- api 服务的使命
+    1. http 服务
+    2. router method  url 响应
+    3. try catch 容错
+    4. 准备好json 数据 响应 res.body
+
+- typescript
+    - component
+    - api
+    - store
+
+- reducer + typescript 怎么做？
+    1. 架构调整了  combineReducers + n 个 reducer 函数 写在一个文件里
+    2. npm i @types/redux --save-dev  开发阶段
+        - build把 ts 代码打包成 --> js 代码
+    3. AnyAction 类型  action: AnyAction
+    4. actions 中 添加AnyAction  一定有type 字段
+    5. 在异步action 里，约定 dispatch:Dispatch<AnyAction>
+        - 一定会调用一个同步的action AnyAction
+    6. redux 需要的最基础ts 搞定
 
 - **端口不一样，进程不一样**
