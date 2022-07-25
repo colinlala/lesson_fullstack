@@ -84,8 +84,10 @@
     - 请求失败？原因是什么？  跨域问题，前端在3000  后端在3300 url里面。 http://www.baidu.com:3000/a?b=1  到 https://www.baidu.com:3000/a?b=1 也算跨域、 https://www.baidu.com:3300/a?b=1  也算跨域...
     - 跨域有安全问题，按这些规则来
         1. cors 
-            1. 后端解决方案：
+            1. 后端解决方案
 
+
+- **端口不一样，进程不一样**
 
 - js 浏览器有个 同源机制
 
@@ -142,4 +144,45 @@
         - 一定会调用一个同步的action AnyAction
     6. redux 需要的最基础ts 搞定
 
-- **端口不一样，进程不一样**
+- redux  typescript 使用
+    - store 数据流管理发store 单例（设计模式Singleton createStore？new Store）（由combineReducers 返回的单一状态树）
+        1. windeow as any 断言，跳过ts编译阶段的检测，只有运行在浏览器才有window对象。（语法编译）
+        2. ts 通过vite  js后 工程化
+        3. 在浏览器运行  js  瞬间的编译阶段   变量提升   window
+        4. 运行
+    - thunks as ThunkMiddleware 断言
+    - 提供 state   rootState 自定义类型 `ReturnType<typeof reducers>`
+
+- bilibili 首页tab 功能
+    - antd mobile
+    - 数据流角度
+        
+- api 数据怎么提供   后端能力
+    1. 抖音等没有移动网页的应用？抓包，代理工具？fiddler
+    2. 缓存  304 Not Modified
+    3. 单点入口 
+        - http服务的启动
+        - 中间件服务（路由）的挂载
+        - 模块化放到其他的地方，简单，简洁
+        - MVC  model模型层（数据库的封装） view（html模板）controllers 控制器（校验参数）
+    4. 构建数据的模型能力            B站 首页多级菜单
+        - 树状结构
+        - 0  第一级菜单
+            - 每个菜单项 `{ tid: 1, typename: "动画" }`
+            - tid 唯一   typename 标题
+        - tid 1 父级菜单
+            - 1 ： [ { tid: 33, typename: "MAD·AMV" }, ... ]
+        - class 声明  模块化，ts要求比较严格    export {}
+            - children：PartitionTypes[]
+
+- model层  ts 写法
+    1. model  归属  ts   比较难
+    2. type interface class  关键字，都可以声明类型
+    3. 每个架构级别页面目录下，添加一个index.ts 文件，方便引入
+
+- partitionTypes 从后端到前端  完整的数据流
+    1. 源头       GET  /partitions 获取api服务数据
+    2. 前端   api/getPartitionsRequest 接口
+    3. redux   异步action 结合models校验 ，dispatch同步action，redux重新计算
+    4. connect  mapStateToPropos  state:rootState
+    5. 组件  props 结构

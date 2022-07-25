@@ -1,6 +1,6 @@
 import { AnyAction, Dispatch } from 'redux'
 import * as ActionTypes from '../action-types'
-import { getHotwordRequest } from '@/api'
+import { getHotwordRequest } from '../../api'
 
 export const setHotword = (data: any[]): AnyAction => ({
     type: ActionTypes.SET_HOTWORD,

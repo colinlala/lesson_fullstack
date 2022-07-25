@@ -3,3 +3,8 @@ export interface Video{
     name: string,
     pic: string,
 }
+
+export {
+    PartitionType,
+    createPatitionTypes
+} from './PartitionType'
