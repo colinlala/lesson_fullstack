@@ -38,12 +38,19 @@ const Home : React.FC<HomeProps> = (props) => {
   const tabBarData: PartitionType[] = [{id: 0, name: "首页"}].concat(oneLevelPartitions)
   tabBarData.push({id: -1, name: "直播"})
 
-  const videoElements = rankingVideos.map( video => 
-    <VideoItem 
-      video={video} 
-      key={video.aId} 
-      showStatistics={true} />
-  )
+  const videoElements = rankingVideos.map( video => {
+
+    // 解决 403 Forbidden
+    const pic = `http://localhost:3011/transfer/image?pic=${video.pic}@320w_200h`
+    video.pic = pic 
+
+    return (
+      <VideoItem 
+        video={video} 
+        key={video.aid} 
+        showStatistics={true} />
+    )
+  })
 
   return (
     <HomeWrapper className="top-wrapper">

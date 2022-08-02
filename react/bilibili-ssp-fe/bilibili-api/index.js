@@ -7,6 +7,7 @@ const mainRouter = require('./routers/index')
 const searchRouter = require('./routers/search')
 const videosRouter = require('./routers/videos')
 const rankingRouter = require('./routers/ranking')
+const transferRouter = require('./routers/transfer')
 
 // 挂载跨域中间件
 app.use(cors())
@@ -17,6 +18,7 @@ app.use(mainRouter)
 router.use('/search', searchRouter)
 router.use('/videos', videosRouter)
 router.use('/ranking', rankingRouter)
+router.use('/transfer', transferRouter)
 app.use(router.routes())
 
 

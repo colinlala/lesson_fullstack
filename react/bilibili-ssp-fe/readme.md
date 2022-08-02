@@ -79,5 +79,11 @@
         - ts  propTypes， 图片懒加载
     - video   在 models声明
 
-- 
+- video 列表  403 Forbidden?  权限，安全问题，不属于我的资源，省掉一些流量
+    ```js
+        <meta name="referrer" content="no-referrer" />
+        <!-- 隐藏主机名，以便请求资源 -->
+    ```
+    1. 这个图片资源属于 *B站的服务器*，专门的图片服务器，
+    2. 4xx 用户错误，5xx 服务器错误
 

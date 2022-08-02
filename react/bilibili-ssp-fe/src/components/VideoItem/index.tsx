@@ -26,7 +26,8 @@ const VideoItem :React.FC<VideoItemProps> = (props) => {
               {
                 video.pic && (
                   <LazyLoad>
-                    <img src={video.pic} className="pic" alt={video.title}/>
+                    <img src={video.pic} className="pic" alt={video.title} 
+                        onLoad={(e) => e.currentTarget.style.opacity = "1"}/>
                   </LazyLoad>
                 )
               }
@@ -36,11 +37,11 @@ const VideoItem :React.FC<VideoItemProps> = (props) => {
                     <div className="info">
                       <span className="play-icon icon-play-count"></span>
                       <span className="play-count">
-                        { video.playCount ? formatTenThousand(video.playCount):"0"}
+                        { video.play ? formatTenThousand(video.play) : "0"}
                       </span>
                       <span className="barrage-icon icon-barrage-count"></span>
                       <span className="barrage-count">
-                        {video.barrageCount?formatTenThousand(video.barrageCount):"0"}
+                        {video.pts ? formatTenThousand(video.pts) : "0"}
                       </span>
                     </div>
                   )
