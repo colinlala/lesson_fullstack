@@ -41,8 +41,8 @@ const Home : React.FC<HomeProps> = (props) => {
   const videoElements = rankingVideos.map( video => {
 
     // 解决 403 Forbidden
-    const pic = `http://localhost:3011/transfer/image?pic=${video.pic}@320w_200h`
-    video.pic = pic 
+    // const pic = `http://localhost:3011/transfer/image?pic=${video.pic}@320w_200h`
+    // video.pic = pic 
 
     return (
       <VideoItem 

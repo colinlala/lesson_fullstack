@@ -86,4 +86,12 @@
     ```
     1. 这个图片资源属于 *B站的服务器*，专门的图片服务器，
     2. 4xx 用户错误，5xx 服务器错误
+    3. 前端图片访问403 借助node解决
+        1. /transfer/image 中转一下
+        2. 协议层  后端拿到 ?pic=...   
+        3. node-fetch (request库) 请求 await一下 （koa 支持async） 下载完拿到response
+        4. response 转成 buffer 格式，图片在传输的时候都是二进制流，node  buffer 对应
+        5. 远程图片旧来到了本地服务器
+        6. 前端访问的就是自己的服务器，不存在 forbidden 问题
+        7. `ctx.set('Content-Type', 'images/jpeg')`  响应头加上Content-Type  images/jpeg格式的
 

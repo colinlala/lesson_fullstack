@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import tv from '@/assets/images/tv.png';
 import LazyLoad from "react-lazyload";
 import { formatTenThousand } from '@/utils/string';
+import { baseURL } from '@/api/config';
 
 interface VideoItemProps {
     video: Video;
@@ -26,8 +27,13 @@ const VideoItem :React.FC<VideoItemProps> = (props) => {
               {
                 video.pic && (
                   <LazyLoad>
-                    <img src={video.pic} className="pic" alt={video.title} 
-                        onLoad={(e) => e.currentTarget.style.opacity = "1"}/>
+                    {/* <img src={video.pic} className="pic" alt={video.title} 
+                        onLoad={(e) => e.currentTarget.style.opacity = "1"}/> */}
+                    <img src={baseURL+'/transfer/image?pic=' + video.pic + '@320w_200h.jpg'} 
+                          className="pic" 
+                          alt={video.title}
+                          onLoad={(e) => e.currentTarget.style.opacity = "1"}
+                    />
                   </LazyLoad>
                 )
               }
